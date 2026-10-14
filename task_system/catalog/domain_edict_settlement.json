@@ -1,0 +1,738 @@
+{
+  "version": 1,
+  "domain_defaults": {
+    "disaster_relief": {
+      "phase_narratives": ["核灾调粮", "开仓赈济安置", "收口稽查"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "public_support", "value": 4},
+          {"type": "stat_change", "key": "disaster_index", "value": -5},
+          {"type": "stat_change", "key": "treasury_balance", "value": -12000}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "public_support", "value": 2},
+          {"type": "stat_change", "key": "disaster_index", "value": -2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -8000}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -2},
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "public_support", "value": -4},
+          {"type": "stat_change", "key": "unrest", "value": 4},
+          {"type": "stat_change", "key": "corruption", "value": 2}
+        ]
+      }
+    },
+    "agriculture": {
+      "phase_narratives": ["劝课农桑", "督州县行课", "汇奏收成"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "public_support", "value": 3},
+          {"type": "stat_change", "key": "tax_completion_index", "value": 2}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "public_support", "value": 1},
+          {"type": "stat_change", "key": "tax_completion_index", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ]
+      }
+    },
+    "fiscal": {
+      "phase_narratives": ["清厘簿籍", "追比州县", "汇奏国用"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "tax_completion_index", "value": 3},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": -2},
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "tax_completion_index", "value": 1},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": -1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -2},
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 3},
+          {"type": "stat_change", "key": "public_support", "value": -3}
+        ]
+      }
+    },
+    "military": {
+      "phase_narratives": ["整饬军备", "巡边阅武", "汇奏边防"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "army_morale", "value": 5},
+          {"type": "stat_change", "key": "army_supply", "value": 4},
+          {"type": "stat_change", "key": "treasury_balance", "value": -15000}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "army_morale", "value": 2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -10000}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "army_morale", "value": -2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 3},
+          {"type": "stat_change", "key": "treasury_balance", "value": -20000}
+        ]
+      }
+    },
+    "diplomacy": {
+      "phase_narratives": ["修明礼仪", "抚谕来使", "汇奏藩务"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "authority", "value": 3},
+          {"type": "stat_change", "key": "treasury_balance", "value": -8000}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "authority", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "authority", "value": -2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 2},
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ]
+      }
+    },
+    "personnel": {
+      "phase_narratives": ["考课百官", "甄别黜陟", "汇奏铨选"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "corruption", "value": -3},
+          {"type": "stat_change", "key": "authority", "value": 2}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "corruption", "value": -1},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 2},
+          {"type": "stat_change", "key": "authority", "value": -1}
+        ]
+      }
+    },
+    "engineering": {
+      "phase_narratives": ["勘河工险段", "兴工调役", "验堤收工"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "disaster_index", "value": -4},
+          {"type": "stat_change", "key": "public_support", "value": 2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -18000}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "disaster_index", "value": -2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -12000}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 3},
+          {"type": "stat_change", "key": "treasury_balance", "value": -25000}
+        ]
+      }
+    },
+    "public_order": {
+      "phase_narratives": ["缉捕盗匪", "安抚乡里", "汇奏靖安"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "unrest", "value": -5},
+          {"type": "stat_change", "key": "revolt_risk", "value": -3}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "unrest", "value": -2}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "army_supply", "value": -2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 4},
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ]
+      }
+    },
+    "general": {
+      "phase_narratives": ["条议政务", "部院奉行", "汇奏成效"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "public_support", "value": 2},
+          {"type": "stat_change", "key": "authority", "value": 1}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "public_support", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ]
+      }
+    }
+  },
+  "playbooks": {
+    "open_granary_relief": {
+      "phase_narratives": ["核灾与调粮", "开仓赈济流民", "收口稽查"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "public_support", "value": 5},
+          {"type": "stat_change", "key": "disaster_index", "value": -6},
+          {"type": "stat_change", "key": "unrest", "value": -2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -14000}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "public_support", "value": 3},
+          {"type": "stat_change", "key": "disaster_index", "value": -3},
+          {"type": "stat_change", "key": "treasury_balance", "value": -9000}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -1},
+          {"type": "stat_change", "key": "corruption", "value": 1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "public_support", "value": -5},
+          {"type": "stat_change", "key": "unrest", "value": 5},
+          {"type": "stat_change", "key": "corruption", "value": 2}
+        ]
+      }
+    },
+    "tax_remission_relief": {
+      "phase_narratives": ["勘灾核赋", "颁诏蠲缓", "察州县遵行"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "public_support", "value": 5},
+          {"type": "stat_change", "key": "disaster_index", "value": -3},
+          {"type": "stat_change", "key": "tax_completion_index", "value": -2},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 2}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "public_support", "value": 2},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "tax_completion_index", "value": -1},
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 3},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 3}
+        ]
+      }
+    },
+    "dispatch_imperial_commissioner": {
+      "phase_narratives": ["钦命专办", "巡赈按问", "还朝奏报"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "public_support", "value": 6},
+          {"type": "stat_change", "key": "disaster_index", "value": -7},
+          {"type": "stat_change", "key": "authority", "value": 2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -20000}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "public_support", "value": 3},
+          {"type": "stat_change", "key": "disaster_index", "value": -4},
+          {"type": "stat_change", "key": "corruption", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "authority", "value": -1},
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "corruption", "value": 3},
+          {"type": "stat_change", "key": "unrest", "value": 4},
+          {"type": "stat_change", "key": "public_support", "value": -4}
+        ]
+      }
+    },
+    "local_official_relief": {
+      "phase_narratives": ["札付地方", "就地赈济", "督抚汇奏"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "public_support", "value": 3},
+          {"type": "stat_change", "key": "disaster_index", "value": -4},
+          {"type": "stat_change", "key": "treasury_balance", "value": -10000}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "public_support", "value": 2},
+          {"type": "stat_change", "key": "disaster_index", "value": -2}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "corruption", "value": 2},
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 4},
+          {"type": "stat_change", "key": "corruption", "value": 3}
+        ]
+      }
+    },
+    "abolish_state_monopoly": {
+      "phase_narratives": ["奉诏停罢", "诸路撤务", "汇奏商路"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "public_support", "value": 4},
+          {"type": "stat_change", "key": "treasury_balance", "value": -8000},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 2}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "public_support", "value": 2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -5000}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -1},
+          {"type": "stat_change", "key": "corruption", "value": 2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 2},
+          {"type": "stat_change", "key": "authority", "value": -1}
+        ]
+      }
+    },
+    "tax_collection_push": {
+      "phase_narratives": ["清册比对", "追缴宽严", "汇奏完纳"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "tax_completion_index", "value": 4},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": -3},
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "tax_completion_index", "value": 2},
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -3},
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 4},
+          {"type": "stat_change", "key": "tax_completion_index", "value": -1}
+        ]
+      }
+    },
+    "increase_tax_levy": {
+      "phase_narratives": ["勘定加派", "州县执行", "汇奏岁入"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "treasury_balance", "value": 15000},
+          {"type": "stat_change", "key": "tax_completion_index", "value": 3},
+          {"type": "stat_change", "key": "public_support", "value": -3}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "treasury_balance", "value": 8000},
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -4},
+          {"type": "stat_change", "key": "unrest", "value": 3}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 5},
+          {"type": "stat_change", "key": "revolt_risk", "value": 3}
+        ]
+      }
+    },
+    "reduce_court_spending": {
+      "phase_narratives": ["核冗裁费", "诸司奉行", "汇奏节用"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "fiscal_pressure", "value": -4},
+          {"type": "stat_change", "key": "treasury_balance", "value": 10000},
+          {"type": "stat_change", "key": "public_support", "value": 2}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "fiscal_pressure", "value": -2},
+          {"type": "stat_change", "key": "public_support", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "authority", "value": -1},
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 2},
+          {"type": "stat_change", "key": "authority", "value": -2}
+        ]
+      }
+    },
+    "expand_state_monopoly": {
+      "phase_narratives": ["置场立务", "平准收息", "汇奏榷利"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "treasury_balance", "value": 18000},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": -2},
+          {"type": "stat_change", "key": "corruption", "value": 1}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "treasury_balance", "value": 10000},
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -3},
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 4},
+          {"type": "stat_change", "key": "public_support", "value": -4}
+        ]
+      }
+    },
+    "corvee_commutation": {
+      "phase_narratives": ["定户等", "收钱雇役", "汇奏均役"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "public_support", "value": 3},
+          {"type": "stat_change", "key": "tax_completion_index", "value": 2},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 1}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "public_support", "value": 1},
+          {"type": "stat_change", "key": "unrest", "value": -1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "unrest", "value": 2},
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 4},
+          {"type": "stat_change", "key": "authority", "value": -1}
+        ]
+      }
+    },
+    "equalized_transport": {
+      "phase_narratives": ["计度漕路", "发运调剂", "验实上供"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "treasury_balance", "value": 12000},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": -3},
+          {"type": "stat_change", "key": "tax_completion_index", "value": 1}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "treasury_balance", "value": 6000},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": -1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "treasury_balance", "value": -5000},
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 3},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 2}
+        ]
+      }
+    },
+    "spring_encourage_farming": {
+      "phase_narratives": ["颁劝农令", "州县督课", "汇奏农桑"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "public_support", "value": 4},
+          {"type": "stat_change", "key": "tax_completion_index", "value": 2}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "public_support", "value": 2},
+          {"type": "stat_change", "key": "tax_completion_index", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -1},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 2},
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ]
+      }
+    },
+    "irrigation_or_land_improvement": {
+      "phase_narratives": ["踏勘陂塘", "兴工督役", "验收水利"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "public_support", "value": 3},
+          {"type": "stat_change", "key": "disaster_index", "value": -3},
+          {"type": "stat_change", "key": "treasury_balance", "value": -18000}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "public_support", "value": 2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -12000}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "treasury_balance", "value": -8000},
+          {"type": "stat_change", "key": "unrest", "value": 1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 3},
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ]
+      }
+    },
+    "mulberry_silk_promotion": {
+      "phase_narratives": ["示令植桑", "州县课蚕", "汇奏丝课"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "tax_completion_index", "value": 3},
+          {"type": "stat_change", "key": "treasury_balance", "value": 8000},
+          {"type": "stat_change", "key": "public_support", "value": 1}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "tax_completion_index", "value": 2},
+          {"type": "stat_change", "key": "public_support", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -2},
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 4},
+          {"type": "stat_change", "key": "public_support", "value": -3},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 2}
+        ]
+      }
+    },
+    "spring_grain_lending": {
+      "phase_narratives": ["核常平仓廪", "春前给散", "察州县遵行"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "public_support", "value": 4},
+          {"type": "stat_change", "key": "tax_completion_index", "value": 2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -10000}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "public_support", "value": 2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -6000}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -2},
+          {"type": "stat_change", "key": "corruption", "value": 2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 3},
+          {"type": "stat_change", "key": "corruption", "value": 3}
+        ]
+      }
+    },
+    "river_dike_repair": {
+      "phase_narratives": ["勘河工险段", "兴工调役", "验堤收工"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "disaster_index", "value": -5},
+          {"type": "stat_change", "key": "public_support", "value": 2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -20000}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "disaster_index", "value": -2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -12000}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 3},
+          {"type": "stat_change", "key": "treasury_balance", "value": -28000}
+        ]
+      }
+    },
+    "bandit_suppression": {
+      "phase_narratives": ["缉捕盗匪", "安抚乡里", "汇奏靖安"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "unrest", "value": -5},
+          {"type": "stat_change", "key": "revolt_risk", "value": -3}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "unrest", "value": -2}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "army_supply", "value": -2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 4},
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ]
+      }
+    },
+    "patrol_order": {
+      "phase_narratives": ["分巡州县", "缉盗靖安", "汇奏成效"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "unrest", "value": -3},
+          {"type": "stat_change", "key": "public_support", "value": 2}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "unrest", "value": -1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "corruption", "value": 1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 2},
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ]
+      }
+    },
+    "mountain_bandit_campaign": {
+      "phase_narratives": ["会兵进山", "剿巢擒魁", "善后安民"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "unrest", "value": -6},
+          {"type": "stat_change", "key": "revolt_risk", "value": -4},
+          {"type": "stat_change", "key": "army_supply", "value": -3}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "unrest", "value": -3},
+          {"type": "stat_change", "key": "army_supply", "value": -2}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "army_supply", "value": -4},
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 5},
+          {"type": "stat_change", "key": "public_support", "value": -3}
+        ]
+      }
+    },
+    "border_readiness": {
+      "phase_narratives": ["边情与调遣", "整饬与补给", "巡边与报功"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "army_morale", "value": 4},
+          {"type": "stat_change", "key": "army_supply", "value": 3},
+          {"type": "stat_change", "key": "revolt_risk", "value": -2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -15000}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "army_morale", "value": 2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -10000}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "army_supply", "value": -3},
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 4},
+          {"type": "stat_change", "key": "treasury_balance", "value": -22000}
+        ]
+      }
+    },
+    "campaign_against": {
+      "phase_narratives": ["出师调遣", "交锋与补给", "凯旋或收兵"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "army_morale", "value": 5},
+          {"type": "stat_change", "key": "revolt_risk", "value": -4},
+          {"type": "stat_change", "key": "authority", "value": 2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -25000}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "army_morale", "value": 2},
+          {"type": "stat_change", "key": "revolt_risk", "value": -2},
+          {"type": "stat_change", "key": "treasury_balance", "value": -18000}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "army_morale", "value": -4},
+          {"type": "stat_change", "key": "unrest", "value": 3}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "army_morale", "value": -5},
+          {"type": "stat_change", "key": "unrest", "value": 5},
+          {"type": "stat_change", "key": "treasury_balance", "value": -35000}
+        ]
+      }
+    },
+    "merit_appointment": {
+      "phase_narratives": ["廷议除授", "宣付吏部", "朝报新命"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "authority", "value": 3},
+          {"type": "stat_change", "key": "public_support", "value": 1},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 1}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "authority", "value": 1},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 2}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 3},
+          {"type": "stat_change", "key": "authority", "value": -1}
+        ]
+      }
+    },
+    "censure_and_removal": {
+      "phase_narratives": ["台谏交章", "廷议黜罢", "朝野反弹"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "corruption", "value": -3},
+          {"type": "stat_change", "key": "authority", "value": 2},
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "corruption", "value": -1},
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "authority", "value": -2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 4},
+          {"type": "stat_change", "key": "authority", "value": -2}
+        ]
+      }
+    },
+    "official_evaluation": {
+      "phase_narratives": ["考课与访察", "铨选汇奏", "公示与反弹"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "corruption", "value": -3},
+          {"type": "stat_change", "key": "authority", "value": 2}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "corruption", "value": -1},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 2},
+          {"type": "stat_change", "key": "authority", "value": -1}
+        ]
+      }
+    },
+    "urban_order": {
+      "phase_narratives": ["严坊市禁", "缉盗安民", "汇奏京师"],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "unrest", "value": -2},
+          {"type": "stat_change", "key": "public_support", "value": 2},
+          {"type": "stat_change", "key": "authority", "value": 1}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "unrest", "value": -1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "unrest", "value": 2},
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ]
+      }
+    }
+  }
+}

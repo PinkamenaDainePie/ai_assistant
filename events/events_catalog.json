@@ -1,0 +1,341 @@
+[
+  {
+    "id": "event_liaodong_pay_shortage_001",
+    "title": "辽东军饷三月未发",
+    "category": "military",
+    "era_tags": ["chongzhen", "liaodong"],
+    "description": "边军军饷拖欠，营中怨气渐起。",
+    "trigger": {
+      "conditions": { "treasury_balance_lte": 300000, "army_morale_lte": 70 },
+      "weight": 10,
+      "cooldown_turns": 4
+    },
+    "choices": [
+      {
+        "id": "pay_full",
+        "text": "立拨足额军饷",
+        "effects": { "treasury_balance": -100000, "army_morale": 5, "unrest": -1 },
+        "tags": ["military"]
+      },
+      {
+        "id": "pay_partial",
+        "text": "先拨半饷",
+        "effects": { "treasury_balance": -50000, "army_morale": 2, "unrest": 1 },
+        "tags": ["compromise"]
+      },
+      {
+        "id": "delay",
+        "text": "暂缓拨款",
+        "effects": { "army_morale": -5, "unrest": 4, "revolt_risk": 2 },
+        "tags": ["risk"]
+      }
+    ]
+  },
+  {
+    "id": "event_fujian_theater_fire_001",
+    "title": "福建剧院突发大火",
+    "category": "disaster",
+    "era_tags": ["chongzhen", "fujian"],
+    "description": "福建一地剧院突发大火，死伤众多。",
+    "trigger": {
+      "conditions": { "disaster_index_gte": 10 },
+      "weight": 8,
+      "cooldown_turns": 6
+    },
+    "choices": [
+      {
+        "id": "comfort_and_rebuild",
+        "text": "抚慰群众，拨款重建",
+        "effects": { "public_support": 5, "inner_treasury_balance": -50000, "unrest": -2 },
+        "consequence_narration_template": "【{event_title}】你采纳“{choice_text}”。舆情回暖（{good_changes}），但财政承压（{bad_changes}）。",
+        "tags": ["relief"]
+      },
+      {
+        "id": "order_local_gentry_rebuild",
+        "text": "号令豪绅重建",
+        "effects": { "public_support": 3, "authority": -2, "unrest": -1 },
+        "tags": ["delegation"]
+      },
+      {
+        "id": "ignore",
+        "text": "不管不顾",
+        "effects": { "public_support": -5, "unrest": 3, "revolt_risk": 2 },
+        "tags": ["ignore"]
+      }
+    ]
+  },
+  {
+    "id": "event_song_cuike_001",
+    "title": "州县催科过急",
+    "category": "other",
+    "era_tags": ["song", "xining"],
+    "description": "地方官为完成赋税考课，胥吏催征过急，乡里怨声渐起。",
+    "trigger": { "conditions": { "fiscal_pressure_gte": 28, "tax_intensity_gte": 46 }, "weight": 12, "cooldown_turns": 3 },
+    "choices": [
+      { "id": "ban_coercion", "text": "严令停止苛征", "effects": { "public_support": 6, "treasury_balance": -45000, "authority": 2 }, "tags": ["relief"] },
+      { "id": "allow_pressure", "text": "默许地方催科", "effects": { "treasury_balance": 38000, "unrest": 6, "revolt_risk": 4 }, "tags": ["fiscal"] },
+      { "id": "send_censor", "text": "派御史巡查", "effects": { "corruption": -5, "authority": 3, "tax_completion_index": -3 }, "tags": ["audit"] }
+    ]
+  },
+  {
+    "id": "event_song_green_coerce_001",
+    "title": "青苗钱强配",
+    "category": "other",
+    "era_tags": ["song", "xining"],
+    "description": "青苗本为济民，州县为课额强行摊派，民不堪其扰。",
+    "trigger": { "conditions": { "unrest_gte": 27, "tax_intensity_gte": 47 }, "weight": 10, "cooldown_turns": 4 },
+    "choices": [
+      { "id": "probe_local", "text": "彻查抑勒", "effects": { "public_support": 5, "authority": 3, "corruption": -4, "tax_completion_index": -2 }, "tags": ["justice"] },
+      { "id": "push_on", "text": "维持推行", "effects": { "treasury_balance": 42000, "public_support": -6, "unrest": 5 }, "tags": ["reform"] },
+      { "id": "suspend_pilot", "text": "暂停一州试点", "effects": { "unrest": -4, "tax_completion_index": -4, "authority": 2 }, "tags": ["pause"] }
+    ]
+  },
+  {
+    "id": "event_song_gentry_boycott_001",
+    "title": "豪强拒贷",
+    "category": "other",
+    "era_tags": ["song", "xining"],
+    "description": "富室恐官府夺其利，暗唆乡户拒领青苗钱，风潮渐起。",
+    "trigger": { "conditions": { "tax_intensity_gte": 46, "public_support_lte": 57 }, "weight": 10, "cooldown_turns": 4 },
+    "choices": [
+      { "id": "crack_down", "text": "强压豪强", "effects": { "authority": 5, "public_support": -5, "revolt_risk": 3 }, "tags": ["hard"] },
+      { "id": "appease_elite", "text": "安抚豪右", "effects": { "tax_intensity": -2, "treasury_balance": -35000, "public_support": -3 }, "tags": ["soft"] },
+      { "id": "local_compromise", "text": "让地方自议", "effects": { "authority": 2, "tax_completion_index": -4, "unrest": -2 }, "tags": ["delegate"] }
+    ]
+  },
+  {
+    "id": "event_song_border_supply_001",
+    "title": "西北军粮迟至",
+    "category": "military",
+    "era_tags": ["song", "xining"],
+    "description": "边军粮草逾期不至，营中鼓噪，转运司互相推诿。",
+    "trigger": { "conditions": { "army_supply_lte": 63, "fiscal_pressure_gte": 28 }, "weight": 8, "cooldown_turns": 5 },
+    "choices": [
+      { "id": "granary_transfer", "text": "急调常平仓粮", "effects": { "army_supply": 6, "army_morale": 4, "treasury_balance": -55000 }, "tags": ["supply"] },
+      { "id": "punish_transport", "text": "责罚转运官", "effects": { "authority": 4, "corruption": -3, "tax_completion_index": -3 }, "tags": ["punish"] },
+      { "id": "delay_issue", "text": "暂缓发粮", "effects": { "treasury_balance": 28000, "army_morale": -6, "revolt_risk": 4 }, "tags": ["risk"] }
+    ]
+  },
+  {
+    "id": "event_song_grain_kaifeng_001",
+    "title": "汴京粮价腾贵",
+    "category": "other",
+    "era_tags": ["song", "xining"],
+    "description": "京师米价日昂，小民籴食艰难，街市已有怨言。",
+    "trigger": { "conditions": { "unrest_gte": 27, "public_support_lte": 57 }, "weight": 11, "cooldown_turns": 3 },
+    "choices": [
+      { "id": "open_granary", "text": "开仓平价", "effects": { "public_support": 6, "unrest": -5, "treasury_balance": -52000 }, "tags": ["relief"] },
+      { "id": "hoarding_raid", "text": "查禁囤积", "effects": { "public_support": 4, "tax_intensity": 2, "authority": 2 }, "tags": ["control"] },
+      { "id": "laissez", "text": "听任市场", "effects": { "treasury_balance": 22000, "public_support": -5, "unrest": 5 }, "tags": ["market"] }
+    ]
+  },
+  {
+    "id": "event_song_censor_reform_001",
+    "title": "台谏弹劾新法官",
+    "category": "other",
+    "era_tags": ["song", "xining"],
+    "description": "御史台交章，劾新法属官扰民、营私，朝论汹汹。",
+    "trigger": { "conditions": { "authority_gte": 55, "unrest_gte": 27 }, "weight": 9, "cooldown_turns": 4 },
+    "choices": [
+      { "id": "remove_official", "text": "罢免该官", "effects": { "unrest": -3, "tax_completion_index": -4, "public_support": 3 }, "tags": ["purge"] },
+      { "id": "shield_official", "text": "保下该官", "effects": { "tax_completion_index": 4, "unrest": 5, "authority": 2 }, "tags": ["shield"] },
+      { "id": "sansi_review", "text": "交三司条例司复核", "effects": { "tax_completion_index": -2, "unrest": -1, "fiscal_pressure": 2 }, "tags": ["review"] }
+    ]
+  },
+  {
+    "id": "event_song_simaguang_memorial_001",
+    "title": "司马光上疏",
+    "category": "other",
+    "era_tags": ["song", "xining"],
+    "description": "旧臣上疏，谓理财之法近于聚敛，祖宗成法不可轻改。",
+    "trigger": { "conditions": { "fiscal_pressure_gte": 29, "tax_completion_index_lte": 44 }, "weight": 8, "cooldown_turns": 5 },
+    "choices": [
+      { "id": "slow_reform", "text": "采纳谏言，放缓新法", "effects": { "unrest": -2, "tax_completion_index": -3, "public_support": 4 }, "tags": ["conservative"] },
+      { "id": "reject_memorial", "text": "驳回奏疏", "effects": { "authority": 5, "unrest": 6, "tax_completion_index": 3 }, "tags": ["assert"] },
+      { "id": "court_debate", "text": "召集廷辩", "effects": { "unrest": 3, "authority": 2, "tax_completion_index": -2 }, "tags": ["debate"] }
+    ]
+  },
+  {
+    "id": "event_song_wang_anshi_debate_001",
+    "title": "王安石力辩",
+    "category": "other",
+    "era_tags": ["song", "xining"],
+    "description": "王安石请对，极陈富国强兵、救弊于积贫，与台谏往复辩难。",
+    "trigger": { "conditions": { "tax_completion_index_lte": 44, "authority_gte": 54 }, "weight": 9, "cooldown_turns": 5 },
+    "choices": [
+      { "id": "open_backing", "text": "公开支持新论", "effects": { "tax_completion_index": 6, "authority": 4, "unrest": 5 }, "tags": ["reform"] },
+      { "id": "equivocate", "text": "含糊其辞", "effects": { "unrest": -2, "tax_completion_index": -2, "fiscal_pressure": 2 }, "tags": ["hedge"] },
+      { "id": "demand_proof", "text": "责新党自证成效", "effects": { "tax_completion_index": 4, "corruption": 2, "fiscal_pressure": 1 }, "tags": ["accountability"] }
+    ]
+  },
+  {
+    "id": "event_song_water_canal_dispute_001",
+    "title": "水利工程争地",
+    "category": "disaster",
+    "era_tags": ["song", "xining"],
+    "description": "兴修渠堰需占地亩，乡民与胥吏争执不下，有殴斗之渐。",
+    "trigger": { "conditions": { "disaster_index_gte": 14 }, "weight": 10, "cooldown_turns": 4 },
+    "choices": [
+      { "id": "compensate", "text": "补偿占田民户", "effects": { "public_support": 5, "tax_completion_index": 4, "treasury_balance": -42000 }, "tags": ["fair"] },
+      { "id": "force_work", "text": "强行开工", "effects": { "tax_completion_index": 6, "unrest": 6, "authority": 2 }, "tags": ["harsh"] },
+      { "id": "postpone", "text": "暂缓工程", "effects": { "unrest": -3, "tax_completion_index": -3, "fiscal_pressure": 2 }, "tags": ["delay"] }
+    ]
+  },
+  {
+    "id": "event_song_temple_hidden_land_001",
+    "title": "寺院隐田事发",
+    "category": "other",
+    "era_tags": ["song", "xining"],
+    "description": "有司揭发寺院田产不入税册，牵涉度僧与免役之利。",
+    "trigger": { "conditions": { "corruption_gte": 36, "tax_completion_index_lte": 45 }, "weight": 9, "cooldown_turns": 5 },
+    "choices": [
+      { "id": "full_audit", "text": "清查寺产", "effects": { "treasury_balance": 48000, "authority": 3, "unrest": 2 }, "tags": ["audit"] },
+      { "id": "status_quo", "text": "维持旧例", "effects": { "unrest": -2, "treasury_balance": -28000, "corruption": 3 }, "tags": ["conservative"] },
+      { "id": "partial_audit", "text": "只查新增田产", "effects": { "treasury_balance": 26000, "fiscal_pressure": 2, "tax_completion_index": -2 }, "tags": ["compromise"] }
+    ]
+  },
+  {
+    "id": "event_song_salt_smuggle_001",
+    "title": "榷盐私贩成风",
+    "category": "other",
+    "era_tags": ["song", "xining"],
+    "description": "沿海、淮南私盐横行，官榷岁课受损，捕盗与恤民两难。",
+    "trigger": { "conditions": { "tax_completion_index_gte": 37, "fiscal_pressure_gte": 28 }, "weight": 10, "cooldown_turns": 4 },
+    "choices": [
+      { "id": "crack_smugglers", "text": "严捕私贩", "effects": { "treasury_balance": 40000, "authority": 3, "unrest": 4 }, "tags": ["enforce"] },
+      { "id": "purge_salt_officials", "text": "整顿盐务官吏", "effects": { "corruption": -5, "treasury_balance": 28000, "tax_completion_index": -2 }, "tags": ["purge"] },
+      { "id": "lower_salt_price", "text": "稍降官盐价", "effects": { "public_support": 5, "treasury_balance": -42000, "unrest": -3 }, "tags": ["relief"] }
+    ]
+  },
+  {
+    "id": "event_song_river_flood_warn_001",
+    "title": "河决预警",
+    "category": "disaster",
+    "era_tags": ["song", "xining"],
+    "description": "黄河堤段报险，地方请帑抢修，迟则恐有溃决之患。",
+    "trigger": { "conditions": { "disaster_index_gte": 15 }, "weight": 6, "cooldown_turns": 6 },
+    "choices": [
+      { "id": "fund_now", "text": "立即拨款修堤", "effects": { "public_support": 5, "treasury_balance": -90000, "disaster_index": -6 }, "tags": ["crisis"] },
+      { "id": "local_raise", "text": "责成地方自筹", "effects": { "treasury_balance": -22000, "tax_intensity": 3, "unrest": 3 }, "tags": ["shift"] },
+      { "id": "defer", "text": "暂缓处置", "effects": { "treasury_balance": 26000, "disaster_index": 8, "public_support": -4 }, "tags": ["risk"] }
+    ]
+  },
+  {
+    "id": "event_song_exam_bribery_001",
+    "title": "科场请托风波",
+    "category": "other",
+    "era_tags": ["song", "xining"],
+    "description": "礼闱未揭，已有考官收受请托之谣，士子哗然。",
+    "trigger": { "conditions": { "corruption_gte": 35 }, "weight": 9, "cooldown_turns": 5 },
+    "choices": [
+      { "id": "retest", "text": "重开考试", "effects": { "authority": 5, "public_support": 4, "treasury_balance": -48000 }, "tags": ["justice"] },
+      { "id": "punish_examiners", "text": "严惩考官", "effects": { "corruption": -6, "unrest": 3, "tax_completion_index": -2 }, "tags": ["purge"] },
+      { "id": "suppress_news", "text": "压下风波", "effects": { "unrest": -2, "corruption": 5, "public_support": -3 }, "tags": ["cover"] }
+    ]
+  },
+  {
+    "id": "event_song_academy_graft_001",
+    "title": "学政贪墨案",
+    "category": "other",
+    "era_tags": ["song", "xining"],
+    "description": "国子监、诸路学官被指侵吞膏火、卖牒取利，清流与胥吏各执一词。",
+    "trigger": { "conditions": { "corruption_gte": 38 }, "weight": 8, "cooldown_turns": 5 },
+    "choices": [
+      { "id": "censor_investigate", "text": "派御史查办", "effects": { "authority": 5, "corruption": -6, "unrest": 3 }, "tags": ["audit"] },
+      { "id": "warn_keep", "text": "警告学政，暂留原职", "effects": { "unrest": -2, "corruption": 3, "public_support": -3 }, "tags": ["lenient"] },
+      { "id": "no_action", "text": "不予查办", "effects": { "corruption": 6, "authority": -4, "tax_completion_index": -2 }, "tags": ["neglect"] }
+    ]
+  },
+  {
+    "id": "event_song_border_general_pay_001",
+    "title": "边将索饷",
+    "category": "military",
+    "era_tags": ["song", "xining"],
+    "description": "边将上奏：若无旬日之内拨饷，恐军心难维，虏骑乘隙。",
+    "trigger": { "conditions": { "army_morale_lte": 64, "revolt_risk_gte": 32 }, "weight": 7, "cooldown_turns": 5 },
+    "choices": [
+      { "id": "pay_fast", "text": "立刻拨饷", "effects": { "army_morale": 6, "army_supply": 4, "treasury_balance": -78000 }, "tags": ["pay"] },
+      { "id": "cut_capital_salary", "text": "削减京官俸以补边", "effects": { "army_morale": 5, "unrest": 5, "authority": 2 }, "tags": ["shift"] },
+      { "id": "rebuke_general", "text": "斥责边将要挟", "effects": { "authority": 4, "army_morale": -6, "revolt_risk": 4 }, "tags": ["harsh"] }
+    ]
+  },
+  {
+    "id": "event_song_imperial_army_ghost_001",
+    "title": "禁军空额",
+    "category": "military",
+    "era_tags": ["song", "xining"],
+    "description": "账面满员，实则冒名支饷者众，三司与枢府各不相让。",
+    "trigger": { "conditions": { "corruption_gte": 37, "army_morale_lte": 64 }, "weight": 8, "cooldown_turns": 5 },
+    "choices": [
+      { "id": "full_muster", "text": "彻查军籍", "effects": { "treasury_balance": 52000, "corruption": -5, "army_morale": -3 }, "tags": ["audit"] },
+      { "id": "look_away", "text": "暂不追究", "effects": { "army_morale": 2, "corruption": 5, "treasury_balance": -36000 }, "tags": ["neglect"] },
+      { "id": "outer_only", "text": "只查外州军", "effects": { "treasury_balance": 30000, "corruption": -2, "revolt_risk": 2 }, "tags": ["partial"] }
+    ]
+  },
+  {
+    "id": "event_song_merchant_petition_001",
+    "title": "商贾联名请愿",
+    "category": "other",
+    "era_tags": ["song", "xining"],
+    "description": "汴京、淮南商贾联名，陈均输榷货过严，市易不行。",
+    "trigger": { "conditions": { "tax_intensity_gte": 48, "public_support_lte": 58 }, "weight": 10, "cooldown_turns": 4 },
+    "choices": [
+      { "id": "ease_levy", "text": "放宽商税", "effects": { "tax_intensity": -3, "treasury_balance": -46000, "public_support": 5 }, "tags": ["merchant"] },
+      { "id": "state_monopoly", "text": "坚持官营", "effects": { "treasury_balance": 46000, "public_support": -4, "unrest": 3 }, "tags": ["state"] },
+      { "id": "hearing", "text": "设场听议", "effects": { "authority": 2, "tax_completion_index": -2, "public_support": 3 }, "tags": ["consult"] }
+    ]
+  },
+  {
+    "id": "event_song_refugees_capital_001",
+    "title": "流民入京",
+    "category": "disaster",
+    "era_tags": ["song", "xining"],
+    "description": "灾荒州县流民涌入京师，坊市拥挤，治安与赈济俱急。",
+    "trigger": { "conditions": { "unrest_gte": 29, "disaster_index_gte": 14 }, "weight": 7, "cooldown_turns": 5 },
+    "choices": [
+      { "id": "porridge_halls", "text": "设粥厂赈济", "effects": { "public_support": 7, "unrest": -6, "treasury_balance": -68000 }, "tags": ["relief"] },
+      { "id": "expel", "text": "驱返原籍", "effects": { "unrest": 5, "authority": 3, "public_support": -5 }, "tags": ["harsh"] },
+      { "id": "labor_corvee", "text": "编入役作", "effects": { "treasury_balance": -26000, "public_support": 2, "tax_completion_index": 3 }, "tags": ["labor"] }
+    ]
+  },
+  {
+    "id": "event_song_auspicious_report_001",
+    "title": "地方祥瑞上奏",
+    "category": "other",
+    "era_tags": ["song", "xining"],
+    "description": "诸路献瑞，称新政得天命，或谓粉饰，朝野窃议。",
+    "trigger": { "conditions": { "authority_gte": 55, "tax_completion_index_gte": 40 }, "weight": 11, "cooldown_turns": 3 },
+    "choices": [
+      { "id": "propaganda", "text": "采纳祥瑞宣示", "effects": { "authority": 5, "public_support": 2, "unrest": 3 }, "tags": ["symbol"] },
+      { "id": "rebuke_flattery", "text": "斥为虚饰", "effects": { "authority": 2, "corruption": -2, "tax_completion_index": -2 }, "tags": ["sober"] },
+      { "id": "no_comment", "text": "不置可否", "effects": { "unrest": -2, "fiscal_pressure": 1 }, "tags": ["neutral"] }
+    ]
+  },
+  {
+    "id": "event_song_viet_war_supply_001",
+    "title": "交趾前线粮械不济",
+    "category": "military",
+    "era_tags": ["song", "xining"],
+    "description": "宋越战争中钦州一路转运迟滞，郭逵军粮械不足，士卒怨噪，朝议是否增拨内帑。",
+    "trigger": { "conditions": { "army_supply_lte": 62, "fiscal_pressure_gte": 40 }, "weight": 16, "cooldown_turns": 2 },
+    "choices": [
+      { "id": "emergency_funds", "text": "紧急内帑拨发", "effects": { "army_supply": 7, "army_morale": 4, "treasury_balance": -60000 }, "tags": ["supply", "military"] },
+      { "id": "local_levy", "text": "就地支调", "effects": { "army_supply": 4, "public_support": -5, "unrest": 4 }, "tags": ["levy"] },
+      { "id": "delay_campaign", "text": "暂缓进击", "effects": { "army_morale": -5, "revolt_risk": 2, "fiscal_pressure": -2 }, "tags": ["pause"] }
+    ]
+  },
+  {
+    "id": "event_song_royal_land_grab_001",
+    "title": "皇亲侵占民田",
+    "category": "other",
+    "era_tags": ["song", "xining"],
+    "description": "宗室、贵戚圈占民田为庄，州县畏势不敢问。",
+    "trigger": { "conditions": { "unrest_gte": 26, "corruption_gte": 35 }, "weight": 8, "cooldown_turns": 5 },
+    "choices": [
+      { "id": "law_restore", "text": "依法追夺还民", "effects": { "authority": 6, "public_support": 5, "tax_completion_index": -3 }, "tags": ["justice"] },
+      { "id": "private_settle", "text": "私下调停", "effects": { "unrest": -2, "public_support": -2, "corruption": 2 }, "tags": ["compromise"] },
+      { "id": "shield_kin", "text": "袒护宗室", "effects": { "authority": -4, "public_support": -5, "unrest": 4 }, "tags": ["nepotism"] }
+    ]
+  }
+]
+

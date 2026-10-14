@@ -1,0 +1,24 @@
+# FastAPI 人物/数值/任务等后端（默认监听 8000）
+# 云平台若无 3.11，构建时指定：docker build --build-arg PYTHON_VERSION=3.10 -f Dockerfile.api .
+ARG PYTHON_VERSION=3.11
+FROM python:${PYTHON_VERSION}-slim-bookworm
+WORKDIR /app
+
+RUN sed -i 's|http://deb.debian.org|http://mirrors.tencent.com|g; s|http://security.debian.org|http://mirrors.tencent.com/debian-security|g' \
+      /etc/apt/sources.list.d/debian.sources 2>/dev/null || \
+    sed -i 's|deb.debian.org|mirrors.tencent.com|g; s|security.debian.org|mirrors.tencent.com/debian-security|g' \
+      /etc/apt/sources.list 2>/dev/null || true
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements_api_docker.txt /app/requirements_api_docker.txt
+RUN pip config set global.index-url http://mirrors.cloud.tencent.com/pypi/simple && \
+    pip config set global.trusted-host mirrors.cloud.tencent.com && \
+    pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r /app/requirements_api_docker.txt
+
+COPY . /app
+ENV PYTHONUNBUFFERED=1
+EXPOSE 8000
+CMD ["python", "-m", "renwu_module.main", "--mode", "api", "--host", "0.0.0.0", "--port", "8000"]

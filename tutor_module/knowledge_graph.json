@@ -1,0 +1,229 @@
+{
+  "communities": [
+    {
+      "id": "community_pre_qin",
+      "title": "先秦财政伦理",
+      "summary": "井田制承载土地国有与劳役贡纳观念；贡赋不仅是物质交换，更嵌入宗法伦理与政治正当性。理解早期财政须关注「公田—私田」分工与劳役折算。"
+    },
+    {
+      "id": "community_han",
+      "title": "汉代专卖与国家干预",
+      "summary": "盐铁专卖将关键物资纳入国家垄断，引发桑弘羊与贤良文学之辩：国家能力、物价稳定与民间生计如何平衡。此辩题影响后世对「聚敛」与「理财」的评价框架。"
+    },
+    {
+      "id": "community_tang",
+      "title": "唐代两税法转型",
+      "summary": "两税法（780）由人头租庸调转向按资产与地域征课，税源货币化、户籍控制弱化。安史之乱后财政重构的关键，也是理解宋代商业财政的前奏。"
+    },
+    {
+      "id": "community_song",
+      "title": "宋代商业性财政",
+      "summary": "宋代财政高度依赖商税、榷货、钞引与漕运统筹；熙宁新法以青苗、免役、市易、方田等工具强化国家理财与强兵。争议焦点常在「理财」是否等同「聚敛」。"
+    },
+    {
+      "id": "community_ming",
+      "title": "明代赋役简化",
+      "summary": "一条鞭法（1581）将田赋与徭役折银合并征收，简化征管链条，反映白银货币化与地方包干逻辑。与张居正改革后的漕运、边饷体系密切相关。"
+    },
+    {
+      "id": "community_compare",
+      "title": "中西财政比较",
+      "summary": "比较维度包括：财政汲取方式（田赋/商税/榷货 vs 税赋与军团供给）、货币信用（铜钱交子 vs 贵金属与信贷网络）、战争动员与治理逻辑（士大夫共治 vs 多元精英制衡）。"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "well_field",
+      "labels": ["Concept"],
+      "title": "井田与贡赋",
+      "era": "先秦",
+      "year": "前4世纪",
+      "summary": "土地国有观念与劳役贡纳，奠定早期财政伦理。",
+      "aliases": ["井田", "贡赋", "公田", "劳役"],
+      "content": "井田制强调公田共耕与贡纳义务，财政嵌入宗法秩序。早期税赋以实物与劳役为主，国家直接控制土地分配观念。"
+    },
+    {
+      "id": "salt_iron",
+      "labels": ["Concept"],
+      "title": "盐铁专卖",
+      "era": "汉",
+      "year": "前119",
+      "summary": "国家垄断关键物资，开启干预与放任之辩。",
+      "aliases": ["盐铁论", "专卖", "榷盐", "榷铁", "桑弘羊"],
+      "content": "汉武帝时期盐铁官营，增加国库收入并调控物资。盐铁论辩论国家垄断是否损害民间经济，成为评价后世财政干预的经典参照。"
+    },
+    {
+      "id": "liangshui",
+      "labels": ["Concept"],
+      "title": "两税法",
+      "era": "唐",
+      "year": "780",
+      "summary": "由人头转向资产与货币税，税源货币化关键一步。",
+      "aliases": ["两税", "租庸调", "杨炎", "资产税", "货币化"],
+      "content": "两税法按户产与地域分夏税、秋税，不再严格按人头征租庸调。标志唐代财政由均田—租庸调体系向资产与货币征课转型。"
+    },
+    {
+      "id": "zuyongdiao",
+      "labels": ["Concept"],
+      "title": "租庸调",
+      "era": "唐",
+      "year": "唐初",
+      "summary": "均田制下的三课：租、庸、调，以人头与授田为基础。",
+      "aliases": ["租庸", "均田", "三课"],
+      "content": "租庸调建立在均田与户籍控制之上：租为田赋，庸为劳役折纳，调为户调杂征。人户流动与土地兼并削弱其基础，是两税法改革的背景。"
+    },
+    {
+      "id": "xining",
+      "labels": ["Concept"],
+      "title": "熙宁新法",
+      "era": "宋",
+      "year": "1069",
+      "summary": "青苗、免役、市易、方田——商业财政与强兵并举。",
+      "aliases": ["熙宁变法", "王安石变法", "新法", "理财"],
+      "content": "熙宁新法以富国强兵为目标，通过信贷（青苗）、代役纳钱（免役）、商业调控（市易）与土地清查（方田）重塑国家财政能力，引发与保守派长期争论。"
+    },
+    {
+      "id": "qingmiao",
+      "labels": ["Reform"],
+      "title": "青苗法",
+      "era": "宋",
+      "year": "1069",
+      "summary": "官府在青黄不接时贷粮于民，秋后连本带息偿还。",
+      "aliases": ["青苗", "常平仓", "信贷"],
+      "content": "青苗法意在抑制高利贷、增加国库息入并平滑粮价，但执行中可能出现强制借贷、息率过高与吏胥扰民，是「理财/聚敛」争论焦点。"
+    },
+    {
+      "id": "mianyi",
+      "labels": ["Reform"],
+      "title": "免役法",
+      "era": "宋",
+      "year": "1071",
+      "summary": "以钱代役，按户等负担，原服役户可免亲身应役。",
+      "aliases": ["免役", "雇役", "代役纳钱"],
+      "content": "免役法将差役折纳为雇役钱，由官府雇人服役，减轻农户亲身应役负担，但户等评定与附加征敛可能加重中下户压力。"
+    },
+    {
+      "id": "shiyi",
+      "labels": ["Reform"],
+      "title": "市易法",
+      "era": "宋",
+      "year": "1072",
+      "summary": "官府参与市场购销，平抑物价、增加商税。",
+      "aliases": ["市易", "均输"],
+      "content": "市易法通过市易司买卖货物以调控价格、打击囤积，并与均输法配合调节物资流通，体现国家主动介入商业的逻辑。"
+    },
+    {
+      "id": "fangtian",
+      "labels": ["Reform"],
+      "title": "方田均税法",
+      "era": "宋",
+      "year": "1073",
+      "summary": "清查田地、均定税赋，抑制隐田漏税。",
+      "aliases": ["方田", "均税", "清丈"],
+      "content": "方田均税法旨在解决隐田、逃税问题，重新核定田亩与税则，为其他新法提供税基数据，但清丈阻力大、推行范围有限。"
+    },
+    {
+      "id": "yitiao",
+      "labels": ["Concept"],
+      "title": "一条鞭法",
+      "era": "明",
+      "year": "1581",
+      "summary": "赋役合一、银粮并收，简化征管链条。",
+      "aliases": ["一条鞭", "折银", "张居正", "银粮并收"],
+      "content": "一条鞭将各类征派合并、多折银征收，减少里甲层层加派，是明代财政简化与白银货币化的重要节点。"
+    },
+    {
+      "id": "song_commercial_fiscal",
+      "labels": ["Concept"],
+      "title": "宋代商业性财政",
+      "era": "宋",
+      "year": "11世纪",
+      "summary": "商税、榷货、钞引与漕运构成高度货币化财政体系。",
+      "aliases": ["商业财政", "商税", "榷货", "钞引", "漕运"],
+      "content": "宋代城市商业繁荣，财政汲取不再仅依赖田赋；茶盐专卖、市舶、商税与纸币（交子）等工具使国家与市场深度联动，故称「商业性财政」。"
+    },
+    {
+      "id": "wang_anshi",
+      "labels": ["Person"],
+      "title": "王安石",
+      "era": "宋",
+      "year": "1021-1086",
+      "summary": "熙宁新法主导者，强调变法理财与制度重建。",
+      "aliases": ["荆公", "王介甫"],
+      "content": "王安石主张以新法增加国库、强兵备边，认为合理理财不等于聚敛；与司马光等在祖宗之法、政策节奏上分歧显著。"
+    },
+    {
+      "id": "sima_guang",
+      "labels": ["Person"],
+      "title": "司马光",
+      "era": "宋",
+      "year": "1019-1086",
+      "summary": "保守派代表，强调祖宗成法与渐进改良。",
+      "aliases": ["司马温公"],
+      "content": "司马光批评新法操之过急、吏治败坏可能伤及民本，主张维护既有秩序与道德政治优先于激进财政扩张。"
+    },
+    {
+      "id": "compare_fiscal_extraction",
+      "labels": ["CompareDim"],
+      "title": "财政汲取",
+      "summary": "中国：田赋、商税、榷货与漕运统筹；西方：税赋、贡赋与军团供给。",
+      "aliases": ["汲取", "国家能力"],
+      "content": "财政汲取比较关注国家如何从经济中获取资源：中国历代常综合田赋、专卖与商业税；罗马帝国等更突出直接税、包税与军事供给链条。"
+    },
+    {
+      "id": "compare_monetary",
+      "labels": ["CompareDim"],
+      "title": "货币信用",
+      "summary": "中国：铜钱、交子、钱陌；西方：贵金属与商业信贷网络。",
+      "aliases": ["货币", "纸币", "交子"],
+      "content": "宋代出现纸币交子，国家与市场并用；西方中世纪贵金属流通有限，信贷多依托商业网络而非统一纸币体系。"
+    },
+    {
+      "id": "compare_war",
+      "labels": ["CompareDim"],
+      "title": "战争动员",
+      "summary": "中国：边饷、保甲保马；西方：军团给养与地方包税。",
+      "aliases": ["边饷", "军事财政"],
+      "content": "战争动员比较财政与军事绑定方式：宋代西北边事牵动财政；罗马扩张成本影响税结构与地方包税制度。"
+    },
+    {
+      "id": "compare_governance",
+      "labels": ["CompareDim"],
+      "title": "治理逻辑",
+      "summary": "中国：士大夫共治；西方：元老、教会与商业精英多元制衡。",
+      "aliases": ["朝局", "共治"],
+      "content": "治理逻辑比较改革如何发生：中国改革常系于朝局博弈与经世致用传统；欧洲因地区而异，存在教会、城邦商业精英等多元力量。"
+    }
+  ],
+  "edges": [
+    {"from": "well_field", "to": "salt_iron", "type": "PRECEDES"},
+    {"from": "salt_iron", "to": "liangshui", "type": "PRECEDES"},
+    {"from": "liangshui", "to": "xining", "type": "PRECEDES"},
+    {"from": "xining", "to": "yitiao", "type": "PRECEDES"},
+    {"from": "zuyongdiao", "to": "liangshui", "type": "DEBATES"},
+    {"from": "qingmiao", "to": "xining", "type": "PART_OF"},
+    {"from": "mianyi", "to": "xining", "type": "PART_OF"},
+    {"from": "shiyi", "to": "xining", "type": "PART_OF"},
+    {"from": "fangtian", "to": "xining", "type": "PART_OF"},
+    {"from": "wang_anshi", "to": "xining", "type": "IMPLEMENTS"},
+    {"from": "sima_guang", "to": "xining", "type": "DEBATES"},
+    {"from": "song_commercial_fiscal", "to": "xining", "type": "RELATED_TO"},
+    {"from": "liangshui", "to": "song_commercial_fiscal", "type": "PRECEDES"},
+    {"from": "compare_fiscal_extraction", "to": "song_commercial_fiscal", "type": "COMPARES"},
+    {"from": "compare_monetary", "to": "song_commercial_fiscal", "type": "COMPARES"},
+    {"from": "compare_war", "to": "xining", "type": "COMPARES"},
+    {"from": "compare_governance", "to": "xining", "type": "COMPARES"},
+    {"from": "well_field", "to": "community_pre_qin", "type": "MEMBER_OF"},
+    {"from": "salt_iron", "to": "community_han", "type": "MEMBER_OF"},
+    {"from": "liangshui", "to": "community_tang", "type": "MEMBER_OF"},
+    {"from": "zuyongdiao", "to": "community_tang", "type": "MEMBER_OF"},
+    {"from": "xining", "to": "community_song", "type": "MEMBER_OF"},
+    {"from": "qingmiao", "to": "community_song", "type": "MEMBER_OF"},
+    {"from": "song_commercial_fiscal", "to": "community_song", "type": "MEMBER_OF"},
+    {"from": "yitiao", "to": "community_ming", "type": "MEMBER_OF"},
+    {"from": "compare_fiscal_extraction", "to": "community_compare", "type": "MEMBER_OF"},
+    {"from": "compare_monetary", "to": "community_compare", "type": "MEMBER_OF"},
+    {"from": "compare_war", "to": "community_compare", "type": "MEMBER_OF"},
+    {"from": "compare_governance", "to": "community_compare", "type": "MEMBER_OF"}
+  ]
+}

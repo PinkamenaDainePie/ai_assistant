@@ -1,0 +1,119 @@
+[
+  {
+    "id": "faction_balance_court",
+    "title": "平衡朝堂派系",
+    "description": "动乱相对发任务时至少再降 2 点，且权威不低于 52。",
+    "category": "faction",
+    "difficulty": "normal",
+    "trigger_conditions": [{ "type": "stat_less_than", "key": "authority", "value": 60 }],
+    "objectives": [
+      { "type": "stat_reduce_by", "key": "unrest", "value": 2 },
+      { "type": "stat_at_least", "key": "authority", "value": 52 }
+    ],
+    "rewards": [{ "type": "stat_change", "key": "public_support", "value": 1 }],
+    "penalties": [{ "type": "stat_change", "key": "corruption", "value": 2 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "corruption", "value": 1 }],
+    "duration": 1,
+    "priority": 62,
+    "tags": ["派系", "朝政"]
+  },
+  {
+    "id": "faction_anti_corruption",
+    "title": "压制朋党腐化",
+    "description": "将腐败降低至 52 以下。",
+    "category": "faction",
+    "difficulty": "hard",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "corruption", "value": 52 }],
+    "objectives": [{ "type": "stat_at_most", "key": "corruption", "value": 52 }],
+    "rewards": [{ "type": "stat_change", "key": "authority", "value": 2 }],
+    "penalties": [{ "type": "stat_change", "key": "unrest", "value": 2 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "unrest", "value": 1 }],
+    "duration": 1,
+    "priority": 71,
+    "tags": ["派系", "腐败"]
+  },
+  {
+    "id": "faction_stability_optional",
+    "title": "调停台谏纷争",
+    "description": "将动乱降低到 38 以下。",
+    "category": "faction",
+    "difficulty": "normal",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "unrest", "value": 38 }],
+    "objectives": [{ "type": "stat_at_most", "key": "unrest", "value": 38 }],
+    "rewards": [{ "type": "stat_change", "key": "authority", "value": 1 }],
+    "penalties": [{ "type": "stat_change", "key": "public_support", "value": -1 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "public_support", "value": -1 }],
+    "duration": 1,
+    "priority": 58,
+    "tags": ["派系"]
+  },
+  {
+    "id": "reform_green_coerce_probe",
+    "title": "青苗强配纠弹",
+    "description": "州县为课额强令民户借贷，台谏交章；须纠劾抑勒、以塞民怨。",
+    "category": "faction",
+    "difficulty": "hard",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "corruption", "value": 38 }],
+    "objectives": [{ "type": "stat_reduce_by", "key": "corruption", "value": 2 }],
+    "rewards": [{ "type": "stat_change", "key": "public_support", "value": 2 }],
+    "penalties": [{ "type": "stat_change", "key": "fiscal_pressure", "value": 2 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "fiscal_pressure", "value": 1 }],
+    "duration": 1,
+    "priority": 81,
+    "tags": ["熙宁", "青苗", "台谏", "派系"]
+  },
+  {
+    "id": "reform_gentry_boycott",
+    "title": "豪右串联拒贷",
+    "description": "富室恐夺其利，阴唆乡户拒领青苗钱；当以威信与实惠并行，破其梗阻。",
+    "category": "faction",
+    "difficulty": "normal",
+    "trigger_conditions": [
+      { "type": "stat_greater_than", "key": "tax_intensity", "value": 47 },
+      { "type": "stat_less_than", "key": "public_support", "value": 57 }
+    ],
+    "objectives": [{ "type": "stat_at_least", "key": "public_support", "value": 57 }],
+    "rewards": [{ "type": "stat_change", "key": "authority", "value": 2 }],
+    "penalties": [{ "type": "stat_change", "key": "unrest", "value": 2 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "unrest", "value": 1 }],
+    "duration": 1,
+    "priority": 74,
+    "tags": ["熙宁", "青苗", "豪强", "派系"]
+  },
+  {
+    "id": "reform_water_gentry_monopoly",
+    "title": "豪渠占堰夺水利",
+    "description": "大户占堰为私，小户不得溉；若不厘正，水利条约反为豪右护符。",
+    "category": "faction",
+    "difficulty": "normal",
+    "trigger_conditions": [
+      { "type": "stat_greater_than", "key": "disaster_index", "value": 12 },
+      { "type": "stat_greater_than", "key": "corruption", "value": 36 }
+    ],
+    "objectives": [{ "type": "stat_reduce_by", "key": "corruption", "value": 2 }],
+    "rewards": [{ "type": "stat_change", "key": "public_support", "value": 1 }],
+    "penalties": [{ "type": "stat_change", "key": "unrest", "value": 2 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "unrest", "value": 1 }],
+    "duration": 1,
+    "priority": 69,
+    "tags": ["熙宁", "水利", "豪强", "派系"]
+  },
+  {
+    "id": "reform_throne_debate",
+    "title": "御前辩理财之本末",
+    "description": "神宗御前集议：理财为聚敛耶？为富国强兵耶？须彰明纪纲、整饬课入。",
+    "category": "faction",
+    "difficulty": "medium",
+    "trigger_conditions": [
+      { "type": "stat_greater_than", "key": "authority", "value": 56 },
+      { "type": "stat_greater_than", "key": "fiscal_pressure", "value": 28 }
+    ],
+    "objectives": [{ "type": "stat_at_least", "key": "authority", "value": 61 }],
+    "rewards": [{ "type": "stat_change", "key": "tax_completion_index", "value": 2 }],
+    "penalties": [{ "type": "stat_change", "key": "corruption", "value": 1 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "corruption", "value": 1 }],
+    "duration": 1,
+    "priority": 78,
+    "tags": ["熙宁", "廷辩", "理财", "派系"]
+  }
+]

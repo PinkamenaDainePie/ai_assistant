@@ -1,0 +1,9 @@
+{
+  "id": "ming_wanli",
+  "name": "万历改革",
+  "description": "万历元年，张居正主持考成法与一条鞭法改革。可玩至 1593。",
+  "source": "bundled",
+  "content_version": "1.0.2",
+  "ending_profile": "wanli",
+  "playable_years": [1573, 1593]
+}

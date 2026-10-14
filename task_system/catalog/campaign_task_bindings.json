@@ -1,0 +1,295 @@
+{
+  "version": 1,
+  "scenario": "song_xining",
+  "design_note": "每个任务模板/事件须归属剧情阶段（owner）。generate_fill 与 event roll 仅在本季 active_owners 窗口内抽取。",
+  "owner_labels_zh": {
+    "ambient:court_routine": "朝堂日常",
+    "policy:green_sprout_active": "青苗法试行期",
+    "policy:corvee_active": "免役法试行期",
+    "policy:fiscal_reform_pack_active": "国家理财改革期",
+    "policy:old_party_pressure": "旧党朝议压力",
+    "policy:song_viet_war_active": "交趾战事期",
+    "policy:hehuang_arc_active": "熙河开边期"
+  },
+  "template_bindings": {
+    "internal_restore_authority": {
+      "primary_owner": "ambient:court_routine",
+      "eligible_owners": ["main_xining_reform_mandate", "main_wang_anshi_to_court"],
+      "quarter_min": 1,
+      "quarter_max": 8
+    },
+    "military_raise_morale": {
+      "primary_owner": "ambient:court_routine",
+      "eligible_owners": ["main_xining_reform_mandate", "main_wang_anshi_to_court", "main_baojia_baoma_route"],
+      "quarter_min": 1,
+      "quarter_max": 20
+    },
+    "faction_balance_court": {
+      "primary_owner": "ambient:court_routine",
+      "eligible_owners": ["main_xining_reform_mandate", "main_wang_anshi_to_court", "main_sansi_establish"],
+      "quarter_min": 1,
+      "quarter_max": 12
+    },
+    "internal_stabilize_order": {
+      "primary_owner": "ambient:court_routine",
+      "eligible_owners": ["main_baojia_baoma_route", "main_drought_famine_crisis"],
+      "quarter_min": 1,
+      "quarter_max": 40
+    },
+    "internal_reduce_corruption": {
+      "primary_owner": "main_sansi_establish",
+      "eligible_owners": ["main_sansi_establish", "main_wang_anshi_resignation_crisis"],
+      "quarter_min": 5,
+      "quarter_max": 40
+    },
+    "faction_anti_corruption": {
+      "primary_owner": "main_sansi_establish",
+      "eligible_owners": ["main_sansi_establish", "main_baojia_baoma_route"],
+      "quarter_min": 5,
+      "quarter_max": 35
+    },
+    "faction_stability_optional": {
+      "primary_owner": "main_wang_anshi_resignation_crisis",
+      "eligible_owners": ["main_wang_anshi_resignation_crisis", "policy:old_party_pressure"],
+      "quarter_min": 28,
+      "quarter_max": 40
+    },
+    "reform_throne_debate": {
+      "primary_owner": "main_wang_anshi_resignation_crisis",
+      "eligible_owners": ["main_wang_anshi_resignation_crisis", "policy:old_party_pressure"],
+      "quarter_min": 20,
+      "quarter_max": 40
+    },
+    "finance_relieve_tax": {
+      "primary_owner": "ambient:court_routine",
+      "eligible_owners": ["main_drought_famine_crisis", "main_sansi_establish"],
+      "quarter_min": 1,
+      "quarter_max": 40
+    },
+    "finance_reduce_pressure": {
+      "primary_owner": "ambient:court_routine",
+      "eligible_owners": ["main_sansi_establish", "main_fiscal_reform_pack"],
+      "quarter_min": 1,
+      "quarter_max": 40
+    },
+    "finance_raise_treasury": {
+      "primary_owner": "main_sansi_establish",
+      "eligible_owners": ["main_sansi_establish", "main_fiscal_reform_pack"],
+      "quarter_min": 5,
+      "quarter_max": 40
+    },
+    "reform_even_transport_pilot": {
+      "primary_owner": "main_fiscal_reform_pack",
+      "eligible_owners": ["main_fiscal_reform_pack"],
+      "quarter_min": 14,
+      "quarter_max": 28
+    },
+    "reform_green_spring_lend": {
+      "primary_owner": "main_green_sprout_route",
+      "eligible_owners": ["main_green_sprout_route", "policy:green_sprout_active"],
+      "quarter_min": 7,
+      "quarter_max": 18
+    },
+    "fiscal_tax_collection_push": {
+      "primary_owner": "main_sansi_establish",
+      "eligible_owners": ["main_sansi_establish", "main_green_sprout_route", "main_fiscal_reform_pack"],
+      "quarter_min": 5,
+      "quarter_max": 35
+    },
+    "fiscal_reduce_court_spending": {
+      "primary_owner": "main_xining_reform_mandate",
+      "eligible_owners": ["main_xining_reform_mandate", "main_sansi_establish"],
+      "quarter_min": 1,
+      "quarter_max": 12
+    },
+    "fiscal_increase_tax_levy": {
+      "primary_owner": "main_sansi_establish",
+      "eligible_owners": ["main_sansi_establish", "main_fiscal_reform_pack"],
+      "quarter_min": 5,
+      "quarter_max": 40
+    },
+    "fiscal_corvee_commutation": {
+      "primary_owner": "main_corvee_commutation",
+      "eligible_owners": ["main_corvee_commutation", "policy:corvee_active"],
+      "quarter_min": 13,
+      "quarter_max": 22
+    },
+    "fiscal_equalized_transport": {
+      "primary_owner": "main_fiscal_reform_pack",
+      "eligible_owners": ["main_fiscal_reform_pack", "policy:fiscal_reform_pack_active"],
+      "quarter_min": 14,
+      "quarter_max": 30
+    },
+    "fiscal_expand_state_monopoly": {
+      "primary_owner": "main_fiscal_reform_pack",
+      "eligible_owners": ["main_fiscal_reform_pack", "policy:fiscal_reform_pack_active"],
+      "quarter_min": 14,
+      "quarter_max": 30
+    },
+    "agri_spring_encourage_farming": {
+      "primary_owner": "main_green_sprout_route",
+      "eligible_owners": ["main_green_sprout_route", "main_sansi_establish"],
+      "quarter_min": 5,
+      "quarter_max": 22
+    },
+    "agri_mulberry_silk_promotion": {
+      "primary_owner": "main_green_sprout_route",
+      "eligible_owners": ["main_green_sprout_route", "policy:green_sprout_active"],
+      "quarter_min": 7,
+      "quarter_max": 20
+    },
+    "agri_irrigation_or_land_improvement": {
+      "primary_owner": "main_green_sprout_route",
+      "eligible_owners": ["main_green_sprout_route", "main_fiscal_reform_pack"],
+      "quarter_min": 7,
+      "quarter_max": 30
+    },
+    "agri_song_irrigation_charter": {
+      "primary_owner": "main_fiscal_reform_pack",
+      "eligible_owners": ["main_fiscal_reform_pack", "main_green_sprout_route"],
+      "quarter_min": 10,
+      "quarter_max": 30
+    },
+    "agri_spring_grain_lending": {
+      "primary_owner": "main_green_sprout_route",
+      "eligible_owners": ["main_green_sprout_route", "policy:green_sprout_active"],
+      "quarter_min": 7,
+      "quarter_max": 18
+    },
+    "agri_post_disaster_replant": {
+      "primary_owner": "main_drought_famine_crisis",
+      "eligible_owners": ["main_drought_famine_crisis"],
+      "quarter_min": 24,
+      "quarter_max": 35
+    },
+    "livelihood_disaster_relief": {
+      "primary_owner": "main_drought_famine_crisis",
+      "eligible_owners": ["main_drought_famine_crisis"],
+      "quarter_min": 24,
+      "quarter_max": 35
+    },
+    "livelihood_reduce_unrest": {
+      "primary_owner": "main_drought_famine_crisis",
+      "eligible_owners": ["main_drought_famine_crisis", "main_baojia_baoma_route", "ambient:court_routine"],
+      "quarter_min": 1,
+      "quarter_max": 40
+    },
+    "livelihood_support_recovery": {
+      "primary_owner": "ambient:court_routine",
+      "eligible_owners": ["main_drought_famine_crisis", "ambient:court_routine"],
+      "quarter_min": 1,
+      "quarter_max": 40
+    },
+    "reform_water_charter": {
+      "primary_owner": "main_fiscal_reform_pack",
+      "eligible_owners": ["main_fiscal_reform_pack"],
+      "quarter_min": 14,
+      "quarter_max": 28
+    },
+    "reform_water_gentry_monopoly": {
+      "primary_owner": "main_fiscal_reform_pack",
+      "eligible_owners": ["main_fiscal_reform_pack", "main_green_sprout_route"],
+      "quarter_min": 10,
+      "quarter_max": 28
+    },
+    "military_reduce_revolt": {
+      "primary_owner": "main_baojia_baoma_route",
+      "eligible_owners": ["main_baojia_baoma_route", "main_song_viet_war_1075"],
+      "quarter_min": 17,
+      "quarter_max": 40
+    },
+    "military_secure_supply": {
+      "primary_owner": "main_wangshao_hehuang",
+      "eligible_owners": ["main_wangshao_hehuang", "main_song_viet_war_1075", "policy:hehuang_arc_active", "policy:song_viet_war_active"],
+      "quarter_min": 18,
+      "quarter_max": 40
+    },
+    "reform_northwest_budget": {
+      "primary_owner": "main_wangshao_hehuang",
+      "eligible_owners": ["main_wangshao_hehuang", "policy:hehuang_arc_active"],
+      "quarter_min": 18,
+      "quarter_max": 32
+    },
+    "reform_sansi_audit": {
+      "primary_owner": "main_sansi_establish",
+      "eligible_owners": ["main_sansi_establish"],
+      "quarter_min": 5,
+      "quarter_max": 12
+    },
+    "reform_memorial_backlash": {
+      "primary_owner": "main_sansi_establish",
+      "eligible_owners": ["main_sansi_establish", "main_green_sprout_route", "policy:old_party_pressure"],
+      "quarter_min": 5,
+      "quarter_max": 30
+    },
+    "reform_gentry_boycott": {
+      "primary_owner": "main_green_sprout_route",
+      "eligible_owners": ["main_green_sprout_route", "main_fiscal_reform_pack"],
+      "quarter_min": 7,
+      "quarter_max": 28
+    },
+    "reform_green_coerce_probe": {
+      "primary_owner": "main_green_sprout_route",
+      "eligible_owners": ["main_green_sprout_route", "policy:green_sprout_active"],
+      "quarter_min": 7,
+      "quarter_max": 18
+    },
+    "reform_local_delay": {
+      "primary_owner": "main_green_sprout_route",
+      "eligible_owners": ["main_green_sprout_route", "main_corvee_commutation"],
+      "quarter_min": 7,
+      "quarter_max": 22
+    },
+    "reform_canal_patrol": {
+      "primary_owner": "main_fiscal_reform_pack",
+      "eligible_owners": ["main_fiscal_reform_pack"],
+      "quarter_min": 14,
+      "quarter_max": 28
+    }
+  },
+  "event_bindings": {
+    "event_song_censor_reform_001": {
+      "primary_owner": "main_sansi_establish",
+      "eligible_owners": ["main_sansi_establish", "main_green_sprout_route", "policy:old_party_pressure"],
+      "quarter_min": 5,
+      "quarter_max": 30
+    },
+    "event_song_green_coerce_001": {
+      "primary_owner": "main_green_sprout_route",
+      "eligible_owners": ["main_green_sprout_route", "policy:green_sprout_active"],
+      "quarter_min": 7,
+      "quarter_max": 20
+    },
+    "event_song_gentry_boycott_001": {
+      "primary_owner": "main_green_sprout_route",
+      "eligible_owners": ["main_green_sprout_route", "main_fiscal_reform_pack"],
+      "quarter_min": 7,
+      "quarter_max": 28
+    },
+    "event_song_border_supply_001": {
+      "primary_owner": "main_wangshao_hehuang",
+      "eligible_owners": ["main_wangshao_hehuang", "policy:hehuang_arc_active"],
+      "quarter_min": 18,
+      "quarter_max": 32
+    },
+    "event_song_cuike_001": {
+      "primary_owner": "main_drought_famine_crisis",
+      "eligible_owners": ["main_drought_famine_crisis", "policy:fiscal_reform_pack_active"],
+      "quarter_min": 20,
+      "quarter_max": 35
+    },
+    "event_song_simaguang_memorial_001": {
+      "primary_owner": "policy:old_party_pressure",
+      "eligible_owners": ["main_sansi_establish", "main_green_sprout_route", "policy:old_party_pressure"],
+      "quarter_min": 8,
+      "quarter_max": 35
+    },
+    "event_song_viet_war_supply_001": {
+      "primary_owner": "main_song_viet_war_1075",
+      "eligible_owners": ["main_song_viet_war_1075", "policy:song_viet_war_active"],
+      "quarter_min": 29,
+      "quarter_max": 40,
+      "requires_flags": {"song_viet_war_active": true}
+    }
+  }
+}

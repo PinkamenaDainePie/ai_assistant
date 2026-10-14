@@ -1,0 +1,198 @@
+{
+  "__office_grant_version": 2,
+  "office_default_skills": {
+    "内阁": {
+      "court_tools": [
+        "check_treasury"
+      ],
+      "agno_skills": [],
+      "chips": []
+    },
+    "吏部": {
+      "court_tools": [
+        "propose_appointment"
+      ],
+      "agno_skills": [],
+      "chips": []
+    },
+    "户部": {
+      "court_tools": [
+        "check_treasury",
+        "adjust_tax"
+      ],
+      "agno_skills": [
+        "tax-adjust"
+      ],
+      "chips": [
+        {
+          "label": "调税",
+          "text": "调税如下：把 [税种：田赋/辽饷/盐税/商税] [加征/减征/罢废，幅度几成] [全国 或 某省]。",
+          "prefix": true
+        }
+      ]
+    },
+    "兵部": {
+      "court_tools": [
+        "dispatch_arms"
+      ],
+      "agno_skills": [],
+      "chips": [
+        {
+          "label": "拨发军械",
+          "text": "拨发军械如下：从军备总库拨 [武器型号，如红夷大炮/火铳/燧发枪] [件数] 予 [受拨军号]。",
+          "prefix": true
+        }
+      ]
+    },
+    "工部": {
+      "court_tools": [
+        "dispatch_arms"
+      ],
+      "agno_skills": [],
+      "chips": [
+        {
+          "label": "拨发军械",
+          "text": "拨发军械如下：从军备总库拨 [武器型号，如红夷大炮/火铳/燧发枪] [件数] 予 [受拨军号]。",
+          "prefix": true
+        }
+      ]
+    },
+    "礼部": {
+      "court_tools": [
+        "present_consort_candidates"
+      ],
+      "agno_skills": [
+        "consort-selection"
+      ],
+      "chips": [
+        {
+          "label": "选妃",
+          "text": "选妃如下：",
+          "prefix": true
+        }
+      ]
+    },
+    "司礼监": {
+      "court_tools": [
+        "check_treasury",
+        "present_consort_candidates"
+      ],
+      "agno_skills": [
+        "consort-selection"
+      ],
+      "chips": [
+        {
+          "label": "选妃",
+          "text": "选妃如下：",
+          "prefix": true
+        }
+      ]
+    },
+    "锦衣卫": {
+      "court_tools": [],
+      "agno_skills": [],
+      "chips": []
+    },
+    "东厂": {
+      "court_tools": [],
+      "agno_skills": [],
+      "chips": []
+    },
+    "边镇": {
+      "court_tools": [],
+      "agno_skills": [],
+      "chips": []
+    },
+    "后宫": {
+      "court_tools": [],
+      "agno_skills": [],
+      "chips": []
+    },
+    "外臣": {
+      "court_tools": [],
+      "agno_skills": [],
+      "chips": []
+    }
+  },
+  "office_definitions": {
+    "内阁": {
+      "tools": [
+        "convene_court_debate"
+      ],
+      "authority_scope": "票拟、廷议、协调部院，但不能直接查账、调兵或密捕。",
+      "power": 78,
+      "responsibility": 82,
+      "corruption_risk": 42
+    },
+    "户部": {
+      "tools": [
+        "check_treasury"
+      ],
+      "authority_scope": "核国库、钱粮、军饷、官俸和亏空。",
+      "power": 72,
+      "responsibility": 76,
+      "corruption_risk": 68
+    },
+    "兵部": {
+      "tools": [
+        "check_military"
+      ],
+      "authority_scope": "复核军情、军心、将领和边防，但实际发饷仍要户部。",
+      "power": 70,
+      "responsibility": 74,
+      "corruption_risk": 55
+    },
+    "工部": {
+      "tools": [
+        "estimate_project"
+      ],
+      "authority_scope": "估工程、匠役、器械和试造成本，不能自行开国库。",
+      "power": 58,
+      "responsibility": 62,
+      "corruption_risk": 61
+    },
+    "司礼监": {
+      "tools": [
+        "inner_court_inquiry"
+      ],
+      "authority_scope": "传旨、内廷查访、内库建议，可影响旨意传达。",
+      "power": 73,
+      "responsibility": 58,
+      "corruption_risk": 64
+    },
+    "锦衣卫": {
+      "tools": [
+        "secret_investigation"
+      ],
+      "authority_scope": "密查、缉访、监视官员，适合查隐情但会激起外朝疑惧。",
+      "power": 66,
+      "responsibility": 50,
+      "corruption_risk": 72
+    },
+    "东厂": {
+      "tools": [
+        "secret_investigation"
+      ],
+      "authority_scope": "以内廷旧线密查和威慑外朝，效率高但政治反噬重。",
+      "power": 76,
+      "responsibility": 45,
+      "corruption_risk": 86
+    },
+    "边镇": {
+      "tools": [
+        "check_military"
+      ],
+      "authority_scope": "查本镇军情、军心和城防，只能回奏，不能自开钱粮。",
+      "power": 68,
+      "responsibility": 80,
+      "corruption_risk": 58
+    },
+    "外臣": {
+      "tools": [],
+      "authority_scope": "势力君主、贵族、谋臣、藩属国臣等人物的身份归类；用于世界盘面，不授予大明朝堂工具。",
+      "power": 55,
+      "responsibility": 55,
+      "corruption_risk": 40
+    }
+  }
+}

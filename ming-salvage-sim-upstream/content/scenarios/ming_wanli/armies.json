@@ -1,0 +1,430 @@
+{
+  "meta": {
+    "manpower_unit": "人",
+    "maintenance_unit": "万两/月",
+    "score_unit": "0-100（arrears 例外，单位为累计欠饷万两、整数、无上限）",
+    "note": "万历初年军镇：蓟镇戚继光、辽东李成梁；无关宁袁崇焕、无东江镇、无流寇主力。"
+  },
+  "armies": [
+    {
+      "id": "jingying",
+      "name": "京营",
+      "station": "北直隶 / 京师",
+      "theater": "京畿",
+      "commander": "京营诸将",
+      "controller": "兵部",
+      "troop_type": "杂兵、火炮队、轻骑兵",
+      "manpower": 90000,
+      "maintenance_per_turn": 7,
+      "supply": 58,
+      "morale": 48,
+      "training": 42,
+      "equipment": 52,
+      "arrears": 12,
+      "mobility": 35,
+      "loyalty": 52,
+      "status": "拱卫京师，空额克扣较崇祯时为轻，操练尚可。",
+      "owner_power": "ming",
+      "troop_composition": {
+        "杂兵": 78000,
+        "火炮队": 6000,
+        "轻骑兵": 6000
+      },
+      "arms": [
+        {
+          "troop_type": "火炮队",
+          "weapon": "虎蹲炮",
+          "qty": 100
+        },
+        {
+          "troop_type": "火炮队",
+          "weapon": "佛郎机",
+          "qty": 50
+        },
+        {
+          "troop_type": "杂兵",
+          "weapon": "火铳",
+          "qty": 12000
+        }
+      ]
+    },
+    {
+      "id": "jizhen",
+      "name": "蓟镇兵",
+      "station": "北直隶 / 蓟镇",
+      "theater": "京畿屏障",
+      "commander": "戚继光",
+      "controller": "戚继光",
+      "troop_type": "杂兵、车营、火炮队、轻骑兵",
+      "manpower": 58000,
+      "maintenance_per_turn": 5,
+      "supply": 52,
+      "morale": 58,
+      "training": 72,
+      "equipment": 62,
+      "arrears": 10,
+      "mobility": 48,
+      "loyalty": 62,
+      "status": "戚继光练兵有成，车营火器为九边楷模，蒙古叩边多赖此镇御之。",
+      "owner_power": "ming",
+      "troop_composition": {
+        "杂兵": 32000,
+        "车营": 12000,
+        "火炮队": 8000,
+        "轻骑兵": 6000
+      },
+      "arms": [
+        {
+          "troop_type": "火炮队",
+          "weapon": "佛郎机",
+          "qty": 80
+        },
+        {
+          "troop_type": "杂兵",
+          "weapon": "火铳",
+          "qty": 10000
+        }
+      ]
+    },
+    {
+      "id": "liaodong",
+      "name": "辽东镇",
+      "station": "辽东",
+      "theater": "辽东",
+      "commander": "李成梁",
+      "controller": "李成梁",
+      "troop_type": "杂兵、重骑兵、轻骑兵",
+      "manpower": 68000,
+      "maintenance_per_turn": 7,
+      "supply": 48,
+      "morale": 55,
+      "training": 65,
+      "equipment": 55,
+      "arrears": 14,
+      "mobility": 52,
+      "loyalty": 58,
+      "status": "李成梁累破女真，威名素著；辽饷渐增而续解时有迟滞，建州诸部渐强不可不防。",
+      "owner_power": "ming",
+      "troop_composition": {
+        "杂兵": 40000,
+        "重骑兵": 16000,
+        "轻骑兵": 12000
+      },
+      "arms": [
+        {
+          "troop_type": "杂兵",
+          "weapon": "火铳",
+          "qty": 8000
+        },
+        {
+          "troop_type": "杂兵",
+          "weapon": "三眼铳",
+          "qty": 2500
+        }
+      ]
+    },
+    {
+      "id": "shanhaiguan",
+      "name": "山海关守军",
+      "station": "北直隶 / 山海关",
+      "theater": "辽东门户",
+      "commander": "山海关总兵",
+      "controller": "兵部",
+      "troop_type": "杂兵、火炮队",
+      "manpower": 24000,
+      "maintenance_per_turn": 3,
+      "supply": 58,
+      "morale": 56,
+      "training": 56,
+      "equipment": 58,
+      "arrears": 5,
+      "mobility": 28,
+      "loyalty": 58,
+      "status": "辽东门户，与蓟镇、辽东镇联动御敌。",
+      "owner_power": "ming",
+      "troop_composition": {
+        "杂兵": 20000,
+        "火炮队": 4000
+      },
+      "arms": [
+        {
+          "troop_type": "火炮队",
+          "weapon": "虎蹲炮",
+          "qty": 60
+        },
+        {
+          "troop_type": "杂兵",
+          "weapon": "火铳",
+          "qty": 5000
+        }
+      ]
+    },
+    {
+      "id": "xuan_da",
+      "name": "宣大边军",
+      "station": "山西 / 宣府大同",
+      "theater": "北边",
+      "commander": "宣大总督",
+      "controller": "兵部",
+      "troop_type": "杂兵、轻骑兵",
+      "manpower": 62000,
+      "maintenance_per_turn": 5,
+      "supply": 48,
+      "morale": 52,
+      "training": 58,
+      "equipment": 50,
+      "arrears": 18,
+      "mobility": 54,
+      "loyalty": 52,
+      "status": "防蒙古俺答余部叩边，互市与战备并重。",
+      "owner_power": "ming",
+      "troop_composition": {
+        "杂兵": 48000,
+        "轻骑兵": 14000
+      },
+      "arms": [
+        {
+          "troop_type": "杂兵",
+          "weapon": "火铳",
+          "qty": 8000
+        }
+      ]
+    },
+    {
+      "id": "denglai",
+      "name": "登莱兵与水师",
+      "station": "山东 / 登莱",
+      "theater": "海防辽援",
+      "commander": "登莱巡抚",
+      "controller": "兵部",
+      "troop_type": "水师、火炮队、杂兵",
+      "manpower": 22000,
+      "maintenance_per_turn": 3,
+      "supply": 52,
+      "morale": 52,
+      "training": 52,
+      "equipment": 54,
+      "arrears": 4,
+      "mobility": 60,
+      "loyalty": 48,
+      "status": "可海运接济辽东，巡缉黄海倭寇余部。",
+      "owner_power": "ming",
+      "troop_composition": {
+        "水师": 10000,
+        "火炮队": 4000,
+        "杂兵": 8000
+      },
+      "arms": [
+        {
+          "troop_type": "火炮队",
+          "weapon": "佛郎机",
+          "qty": 25
+        }
+      ]
+    },
+    {
+      "id": "shaanxi_army",
+      "name": "陕西边军",
+      "station": "陕西",
+      "theater": "西北",
+      "commander": "陕西巡抚与边将",
+      "controller": "兵部",
+      "troop_type": "杂兵、轻骑兵",
+      "manpower": 38000,
+      "maintenance_per_turn": 3,
+      "supply": 42,
+      "morale": 46,
+      "training": 48,
+      "equipment": 44,
+      "arrears": 12,
+      "mobility": 48,
+      "loyalty": 48,
+      "status": "西北防务，岁旱时有赈抚之责，尚未至民变燎原。",
+      "owner_power": "ming",
+      "troop_composition": {
+        "杂兵": 32000,
+        "轻骑兵": 6000
+      },
+      "arms": [
+        {
+          "troop_type": "杂兵",
+          "weapon": "火铳",
+          "qty": 2500
+        }
+      ]
+    },
+    {
+      "id": "nanjing_garrison",
+      "name": "南京守备军",
+      "station": "南直隶 / 南京",
+      "theater": "江南",
+      "commander": "南京守备",
+      "controller": "南京兵部",
+      "troop_type": "杂兵、水师",
+      "manpower": 44000,
+      "maintenance_per_turn": 4,
+      "supply": 66,
+      "morale": 52,
+      "training": 46,
+      "equipment": 50,
+      "arrears": 3,
+      "mobility": 44,
+      "loyalty": 54,
+      "status": "江南财赋重地，军力可守不可远征。",
+      "owner_power": "ming",
+      "troop_composition": {
+        "杂兵": 32000,
+        "水师": 12000
+      },
+      "arms": [
+        {
+          "troop_type": "杂兵",
+          "weapon": "火铳",
+          "qty": 3500
+        }
+      ]
+    },
+    {
+      "id": "fujian_navy",
+      "name": "福建水师",
+      "station": "福建",
+      "theater": "东南海防",
+      "commander": "福建巡抚与水师将领",
+      "controller": "兵部",
+      "troop_type": "水师",
+      "manpower": 16000,
+      "maintenance_per_turn": 2,
+      "supply": 48,
+      "morale": 52,
+      "training": 50,
+      "equipment": 48,
+      "arrears": 3,
+      "mobility": 68,
+      "loyalty": 46,
+      "status": "巡缉海疆，倭寇渐息而走私未绝。",
+      "owner_power": "ming",
+      "troop_composition": {
+        "水师": 16000
+      }
+    },
+    {
+      "id": "guangdong_navy",
+      "name": "广东水师",
+      "station": "广东",
+      "theater": "南海海防",
+      "commander": "广东巡抚与水师将领",
+      "controller": "兵部",
+      "troop_type": "水师",
+      "manpower": 14000,
+      "maintenance_per_turn": 2,
+      "supply": 50,
+      "morale": 52,
+      "training": 48,
+      "equipment": 48,
+      "arrears": 3,
+      "mobility": 66,
+      "loyalty": 48,
+      "status": "守海口护商，海贸灰区仍须弹压。",
+      "owner_power": "ming",
+      "troop_composition": {
+        "水师": 14000
+      }
+    },
+    {
+      "id": "southwest_tusi",
+      "name": "西南土司兵",
+      "station": "广西 / 云南 / 贵州",
+      "theater": "西南",
+      "commander": "各土司",
+      "controller": "地方督抚",
+      "troop_type": "杂兵",
+      "manpower": 22000,
+      "maintenance_per_turn": 2,
+      "supply": 42,
+      "morale": 56,
+      "training": 46,
+      "equipment": 36,
+      "arrears": 3,
+      "mobility": 58,
+      "loyalty": 34,
+      "status": "山地作战有用，听调取决于土司关系。",
+      "owner_power": "ming",
+      "troop_composition": {
+        "杂兵": 22000
+      }
+    },
+    {
+      "id": "jurchen_host",
+      "name": "建州女真诸部",
+      "station": "建州 / 赫图阿拉",
+      "theater": "辽东外线",
+      "commander": "努尔哈赤",
+      "controller": "建州女真",
+      "troop_type": "轻骑兵、杂兵",
+      "manpower": 28000,
+      "maintenance_per_turn": 0,
+      "supply": 50,
+      "morale": 68,
+      "training": 62,
+      "equipment": 48,
+      "arrears": 0,
+      "mobility": 78,
+      "loyalty": 65,
+      "status": "努尔哈赤兼并诸部，筑城练兵，与明边互市时有不轨。",
+      "owner_power": "jurchen",
+      "troop_composition": {
+        "轻骑兵": 18000,
+        "杂兵": 10000
+      }
+    },
+    {
+      "id": "mongol_tumed_host",
+      "name": "土默特骑兵",
+      "station": "土默特 / 河套",
+      "theater": "漠南草原",
+      "commander": "俺答汗",
+      "controller": "土默特",
+      "troop_type": "轻骑兵、杂兵",
+      "manpower": 32000,
+      "maintenance_per_turn": 0,
+      "supply": 46,
+      "morale": 60,
+      "training": 58,
+      "equipment": 44,
+      "arrears": 0,
+      "mobility": 84,
+      "loyalty": 42,
+      "status": "俺答封顺义王后互市岁赐成例，叩边索赏时见。",
+      "owner_power": "mongol",
+      "troop_composition": {
+        "轻骑兵": 26000,
+        "杂兵": 6000
+      }
+    },
+    {
+      "id": "korean_border_army",
+      "name": "朝鲜边军",
+      "station": "朝鲜 / 义州平壤",
+      "theater": "朝鲜",
+      "commander": "朝鲜备边司诸将",
+      "controller": "朝鲜朝廷",
+      "troop_type": "杂兵、火炮队、水师",
+      "manpower": 24000,
+      "maintenance_per_turn": 0,
+      "supply": 48,
+      "morale": 48,
+      "training": 44,
+      "equipment": 42,
+      "arrears": 0,
+      "mobility": 44,
+      "loyalty": 58,
+      "status": "藩臣恭顺，边备防北方部族与倭寇。",
+      "owner_power": "korea",
+      "troop_composition": {
+        "杂兵": 16000,
+        "火炮队": 4000,
+        "水师": 4000
+      }
+    }
+  ]
+}

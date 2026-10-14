@@ -1,0 +1,106 @@
+[
+  {
+    "id": "event_talent_reform_001",
+    "title": "人才不足：先治人才还是先改法度？",
+    "desc": "朝廷法令具备，但地方推行无力，贪鄙苟简者众。是否优先改革教育与选官体系？",
+    "options": [
+      {
+        "id": "reform_education",
+        "text": "推进学校与教导体系，重建人才培养",
+        "effects": {
+          "talent_supply": 8,
+          "short_term_fiscal_pressure": -2
+        }
+      },
+      {
+        "id": "tighten_laws",
+        "text": "加严法令与考核，立刻压实执行",
+        "effects": {
+          "implementation_capacity": 3,
+          "social_stability": -3
+        }
+      },
+      {
+        "id": "status_quo",
+        "text": "维持现状，等待自然改良",
+        "effects": {
+          "talent_supply": -2,
+          "long_term_risk": 4
+        }
+      }
+    ],
+    "evidence_sources": [
+      "上仁宗皇帝言事书"
+    ]
+  },
+  {
+    "id": "event_salary_corruption_002",
+    "title": "吏禄偏薄：廉耻与腐败风险",
+    "desc": "基层官吏所得不足以维持婚丧奉养等支出，社会风气以奢为荣。是否提升俸禄并配套约束？",
+    "options": [
+      {
+        "id": "raise_salary",
+        "text": "提高俸禄并强化礼法约束",
+        "effects": {
+          "corruption_risk": -5,
+          "fiscal_balance": -4
+        }
+      },
+      {
+        "id": "punish_only",
+        "text": "只加重惩贪而不增禄",
+        "effects": {
+          "corruption_risk": -1,
+          "public_opinion_pressure": 2
+        }
+      },
+      {
+        "id": "ignore",
+        "text": "不作调整",
+        "effects": {
+          "corruption_risk": 4,
+          "administrative_effectiveness": -3
+        }
+      }
+    ],
+    "evidence_sources": [
+      "上仁宗皇帝言事书"
+    ]
+  },
+  {
+    "id": "event_hundred_years_warning_003",
+    "title": "百年无事的隐患：因循与理财",
+    "desc": "本朝长期无大乱，但学校、选官、军事训练与理财制度存在结构性问题。是否启动“有为之治”？",
+    "options": [
+      {
+        "id": "start_reform",
+        "text": "启动系统改革（学校/选官/边防/理财）",
+        "effects": {
+          "reform_speed": 5,
+          "political_support": -3,
+          "long_term_strength": 8
+        }
+      },
+      {
+        "id": "incremental",
+        "text": "小步调整，先从一两项入手",
+        "effects": {
+          "reform_speed": 2,
+          "political_support": -1,
+          "long_term_strength": 3
+        }
+      },
+      {
+        "id": "keep_peace",
+        "text": "以守成为主，避免扰动",
+        "effects": {
+          "social_stability": 2,
+          "long_term_strength": -3
+        }
+      }
+    ],
+    "evidence_sources": [
+      "本朝百年无事札子"
+    ]
+  }
+]

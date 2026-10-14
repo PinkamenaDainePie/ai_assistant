@@ -1,0 +1,17 @@
+# Docker 生产部署用（Python 3.11+）；与 requirements_wanganshi_ai.txt 相比放宽 openai 以兼容 langchain-openai
+openai>=1.40,<2.0
+fastapi>=0.110
+uvicorn[standard]>=0.22.0
+pydantic>=2.0
+python-dotenv>=1.0.0
+pypdf>=3,<4
+openpyxl>=3.1.0
+langgraph>=0.2.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.9
+PyJWT>=2.8.0
+passlib[bcrypt]>=1.7.4
+bcrypt>=4.0.0,<5
+neo4j>=5.14,<6

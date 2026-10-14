@@ -1,0 +1,90 @@
+[
+  {
+    "fact_id": "fact_da7cfcd7",
+    "source_title": "上仁宗皇帝言事书",
+    "type": "structure_fact",
+    "statement": "国势困窘与制度失灵的根源之一在于“人才不足”；需要通过“教之、养之、取之、任之”四端的制度体系来陶冶并形成可用之才。",
+    "variables": [
+      "talent_supply",
+      "governance_capacity",
+      "education_system",
+      "selection_system",
+      "cadre_management"
+    ],
+    "evidence_chunk_ids": [
+      "上仁宗皇帝言事书_4368f204",
+      "上仁宗皇帝言事书_2eb8839d"
+    ]
+  },
+  {
+    "fact_id": "fact_d4e509d6",
+    "source_title": "上仁宗皇帝言事书",
+    "type": "structure_fact",
+    "statement": "仅有法令不足以形成治理效能（徒法不能以自行）；执行人才与制度配套决定政策能否落地。",
+    "variables": [
+      "policy_effectiveness",
+      "implementation_capacity"
+    ],
+    "evidence_chunk_ids": [
+      "上仁宗皇帝言事书_4368f204",
+      "上仁宗皇帝言事书_2eb8839d"
+    ]
+  },
+  {
+    "fact_id": "fact_e5b44fe3",
+    "source_title": "上仁宗皇帝言事书",
+    "type": "structure_fact",
+    "statement": "官吏禄薄会导致廉耻受损与寻租倾向上升，从而拖累治理绩效。",
+    "variables": [
+      "official_salary",
+      "corruption_risk",
+      "administrative_effectiveness"
+    ],
+    "evidence_chunk_ids": []
+  },
+  {
+    "fact_id": "fact_dbd3e31a",
+    "source_title": "上仁宗皇帝言事书",
+    "type": "structure_fact",
+    "statement": "以章句/作文为主的取士与教育体系，会造成学用脱节，削弱国家治理所需能力。",
+    "variables": [
+      "education_alignment",
+      "cadre_quality"
+    ],
+    "evidence_chunk_ids": [
+      "上仁宗皇帝言事书_2eb8839d"
+    ]
+  },
+  {
+    "fact_id": "fact_899d4f25",
+    "source_title": "本朝百年无事札子",
+    "type": "structure_fact",
+    "statement": "“无事百年”的条件包括：宽仁恭俭、慎刑赏、纳谏、公听并观与相坐法等治理机制；但也存在因循末俗、学校与选官机制不足、理财无法等结构性隐患。",
+    "variables": [
+      "political_legitimacy",
+      "rule_of_law",
+      "oversight",
+      "civil_service_quality",
+      "fiscal_capacity"
+    ],
+    "evidence_chunk_ids": [
+      "本朝百年无事札子_50913cd9",
+      "本朝百年无事札子_db635f13",
+      "本朝百年无事札子_e3a8f21e"
+    ]
+  },
+  {
+    "fact_id": "fact_b2053427",
+    "source_title": "答司马谏议书",
+    "type": "structure_fact",
+    "statement": "围绕新法的四类典型指控（侵官、生事、征利、拒谏）可作为情景对话与政治压力事件的模板。",
+    "variables": [
+      "elite_opposition",
+      "public_opinion_pressure",
+      "reform_legitimacy"
+    ],
+    "evidence_chunk_ids": [
+      "答司马谏议书_6962d8fd"
+    ]
+  }
+]

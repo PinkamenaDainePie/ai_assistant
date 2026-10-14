@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "scenario": "song_xining",
+  "framework": "主线改国家路线；选项任务走事件卡；既定事实自动结算",
+  "tier_A_main": [
+    "main_xining_reform_mandate",
+    "main_wang_anshi_to_court",
+    "main_sansi_establish",
+    "main_green_sprout_route",
+    "main_corvee_commutation",
+    "main_fiscal_reform_pack",
+    "main_baojia_baoma_route",
+    "main_wangshao_hehuang",
+    "main_drought_famine_crisis",
+    "main_song_viet_war_1075",
+    "main_wang_anshi_resignation_crisis"
+  ],
+  "tier_B_choice_events": [
+    {
+      "topic": "吕诲劾王安石",
+      "event_id": "event_song_censor_reform_001",
+      "former_main_id": "main_censor_lvhui_attack",
+      "boost_tags": ["censor"]
+    },
+    {
+      "topic": "青苗强贷",
+      "event_id": "event_song_green_coerce_001",
+      "former_main_id": "main_green_coerce_backlash",
+      "boost_tags": ["relief", "reform"]
+    },
+    {
+      "topic": "豪强抵制新法",
+      "event_id": "event_song_gentry_boycott_001",
+      "boost_tags": ["delegate"]
+    },
+    {
+      "topic": "西北军粮告急",
+      "event_id": "event_song_border_supply_001",
+      "former_main_id": "main_border_supply_crisis",
+      "boost_tags": ["supply", "military"],
+      "note": "熙河主线逾期或军需不足时加权"
+    },
+    {
+      "topic": "灾区催科",
+      "event_id": "event_song_cuike_001",
+      "boost_tags": ["relief", "fiscal"]
+    },
+    {
+      "topic": "司马光等反新法奏议",
+      "event_id": "event_song_simaguang_memorial_001",
+      "boost_tags": ["censor"]
+    },
+    {
+      "topic": "交趾前线补给",
+      "event_id": "event_song_viet_war_supply_001",
+      "boost_tags": ["supply", "military"],
+      "requires_flag": "song_viet_war_active"
+    }
+  ],
+  "tier_C_auto_facts": "见 campaign_xining_auto_facts.json",
+  "tier_B_random_exclude_template_ids": [
+    "internal_restore_authority",
+    "faction_balance_court",
+    "military_raise_morale",
+    "reform_green_spring_lend",
+    "reform_even_transport_pilot",
+    "reform_sansi_audit",
+    "reform_green_coerce_probe",
+    "reform_northwest_budget",
+    "reform_memorial_backlash",
+    "reform_gentry_boycott",
+    "reform_water_gentry_monopoly",
+    "reform_throne_debate",
+    "reform_water_charter",
+    "reform_canal_patrol",
+    "reform_local_delay",
+    "fiscal_corvee_commutation",
+    "fiscal_equalized_transport",
+    "fiscal_expand_state_monopoly",
+    "agri_spring_grain_lending"
+  ],
+  "removed_from_xining": [
+    {
+      "id": "main_wutai_sushi",
+      "reason": "乌台诗案为元丰二年（1079），属元丰线非熙宁十年",
+      "relocate": "yuanfeng_campaign_future"
+    },
+    {
+      "id": "main_green_sprout_expand",
+      "reason": "青苗推广为执行阶段",
+      "relocate": "auto_fact:auto_green_sprout_expand"
+    },
+    {
+      "id": "main_shiyi_kaifeng",
+      "reason": "并入国家理财改革包",
+      "relocate": "main_fiscal_reform_pack"
+    },
+    {
+      "id": "main_equalized_transport",
+      "reason": "并入国家理财改革包",
+      "relocate": "main_fiscal_reform_pack"
+    },
+    {
+      "id": "main_fangtian_survey",
+      "reason": "并入国家理财改革包",
+      "relocate": "main_fiscal_reform_pack"
+    },
+    {
+      "id": "main_wang_anshi_retire",
+      "reason": "改为条件型罢相危机，非固定 Q37",
+      "relocate": "main_wang_anshi_resignation_crisis"
+    }
+  ],
+  "quarter_calendar_note": {
+    "Q33": "熙宁九年春（1076），非熙宁十年",
+    "Q37": "熙宁十年春（1077）",
+    "wutai_poetry_case": "元丰二年（1079），Q41+ 属后续剧本"
+  }
+}

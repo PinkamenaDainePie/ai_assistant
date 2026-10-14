@@ -1,0 +1,425 @@
+{
+  "version": 1,
+  "scenario": "song",
+  "ministers": [
+    {
+      "name": "王安石",
+      "office": "同中书门下平章事、参知政事",
+      "party": "新党",
+      "stance": "变法派",
+      "influence": 98.0,
+      "ability_weights": {
+        "integrity": 0.88,
+        "governance": 0.898,
+        "political_power": 0.98,
+        "execution": 0.735
+      },
+      "party_backlash_multiplier": 1.15,
+      "anti_corruption_bias": 0.912,
+      "preferred_domains": [
+        "anti_corruption",
+        "anti_corruption",
+        "fiscal"
+      ],
+      "phase_narrative_style": "新党"
+    },
+    {
+      "name": "司马光",
+      "office": "翰林学士、判西京御史台",
+      "party": "旧党",
+      "stance": "保守派",
+      "influence": 96.0,
+      "ability_weights": {
+        "integrity": 0.9,
+        "governance": 0.846,
+        "political_power": 0.96,
+        "execution": 0.697
+      },
+      "party_backlash_multiplier": 1.12,
+      "anti_corruption_bias": 0.876,
+      "preferred_domains": [
+        "anti_corruption",
+        "anti_corruption",
+        "fiscal"
+      ],
+      "phase_narrative_style": "旧党"
+    },
+    {
+      "name": "曾布",
+      "office": "三司使、翰林学士",
+      "party": "新党",
+      "stance": "变法派",
+      "influence": 86.0,
+      "ability_weights": {
+        "integrity": 0.82,
+        "governance": 0.856,
+        "political_power": 0.86,
+        "execution": 0.631
+      },
+      "party_backlash_multiplier": 1.15,
+      "anti_corruption_bias": 0.852,
+      "preferred_domains": [
+        "anti_corruption",
+        "anti_corruption",
+        "fiscal"
+      ],
+      "phase_narrative_style": "新党"
+    },
+    {
+      "name": "吕惠卿",
+      "office": "参知政事",
+      "party": "新党",
+      "stance": "变法派",
+      "influence": 92.0,
+      "ability_weights": {
+        "integrity": 0.78,
+        "governance": 0.825,
+        "political_power": 0.92,
+        "execution": 0.607
+      },
+      "party_backlash_multiplier": 1.15,
+      "anti_corruption_bias": 0.838,
+      "preferred_domains": [
+        "anti_corruption",
+        "fiscal"
+      ],
+      "phase_narrative_style": "新党"
+    },
+    {
+      "name": "沈括",
+      "office": "三司使、翰林学士",
+      "party": "新党",
+      "stance": "变法派",
+      "influence": 84.0,
+      "ability_weights": {
+        "integrity": 0.82,
+        "governance": 0.838,
+        "political_power": 0.84,
+        "execution": 0.755
+      },
+      "party_backlash_multiplier": 1.15,
+      "anti_corruption_bias": 0.836,
+      "preferred_domains": [
+        "anti_corruption",
+        "anti_corruption",
+        "fiscal"
+      ],
+      "phase_narrative_style": "新党"
+    },
+    {
+      "name": "韩琦",
+      "office": "司徒兼侍中、判相州",
+      "party": "旧党",
+      "stance": "保守派",
+      "influence": 91.0,
+      "ability_weights": {
+        "integrity": 0.86,
+        "governance": 0.806,
+        "political_power": 0.91,
+        "execution": 0.802
+      },
+      "party_backlash_multiplier": 1.12,
+      "anti_corruption_bias": 0.834,
+      "preferred_domains": [
+        "anti_corruption",
+        "anti_corruption"
+      ],
+      "phase_narrative_style": "旧党"
+    },
+    {
+      "name": "文彦博",
+      "office": "太师、判河南府",
+      "party": "旧党",
+      "stance": "保守派",
+      "influence": 89.0,
+      "ability_weights": {
+        "integrity": 0.88,
+        "governance": 0.799,
+        "political_power": 0.89,
+        "execution": 0.739
+      },
+      "party_backlash_multiplier": 1.12,
+      "anti_corruption_bias": 0.828,
+      "preferred_domains": [
+        "anti_corruption",
+        "anti_corruption"
+      ],
+      "phase_narrative_style": "旧党"
+    },
+    {
+      "name": "富弼",
+      "office": "司空兼侍中",
+      "party": "旧党",
+      "stance": "保守派",
+      "influence": 90.0,
+      "ability_weights": {
+        "integrity": 0.84,
+        "governance": 0.786,
+        "political_power": 0.9,
+        "execution": 0.778
+      },
+      "party_backlash_multiplier": 1.12,
+      "anti_corruption_bias": 0.816,
+      "preferred_domains": [
+        "anti_corruption",
+        "anti_corruption"
+      ],
+      "phase_narrative_style": "旧党"
+    },
+    {
+      "name": "苏辙",
+      "office": "制置三司条例司检详文字、尚书右丞",
+      "party": "旧党",
+      "stance": "保守派",
+      "influence": 82.0,
+      "ability_weights": {
+        "integrity": 0.8,
+        "governance": 0.782,
+        "political_power": 0.82,
+        "execution": 0.644
+      },
+      "party_backlash_multiplier": 1.12,
+      "anti_corruption_bias": 0.792,
+      "preferred_domains": [
+        "anti_corruption",
+        "anti_corruption",
+        "fiscal"
+      ],
+      "phase_narrative_style": "旧党"
+    },
+    {
+      "name": "吕公著",
+      "office": "翰林学士、御史中丞",
+      "party": "旧党",
+      "stance": "保守派",
+      "influence": 86.0,
+      "ability_weights": {
+        "integrity": 0.82,
+        "governance": 0.757,
+        "political_power": 0.86,
+        "execution": 0.64
+      },
+      "party_backlash_multiplier": 1.12,
+      "anti_corruption_bias": 0.786,
+      "preferred_domains": [
+        "anti_corruption",
+        "anti_corruption"
+      ],
+      "phase_narrative_style": "旧党"
+    },
+    {
+      "name": "薛向",
+      "office": "三司使、陕西转运使",
+      "party": "新党",
+      "stance": "变法派",
+      "influence": 78.0,
+      "ability_weights": {
+        "integrity": 0.7,
+        "governance": 0.799,
+        "political_power": 0.78,
+        "execution": 0.607
+      },
+      "party_backlash_multiplier": 1.15,
+      "anti_corruption_bias": 0.782,
+      "preferred_domains": [
+        "anti_corruption",
+        "fiscal"
+      ],
+      "phase_narrative_style": "新党"
+    },
+    {
+      "name": "章惇",
+      "office": "知制诰、参知政事",
+      "party": "新党",
+      "stance": "变法派",
+      "influence": 89.0,
+      "ability_weights": {
+        "integrity": 0.8,
+        "governance": 0.737,
+        "political_power": 0.89,
+        "execution": 0.703
+      },
+      "party_backlash_multiplier": 1.15,
+      "anti_corruption_bias": 0.776,
+      "preferred_domains": [
+        "anti_corruption",
+        "anti_corruption"
+      ],
+      "phase_narrative_style": "新党"
+    },
+    {
+      "name": "韩绛",
+      "office": "同中书门下平章事",
+      "party": "新党",
+      "stance": "变法派",
+      "influence": 88.0,
+      "ability_weights": {
+        "integrity": 0.76,
+        "governance": 0.742,
+        "political_power": 0.88,
+        "execution": 0.664
+      },
+      "party_backlash_multiplier": 1.15,
+      "anti_corruption_bias": 0.772,
+      "preferred_domains": [
+        "anti_corruption"
+      ],
+      "phase_narrative_style": "新党"
+    },
+    {
+      "name": "吴充",
+      "office": "同中书门下平章事",
+      "party": "中立派",
+      "stance": "保守派",
+      "influence": 82.0,
+      "ability_weights": {
+        "integrity": 0.78,
+        "governance": 0.735,
+        "political_power": 0.82,
+        "execution": 0.66
+      },
+      "party_backlash_multiplier": 1.0,
+      "anti_corruption_bias": 0.758,
+      "preferred_domains": [
+        "anti_corruption"
+      ],
+      "phase_narrative_style": "中立派"
+    },
+    {
+      "name": "蔡确",
+      "office": "知谏院、参知政事",
+      "party": "新党",
+      "stance": "利己派",
+      "influence": 87.0,
+      "ability_weights": {
+        "integrity": 0.74,
+        "governance": 0.713,
+        "political_power": 0.87,
+        "execution": 0.594
+      },
+      "party_backlash_multiplier": 1.15,
+      "anti_corruption_bias": 0.748,
+      "preferred_domains": [
+        "anti_corruption"
+      ],
+      "phase_narrative_style": "新党"
+    },
+    {
+      "name": "苏轼",
+      "office": "开封府推官、杭州通判",
+      "party": "旧党",
+      "stance": "保守派",
+      "influence": 85.0,
+      "ability_weights": {
+        "integrity": 0.76,
+        "governance": 0.706,
+        "political_power": 0.85,
+        "execution": 0.682
+      },
+      "party_backlash_multiplier": 1.12,
+      "anti_corruption_bias": 0.742,
+      "preferred_domains": [
+        "anti_corruption"
+      ],
+      "phase_narrative_style": "旧党"
+    },
+    {
+      "name": "陈升之",
+      "office": "同中书门下平章事",
+      "party": "中立派",
+      "stance": "利己派",
+      "influence": 81.0,
+      "ability_weights": {
+        "integrity": 0.72,
+        "governance": 0.684,
+        "political_power": 0.81,
+        "execution": 0.631
+      },
+      "party_backlash_multiplier": 1.0,
+      "anti_corruption_bias": 0.714,
+      "preferred_domains": [
+        "anti_corruption"
+      ],
+      "phase_narrative_style": "中立派"
+    },
+    {
+      "name": "王珪",
+      "office": "同中书门下平章事",
+      "party": "中立派",
+      "stance": "利己派",
+      "influence": 83.0,
+      "ability_weights": {
+        "integrity": 0.68,
+        "governance": 0.635,
+        "political_power": 0.83,
+        "execution": 0.609
+      },
+      "party_backlash_multiplier": 1.0,
+      "anti_corruption_bias": 0.68,
+      "preferred_domains": [
+        "anti_corruption"
+      ],
+      "phase_narrative_style": "中立派"
+    },
+    {
+      "name": "王韶",
+      "office": "熙河路经略安抚使",
+      "party": "武臣",
+      "stance": "变法派",
+      "influence": 88.0,
+      "ability_weights": {
+        "integrity": 0.62,
+        "governance": 0.602,
+        "political_power": 0.88,
+        "execution": 0.7
+      },
+      "party_backlash_multiplier": 0.95,
+      "anti_corruption_bias": 0.66,
+      "preferred_domains": [
+        "anti_corruption",
+        "military"
+      ],
+      "phase_narrative_style": "武臣"
+    },
+    {
+      "name": "郭逵",
+      "office": "宣徽南院使、秦州知州",
+      "party": "武臣",
+      "stance": "保守派",
+      "influence": 80.0,
+      "ability_weights": {
+        "integrity": 0.52,
+        "governance": 0.502,
+        "political_power": 0.8,
+        "execution": 0.661
+      },
+      "party_backlash_multiplier": 0.95,
+      "anti_corruption_bias": 0.564,
+      "preferred_domains": [
+        "anti_corruption",
+        "military"
+      ],
+      "phase_narrative_style": "武臣"
+    },
+    {
+      "name": "种谔",
+      "office": "鄜延路钤辖、经略司属官",
+      "party": "武臣",
+      "stance": "变法派",
+      "influence": 79.0,
+      "ability_weights": {
+        "integrity": 0.48,
+        "governance": 0.48,
+        "political_power": 0.79,
+        "execution": 0.603
+      },
+      "party_backlash_multiplier": 0.95,
+      "anti_corruption_bias": 0.542,
+      "preferred_domains": [
+        "anti_corruption",
+        "military"
+      ],
+      "phase_narrative_style": "武臣"
+    }
+  ]
+}

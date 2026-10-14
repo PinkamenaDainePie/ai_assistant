@@ -1,0 +1,449 @@
+[
+  {
+    "id": "event_zzjg_001_retain_power",
+    "title": "首辅留任：夺情守制还是立即离职？",
+    "desc": "国家危机未解，首辅父丧在身。是让张居正夺情留任以维持改革推进，还是按礼制退居守丧？",
+    "options": [
+      {
+        "id": "retain_zhang",
+        "text": "夺情留任，确保改革不断线",
+        "effects": {
+          "implementation_capacity": 7,
+          "political_support": -4,
+          "court_controversy": 5
+        }
+      },
+      {
+        "id": "strict_mourning",
+        "text": "依礼离职守丧，暂停中枢推进",
+        "effects": {
+          "orthodox_legitimacy": 4,
+          "implementation_capacity": -6,
+          "reform_speed": -4
+        }
+      },
+      {
+        "id": "temporary_regency",
+        "text": "暂由群辅分担，保留主要框架",
+        "effects": {
+          "implementation_capacity": -2,
+          "political_support": 1,
+          "factionalism": 2
+        }
+      }
+    ],
+    "evidence_sources": [
+      "张居正变法2",
+      "张居正变法草稿"
+    ]
+  },
+  {
+    "id": "event_zzjg_002_kaocheng",
+    "title": "考成法：是否建立逐级销号的硬考核体系？",
+    "desc": "奏章拖延、部院推诿、抚按稽迟。是否建立内阁—六科—六部—地方的程限与注销制度？",
+    "options": [
+      {
+        "id": "launch_kaocheng",
+        "text": "全面推行考成法，按月注销、逾限问责",
+        "effects": {
+          "implementation_capacity": 8,
+          "bureaucratic_discipline": 6,
+          "elite_resistance": 3
+        }
+      },
+      {
+        "id": "soft_audit",
+        "text": "仅保留提醒与催办，不设严罚",
+        "effects": {
+          "implementation_capacity": 2,
+          "elite_resistance": 0,
+          "decision_latency": 2
+        }
+      },
+      {
+        "id": "do_nothing",
+        "text": "维持旧制，继续依赖临时催办",
+        "effects": {
+          "implementation_capacity": -3,
+          "bureaucratic_discipline": -2
+        }
+      }
+    ],
+    "evidence_sources": [
+      "张居正变法"
+    ]
+  },
+  {
+    "id": "event_zzjg_003_tax_quota",
+    "title": "钱粮九分：是否把征解完成率写成硬指标？",
+    "desc": "国库告急，若不把钱粮征解与官员升降绑定，财政恐难回流；若绑定过紧，又可能催科过重。",
+    "options": [
+      {
+        "id": "hard_quota",
+        "text": "以高完成率为考成核心，未达即参",
+        "effects": {
+          "fiscal_capacity": 7,
+          "bureaucratic_pressure": 5,
+          "peasant_burden": 4
+        }
+      },
+      {
+        "id": "moderate_quota",
+        "text": "设中等目标，允许受灾地区缓征",
+        "effects": {
+          "fiscal_capacity": 3,
+          "bureaucratic_pressure": 1,
+          "social_stability": 2
+        }
+      },
+      {
+        "id": "no_quota",
+        "text": "不与升降挂钩，避免基层过度催科",
+        "effects": {
+          "fiscal_capacity": -3,
+          "social_stability": 1,
+          "implementation_capacity": -2
+        }
+      }
+    ],
+    "evidence_sources": [
+      "张居正变法",
+      "张居正变法2"
+    ]
+  },
+  {
+    "id": "event_zzjg_004_post_system",
+    "title": "整顿驿递：驿站是国家资源还是权贵便利？",
+    "desc": "宗室、宦官、官员家属和私事长期侵占驿站资源，地方供应不堪重负。是否严禁私用？",
+    "options": [
+      {
+        "id": "strict_post_reform",
+        "text": "严禁私用驿站，只准军务与急务",
+        "effects": {
+          "administrative_cost": -5,
+          "local_burden": -4,
+          "elite_resistance": 3
+        }
+      },
+      {
+        "id": "partial_restriction",
+        "text": "限制超额使用，但保留特权名额",
+        "effects": {
+          "administrative_cost": -2,
+          "elite_resistance": 1
+        }
+      },
+      {
+        "id": "maintain_privilege",
+        "text": "默认既有特权通行",
+        "effects": {
+          "administrative_cost": 3,
+          "local_burden": 4,
+          "elite_resistance": -1
+        }
+      }
+    ],
+    "evidence_sources": [
+      "张居正变法"
+    ]
+  },
+  {
+    "id": "event_zzjg_005_land_survey",
+    "title": "全国清丈：是否强行丈量隐田与兼并土地？",
+    "desc": "税基塌陷的主因是隐田与投献。是否在全国统一亩制、重新造册、限期清丈？",
+    "options": [
+      {
+        "id": "full_survey",
+        "text": "三年内全国清丈，严打隐田与阻挠",
+        "effects": {
+          "tax_base": 8,
+          "collection_fairness": 6,
+          "elite_resistance": 6
+        }
+      },
+      {
+        "id": "pilot_survey",
+        "text": "先在重点财赋地区试点清丈",
+        "effects": {
+          "tax_base": 4,
+          "collection_fairness": 3,
+          "elite_resistance": 2
+        }
+      },
+      {
+        "id": "ignore_hidden_land",
+        "text": "暂不触碰隐田，避免朝野激荡",
+        "effects": {
+          "tax_base": -4,
+          "elite_resistance": -2,
+          "peasant_burden": 3
+        }
+      }
+    ],
+    "evidence_sources": [
+      "张居正变法",
+      "张居正变法2"
+    ]
+  },
+  {
+    "id": "event_zzjg_006_single_whip",
+    "title": "一条鞭法：是否把赋役全部并为一条征银？",
+    "desc": "旧赋役名目繁多、册籍失真、盘剥严重。是否推进赋役合并、计亩征银与官收官解？",
+    "options": [
+      {
+        "id": "nationwide_single_whip",
+        "text": "全国推行一条鞭，赋役并征白银",
+        "effects": {
+          "tax_complexity": -6,
+          "monetization": 7,
+          "silver_dependency": 4
+        }
+      },
+      {
+        "id": "regional_single_whip",
+        "text": "仅在财赋核心区先行",
+        "effects": {
+          "tax_complexity": -3,
+          "monetization": 4,
+          "silver_dependency": 2
+        }
+      },
+      {
+        "id": "keep_old_system",
+        "text": "维持粮役并行旧制",
+        "effects": {
+          "tax_complexity": 3,
+          "rent_seeking": 3,
+          "monetization": -2
+        }
+      }
+    ],
+    "evidence_sources": [
+      "张居正变法",
+      "张居正变法2"
+    ]
+  },
+  {
+    "id": "event_zzjg_007_court_cuts",
+    "title": "裁减宫廷费用：节流先从哪里动刀？",
+    "desc": "国库紧张，但宫廷营建、灯火、织造与赏赉仍耗费巨大。是否压缩上层支出？",
+    "options": [
+      {
+        "id": "deep_cuts",
+        "text": "大幅削减灯火、营建、织造与内赏",
+        "effects": {
+          "fiscal_capacity": 5,
+          "court_spending": -6,
+          "palace_support": -3
+        }
+      },
+      {
+        "id": "symbolic_cuts",
+        "text": "象征性节用，维持主要开销",
+        "effects": {
+          "fiscal_capacity": 2,
+          "court_spending": -2
+        }
+      },
+      {
+        "id": "no_cuts",
+        "text": "不触碰宫廷用度，以免失欢",
+        "effects": {
+          "fiscal_capacity": -3,
+          "palace_support": 1
+        }
+      }
+    ],
+    "evidence_sources": [
+      "张居正变法"
+    ]
+  },
+  {
+    "id": "event_zzjg_008_river_transport",
+    "title": "治河与漕运：是否重用潘季驯集中整治黄淮？",
+    "desc": "若河工不修，南粮北运受阻，京师与军储都会动摇。是否授权河漕合一、重金治河？",
+    "options": [
+      {
+        "id": "empower_pan_jixun",
+        "text": "授权潘季驯，以工程手段换漕运安全",
+        "effects": {
+          "grain_transport": 7,
+          "flood_risk": -5,
+          "short_term_fiscal_pressure": -3
+        }
+      },
+      {
+        "id": "minimal_repairs",
+        "text": "只做局部修补，节省当年预算",
+        "effects": {
+          "grain_transport": 1,
+          "flood_risk": 2,
+          "short_term_fiscal_pressure": 1
+        }
+      },
+      {
+        "id": "delay_repairs",
+        "text": "暂缓河工，把钱先投向别处",
+        "effects": {
+          "grain_transport": -4,
+          "flood_risk": 4,
+          "military_logistics": -2
+        }
+      }
+    ],
+    "evidence_sources": [
+      "张居正变法",
+      "张居正变法2"
+    ]
+  },
+  {
+    "id": "event_zzjg_009_border_strategy",
+    "title": "边防方略：继续互市稳边，还是改为强硬扩军？",
+    "desc": "北边可通过互市维持相对和平，但也有人主张停止互市、加兵备战。",
+    "options": [
+      {
+        "id": "trade_and_generals",
+        "text": "维持互市，同时重用戚继光、李成梁实守",
+        "effects": {
+          "border_security": 6,
+          "military_cost": -2,
+          "strategic_stability": 5
+        }
+      },
+      {
+        "id": "hardline_expansion",
+        "text": "收缩互市，全面增兵备战",
+        "effects": {
+          "border_security": 3,
+          "military_cost": 5,
+          "fiscal_capacity": -3
+        }
+      },
+      {
+        "id": "neglect_borders",
+        "text": "既不修边，也不增兵，依赖局势自行缓和",
+        "effects": {
+          "border_security": -5,
+          "military_cost": 0,
+          "long_term_risk": 5
+        }
+      }
+    ],
+    "evidence_sources": [
+      "张居正变法",
+      "张居正变法2",
+      "张居正变法草稿"
+    ]
+  },
+  {
+    "id": "event_zzjg_010_elite_backlash",
+    "title": "既得利益反扑：对抗还是安抚？",
+    "desc": "清丈、考成和节流不断触怒宗室、权贵、豪绅与言官。面对反扑，是继续高压，还是以人事与政策换取和解？",
+    "options": [
+      {
+        "id": "suppress_backlash",
+        "text": "坚持高压推进，强行压住反对派",
+        "effects": {
+          "reform_speed": 5,
+          "elite_resistance": 4,
+          "policy_durability": -1
+        }
+      },
+      {
+        "id": "coopt_elites",
+        "text": "适度让步，换取部分士绅与朝臣合作",
+        "effects": {
+          "elite_resistance": -2,
+          "reform_speed": -2,
+          "policy_durability": 2
+        }
+      },
+      {
+        "id": "freeze_reform",
+        "text": "暂停关键改革，先收人心",
+        "effects": {
+          "elite_resistance": -4,
+          "fiscal_capacity": -3,
+          "implementation_capacity": -3
+        }
+      }
+    ],
+    "evidence_sources": [
+      "张居正变法2"
+    ]
+  },
+  {
+    "id": "event_zzjg_011_after_zhang",
+    "title": "首辅身后：是延续旧法，还是翻案清算？",
+    "desc": "张居正去世后，朝廷将决定改革遗产的命运：保留制度、部分修正，或彻底清算。",
+    "options": [
+      {
+        "id": "preserve_reforms",
+        "text": "保留考成与税制主干，只修正过严之处",
+        "effects": {
+          "policy_durability": 6,
+          "elite_resistance": 2,
+          "implementation_capacity": 3
+        }
+      },
+      {
+        "id": "partial_rollback",
+        "text": "废峻急法，留财政与清丈成果",
+        "effects": {
+          "policy_durability": 2,
+          "elite_resistance": -1,
+          "social_stability": 2
+        }
+      },
+      {
+        "id": "full_purge",
+        "text": "全面翻案，废法并清算张氏集团",
+        "effects": {
+          "elite_resistance": -3,
+          "policy_durability": -6,
+          "implementation_capacity": -4
+        }
+      }
+    ],
+    "evidence_sources": [
+      "张居正变法2"
+    ]
+  },
+  {
+    "id": "event_zzjg_012_silver_risk",
+    "title": "白银依赖：效率提升后，如何应对货币风险？",
+    "desc": "税制货币化让征收更整齐，但国家对白银流通的依赖也更深。是否提前建立缓冲机制？",
+    "options": [
+      {
+        "id": "build_silver_buffers",
+        "text": "积累银储、保留部分实物与地方缓冲",
+        "effects": {
+          "silver_dependency": -2,
+          "reserve_stock": 4,
+          "fiscal_flexibility": 3
+        }
+      },
+      {
+        "id": "embrace_full_monetization",
+        "text": "全面押注征银效率，不留额外缓冲",
+        "effects": {
+          "collection_efficiency": 3,
+          "silver_dependency": 4,
+          "long_term_risk": 3
+        }
+      },
+      {
+        "id": "reverse_monetization",
+        "text": "恢复大量实物与差役征发",
+        "effects": {
+          "silver_dependency": -3,
+          "tax_complexity": 4,
+          "marketization": -3
+        }
+      }
+    ],
+    "evidence_sources": [
+      "张居正变法2"
+    ]
+  }
+]

@@ -1,0 +1,111 @@
+# 本地或单机服务器一键启动：API + 前端 + Neo4j（可选）
+# 用法：在项目根目录放置 .env（含 DASHSCOPE_API_KEY 等），然后：
+#   docker compose up --build -d
+#
+# 浏览器访问 http://localhost:3000 ；前端通过 rewrites 访问 http://api:8000
+# Neo4j Browser：http://localhost:7474
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ai-assistant-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: classroom
+      POSTGRES_PASSWORD: classroom
+      POSTGRES_DB: classroom
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U classroom -d classroom"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  neo4j:
+    image: neo4j:5.26-community
+    container_name: ai-assistant-neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: neo4j/ai_assistant_neo4j
+      NEO4J_server_memory_heap_initial__size: 512m
+      NEO4J_server_memory_heap_max__size: 1G
+    volumes:
+      - neo4j_data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:7474 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+      args:
+        # 镜像源无 3.11 时改为 "3.10" 或 "3.12"
+        PYTHON_VERSION: "3.11"
+    image: ai-assistant-api:local
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      NEO4J_URI: bolt://neo4j:7687
+      DATABASE_URL: postgresql+psycopg2://classroom:classroom@postgres:5432/classroom
+      CLASSROOM_SEED_DEMO: "1"
+      CLASSROOM_JWT_SECRET: ${CLASSROOM_JWT_SECRET:-classroom-compose-dev-secret}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      neo4j:
+        condition: service_healthy
+    restart: unless-stopped
+
+  salvage:
+    build:
+      context: .
+      dockerfile: Dockerfile.salvage
+      args:
+        PYTHON_VERSION: "3.11"
+    image: ai-assistant-salvage:local
+    ports:
+      - "8010:8010"
+    env_file:
+      - .env
+    environment:
+      OPENAI_API_KEY: ${DASHSCOPE_API_KEY}
+      OPENAI_BASE_URL: ${DASHSCOPE_API_BASE:-https://dashscope.aliyuncs.com/compatible-mode/v1}
+      MING_SIM_USER_DATA_DIR: /data
+    volumes:
+      - ming_sim_data:/data
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+      args:
+        NEXT_PUBLIC_API_BASE_URL: ""
+    image: ai-assistant-web:local
+    ports:
+      - "3000:3000"
+    environment:
+      # Next 服务端 rewrite 到容器内 API（勿用 127.0.0.1，那是容器自身）
+      BACKEND_PROXY_URL: http://api:8000
+      MING_SALVAGE_PROXY_URL: http://salvage:8010
+    depends_on:
+      - api
+      - salvage
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  neo4j_data:
+  ming_sim_data:

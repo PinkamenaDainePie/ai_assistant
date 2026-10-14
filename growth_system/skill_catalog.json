@@ -1,0 +1,138 @@
+{
+  "version": 1,
+  "description": "成长技能树目录。后端为唯一真相源，前端从 /growth/skill_catalog 拉取以渲染节点。节点是UI呈现层，实际数值影响仍按树总投入（military/management/politics/scholarship）在 build_growth_effects 中计算。",
+  "trees": {
+    "military": {
+      "key": "military",
+      "label_zh": "军事",
+      "summary_zh": "提升军队训练、补给与边防能力。投入转化为军队士气提升与叛乱风险降低（具体数值见季度结算，带软上限）。",
+      "nodes": [
+        {
+          "id": "mil-zhengjun",
+          "name_zh": "整军",
+          "description_zh": "系统性整顿军备，提升整体训练效率。",
+          "cost": 1,
+          "max_level": 3,
+          "effects_zh": ["军队士气提升", "叛乱风险降低"]
+        },
+        {
+          "id": "mil-bingzhan",
+          "name_zh": "兵站",
+          "description_zh": "优化前线补给与后勤节点。",
+          "cost": 2,
+          "max_level": 2,
+          "effects_zh": ["军需稳定度提升", "后勤事件风险降低"]
+        },
+        {
+          "id": "mil-fangxian",
+          "name_zh": "防线",
+          "description_zh": "加固边境与要塞防务。",
+          "cost": 1,
+          "max_level": 2,
+          "effects_zh": ["叛乱风险降低", "边防事件缓冲"]
+        }
+      ]
+    },
+    "management": {
+      "key": "management",
+      "label_zh": "管理",
+      "summary_zh": "强化财税稽核、仓储调配与官员绩效。投入主要降低财政压力、改善民心与国库（有软上限与资源上限约束）。",
+      "nodes": [
+        {
+          "id": "mgr-qingli",
+          "name_zh": "清厘",
+          "description_zh": "强化账目与财税稽核。",
+          "cost": 1,
+          "max_level": 3,
+          "effects_zh": ["财政压力下降", "贪腐蔓延减缓"]
+        },
+        {
+          "id": "mgr-cangchu",
+          "name_zh": "仓储",
+          "description_zh": "整顿粮仓和调配能力。",
+          "cost": 2,
+          "max_level": 2,
+          "effects_zh": ["民生稳定度提升", "灾害冲击缓解"]
+        },
+        {
+          "id": "mgr-kaohe",
+          "name_zh": "考核",
+          "description_zh": "建立官员绩效与执行追踪制度。",
+          "cost": 1,
+          "max_level": 2,
+          "effects_zh": ["政策执行率提升", "任务成功率提升"]
+        }
+      ]
+    },
+    "politics": {
+      "key": "politics",
+      "label_zh": "政治",
+      "summary_zh": "平衡朝堂派系、压制结党与加强地方督察。投入提升权威、降低腐败与动荡（低位时衰减以避免过早平坦）。",
+      "nodes": [
+        {
+          "id": "pol-hezhong",
+          "name_zh": "和众",
+          "description_zh": "平衡朝堂派系与利益关系。",
+          "cost": 1,
+          "max_level": 3,
+          "effects_zh": ["朝局稳定度提升", "权威上升"]
+        },
+        {
+          "id": "pol-suqing",
+          "name_zh": "肃清",
+          "description_zh": "压制结党营私与朋党网络。",
+          "cost": 2,
+          "max_level": 2,
+          "effects_zh": ["腐败下降", "政令阻力降低"]
+        },
+        {
+          "id": "pol-xunfang",
+          "name_zh": "巡访",
+          "description_zh": "加强地方督察与信息上达。",
+          "cost": 1,
+          "max_level": 2,
+          "effects_zh": ["民怨下降", "地方失控风险下降"]
+        }
+      ]
+    },
+    "scholarship": {
+      "key": "scholarship",
+      "label_zh": "学识",
+      "summary_zh": "夯实政令理论、培养实务人才、推动地方教化。投入改善税务完成度、降低税负强度，并提供温和的民心与治理加成。",
+      "nodes": [
+        {
+          "id": "sch-jingxue",
+          "name_zh": "经学",
+          "description_zh": "夯实政令的理论与合法性依据。",
+          "cost": 1,
+          "max_level": 3,
+          "effects_zh": ["税务执行度提升", "长期民心加成"]
+        },
+        {
+          "id": "sch-shuxue",
+          "name_zh": "术学",
+          "description_zh": "强化实务治理与人才培养。",
+          "cost": 2,
+          "max_level": 2,
+          "effects_zh": ["治理效率提升", "任务波动降低"]
+        },
+        {
+          "id": "sch-jiaoyu",
+          "name_zh": "教谕",
+          "description_zh": "推动地方教化与风俗整顿。",
+          "cost": 1,
+          "max_level": 2,
+          "effects_zh": ["治安隐患减少", "公共支持提升"]
+        }
+      ]
+    }
+  },
+  "tree_level_thresholds": [
+    [1, 1],
+    [3, 2],
+    [8, 3],
+    [15, 4],
+    [25, 5]
+  ],
+  "notes": "节点仅为UI呈现与沉浸；后端按树总累计点数（skill_levels_total）计算实际效果（build_growth_effects）。前端通过 distributePointsIntoTree 将树总点数贪心分配到节点上做可视化。效果文案已尽量与后端真实影响（army_morale, revolt_risk, fiscal_pressure, authority, corruption, tax_completion_index 等）对齐。"
+}

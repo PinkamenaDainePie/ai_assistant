@@ -1,0 +1,845 @@
+{
+  "factions": [
+    {
+      "name": "新法派",
+      "satisfaction": 68,
+      "leverage": 62,
+      "agenda": "推青苗、市易、方田、保甲，富国强兵"
+    },
+    {
+      "name": "旧党",
+      "satisfaction": 35,
+      "leverage": 48,
+      "agenda": "守祖宗成法，抑变法躁进"
+    },
+    {
+      "name": "中立",
+      "satisfaction": 50,
+      "leverage": 40,
+      "agenda": "按章办事、避党争"
+    }
+  ],
+  "characters": [
+    {
+      "name": "宋神宗",
+      "office": "皇帝",
+      "office_type": "皇帝",
+      "faction": "中立",
+      "aliases": [
+        "神宗",
+        "皇上",
+        "陛下"
+      ],
+      "personal_skills": [
+        "锐意求治"
+      ],
+      "loyalty": 100,
+      "ability": 72,
+      "integrity": 65,
+      "courage": 70,
+      "style": "锐意进取",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1048,
+      "status": "active",
+      "summary": "北宋皇帝，熙宁初亲政，锐意求治，倚重王安石主持变法。开局前后正值国用不足、边饷日增，他催促新法开源节流。召见可探问对新法缓急、边事与朝议的取舍。行事果决，好闻实务，亦易受舆论牵动。"
+    },
+    {
+      "name": "王安石",
+      "office": "参知政事",
+      "office_type": "中书",
+      "faction": "新法派",
+      "aliases": [
+        "王安石",
+        "王介甫",
+        "王相公"
+      ],
+      "personal_skills": [
+        "青苗法",
+        "市易法",
+        "方田均税法"
+      ],
+      "loyalty": 88,
+      "ability": 90,
+      "integrity": 75,
+      "courage": 82,
+      "style": "刚愎敢为",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1021,
+      "status": "active",
+      "summary": "参知政事，熙宁变法主持者，新法派核心。以富国强兵为纲，力推青苗、市易、保甲、方田等制。与国用开源、催科尺度、边饷调度直接相关，是改革主线第一人。召见可问新法次第与反对派应对。刚毅自信，不避党争。"
+    },
+    {
+      "name": "司马光",
+      "office": "枢密副使",
+      "office_type": "枢密",
+      "faction": "旧党",
+      "aliases": [
+        "司马光",
+        "司马君实"
+      ],
+      "personal_skills": [
+        "史识",
+        "清议"
+      ],
+      "loyalty": 75,
+      "ability": 85,
+      "integrity": 88,
+      "courage": 70,
+      "style": "稳健守旧",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1019,
+      "status": "active",
+      "summary": "枢密副使一系旧党领袖，反对变法过急。强调祖宗成法与民本，忧青苗催科扰民、市易与商争利。财政压力下他常主张节用宽政而非峻法开源。召见可听反对意见与风险预警。持重守经，论政峻切。"
+    },
+    {
+      "name": "吕惠卿",
+      "office": "参知政事",
+      "office_type": "中书",
+      "faction": "新法派",
+      "aliases": [
+        "吕惠卿",
+        "吕吉甫"
+      ],
+      "personal_skills": [
+        "市易法",
+        "实务"
+      ],
+      "loyalty": 70,
+      "ability": 78,
+      "integrity": 55,
+      "courage": 65,
+      "style": "权变务实",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1030,
+      "status": "active",
+      "summary": "参知政事，新法干将，市易法推行主力。善于御前辩驳，推动官营平准与收息入官。与京师市易、商贾观望及新法执行效率紧密相关。召见可问市易细节与旧党攻讦对策。机敏果决，锋芒外露。"
+    },
+    {
+      "name": "苏轼",
+      "office": "刑部尚书",
+      "office_type": "刑部",
+      "faction": "旧党",
+      "aliases": [
+        "苏轼",
+        "苏东坡",
+        "苏子瞻"
+      ],
+      "personal_skills": [
+        "文辞",
+        "清议"
+      ],
+      "loyalty": 72,
+      "ability": 88,
+      "integrity": 80,
+      "courage": 75,
+      "style": "忧民直言",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1037,
+      "status": "active",
+      "summary": "刑部尚书，对新政扰民极为敏感。常批评青苗、市易执行之弊，旧党中文学清望最高者之一。与言路、民怨及催科尺度相关。召见可听基层扰民实况与折中之策。文采斐然，论政率直。"
+    },
+    {
+      "name": "章惇",
+      "office": "参知政事",
+      "office_type": "中书",
+      "faction": "新法派",
+      "aliases": [
+        "章惇",
+        "章子厚"
+      ],
+      "personal_skills": [
+        "御前辩驳",
+        "办差"
+      ],
+      "loyalty": 75,
+      "ability": 80,
+      "integrity": 50,
+      "courage": 85,
+      "style": "果决干练",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1035,
+      "status": "active",
+      "summary": "参知政事，新党干将，行事果决，常充钦差办差。适合催办清丈、保甲或地方硬钉子。与新法落地、州县执行力相关。召见可委以强硬推行或边地事务。雷厉风行，少作调和。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "沈括",
+      "office": "工部尚书",
+      "office_type": "工部",
+      "faction": "新法派",
+      "aliases": [
+        "沈括",
+        "沈存中"
+      ],
+      "personal_skills": [
+        "勾稽理财",
+        "实务勘察"
+      ],
+      "loyalty": 78,
+      "ability": 88,
+      "integrity": 72,
+      "courage": 70,
+      "style": "能吏博学",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1031,
+      "status": "active",
+      "summary": "工部尚书，能吏兼学者，长于勾稽理财与实地勘察。方田均税、河工漕运等实务可询。与清丈税基、工程役繁相关。召见可问技术细节与可执行方案。务实缜密，重证据。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "曾布",
+      "office": "户部尚书",
+      "office_type": "户部",
+      "faction": "新法派",
+      "aliases": [
+        "曾布",
+        "曾子宣"
+      ],
+      "personal_skills": [
+        "市易法",
+        "漕运"
+      ],
+      "loyalty": 72,
+      "ability": 82,
+      "integrity": 58,
+      "courage": 68,
+      "style": "财政实务",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1036,
+      "status": "active",
+      "summary": "户部尚书，新法财政干将，熟悉市易与漕运。国库岁入、折纳、商税多经其手。与开源理财、边饷续解相关。召见可问太仓盈亏与理财次第。精于算计，偏新法。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "文彦博",
+      "office": "太师",
+      "office_type": "中书",
+      "faction": "旧党",
+      "aliases": [
+        "文彦博",
+        "文潞公"
+      ],
+      "personal_skills": [
+        "老成",
+        "清望"
+      ],
+      "loyalty": 78,
+      "ability": 80,
+      "integrity": 82,
+      "courage": 68,
+      "style": "持重守成",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1006,
+      "status": "active",
+      "summary": "太师，旧党元老，主张持重守成。历事多朝，对骤变制度多持保留。与朝议稳定、抑制催科过急相关。召见可问老成谋国与缓进路径。沉稳持重，声望极高。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "韩琦",
+      "office": "兵部尚书",
+      "office_type": "兵部",
+      "faction": "旧党",
+      "aliases": [
+        "韩琦",
+        "韩魏公"
+      ],
+      "personal_skills": [
+        "老成",
+        "边防"
+      ],
+      "loyalty": 80,
+      "ability": 82,
+      "integrity": 80,
+      "courage": 72,
+      "style": "持重老成",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1008,
+      "status": "active",
+      "summary": "兵部尚书，历事三朝老臣，对变法持保留。熟边务军政，常以边防稳定制约激进开源。与西北边饷、军需调度相关。召见可问边防与改革如何并行。老成持重，重名节。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "富弼",
+      "office": "礼部尚书",
+      "office_type": "礼部",
+      "faction": "旧党",
+      "aliases": [
+        "富弼",
+        "富郑公"
+      ],
+      "personal_skills": [
+        "宽政",
+        "民本"
+      ],
+      "loyalty": 82,
+      "ability": 84,
+      "integrity": 85,
+      "courage": 70,
+      "style": "宽政恤民",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1008,
+      "status": "active",
+      "summary": "礼部尚书，旧党名臣，强调宽政与民本。对青苗、保甲扰民多有批评。与民心、地方安抚相关。召见可问恤民与缓催科。宽厚清望，不喜峻急。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "韩绛",
+      "office": "同平章事",
+      "office_type": "中书",
+      "faction": "新法派",
+      "aliases": [
+        "韩绛",
+        "韩稚圭"
+      ],
+      "personal_skills": [
+        "新法推行",
+        "中枢协调"
+      ],
+      "loyalty": 80,
+      "ability": 78,
+      "integrity": 68,
+      "courage": 72,
+      "style": "同心辅政",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1009,
+      "status": "active",
+      "summary": "同平章事，新法中枢参与者，与王安石同心。协助推动新法入朝议，为人偏稳健。与新法政治护航相关。召见可问朝中合力与人事安排。稳健偏新，少作哗众。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "蔡确",
+      "office": "参知政事",
+      "office_type": "中书",
+      "faction": "新法派",
+      "aliases": [
+        "蔡确",
+        "蔡君谟"
+      ],
+      "personal_skills": [
+        "权变",
+        "机略"
+      ],
+      "loyalty": 68,
+      "ability": 82,
+      "integrity": 45,
+      "courage": 78,
+      "style": "机变重利",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1036,
+      "status": "active",
+      "summary": "参知政事，新党权臣，机变而重实利。长于权术与朝局运作，能压异议。与党争、新法人事相关。召见可问如何巩固新党。机变功利，需防过火。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "苏辙",
+      "office": "尚书右丞",
+      "office_type": "中书",
+      "faction": "旧党",
+      "aliases": [
+        "苏辙",
+        "苏子由"
+      ],
+      "personal_skills": [
+        "论政",
+        "史识"
+      ],
+      "loyalty": 74,
+      "ability": 82,
+      "integrity": 80,
+      "courage": 68,
+      "style": "绵密稳健",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1039,
+      "status": "active",
+      "summary": "尚书右丞，苏轼之弟，论政绵密，反对新法过急。常从法理与民情两端批评峻法。与言路、立法缓急相关。召见可听细密反对意见。冷静绵密，不尚空谈。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "王珪",
+      "office": "同平章事",
+      "office_type": "中书",
+      "faction": "中立",
+      "aliases": [
+        "王珪",
+        "王禹玉"
+      ],
+      "personal_skills": [
+        "揣摩上意",
+        "词章"
+      ],
+      "loyalty": 65,
+      "ability": 70,
+      "integrity": 55,
+      "courage": 55,
+      "style": "善揣摩",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1019,
+      "status": "active",
+      "summary": "同平章事，词臣出身，善揣摩上意。立场相对中立，常在两派间观望。与票拟调和、上意传达相关。召见可问朝议风向。圆熟谨慎，少树敌。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "吴充",
+      "office": "吏部尚书",
+      "office_type": "吏部",
+      "faction": "中立",
+      "aliases": [
+        "吴充",
+        "吴正宪"
+      ],
+      "personal_skills": [
+        "折冲",
+        "持重"
+      ],
+      "loyalty": 75,
+      "ability": 76,
+      "integrity": 72,
+      "courage": 65,
+      "style": "持中折冲",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1001,
+      "status": "active",
+      "summary": "吏部尚书，立场偏稳，常在新旧之间折冲。不以一派标榜，对催科过急多持保留。与铨选、朝议调和相关。召见可探「如何调和而不废理财」。沉稳折中，少作激进主张。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "吕公著",
+      "office": "御史中丞",
+      "office_type": "御史台",
+      "faction": "旧党",
+      "aliases": [
+        "吕公著",
+        "吕申公"
+      ],
+      "personal_skills": [
+        "清议",
+        "台谏"
+      ],
+      "loyalty": 76,
+      "ability": 80,
+      "integrity": 86,
+      "courage": 72,
+      "style": "清望持重",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1018,
+      "status": "active",
+      "summary": "御史中丞，旧党清望，重名节与台谏风纪。纠弹新法执行之弊常出其口。与言路、清议相关。召见可问台谏动向与舆论风险。清正峻切，重名节。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "陈升之",
+      "office": "同平章事",
+      "office_type": "中书",
+      "faction": "中立",
+      "aliases": [
+        "陈升之",
+        "陈升之"
+      ],
+      "personal_skills": [
+        "权衡",
+        "老成"
+      ],
+      "loyalty": 74,
+      "ability": 78,
+      "integrity": 75,
+      "courage": 66,
+      "style": "持中权衡",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1011,
+      "status": "active",
+      "summary": "同平章事，中立宰执，权衡各方利害。对新法不全迎合亦不全否定，求朝局平衡。召见可问折中方案与缓急取舍。圆滑务实，避走极端。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "王韶",
+      "office": "熙河经略使",
+      "office_type": "枢密",
+      "faction": "新法派",
+      "aliases": [
+        "王韶",
+        "王子纯"
+      ],
+      "personal_skills": [
+        "开边",
+        "用兵"
+      ],
+      "loyalty": 78,
+      "ability": 82,
+      "integrity": 68,
+      "courage": 88,
+      "style": "开边进取",
+      "power_id": "song",
+      "location": "shaanxi",
+      "birth_year": 1032,
+      "status": "active",
+      "summary": "熙河经略使，开拓熙河，主张以战促变、拓边固防。边费与拓边收益牵动国用。与西北进取及新法军政相关。召见可问进取与军需。进取敢战，偏新法。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "郭逵",
+      "office": "宣徽南院使",
+      "office_type": "枢密",
+      "faction": "旧党",
+      "aliases": [
+        "郭逵",
+        "郭仲通"
+      ],
+      "personal_skills": [
+        "宿将",
+        "军需"
+      ],
+      "loyalty": 80,
+      "ability": 84,
+      "integrity": 78,
+      "courage": 82,
+      "style": "重战实需",
+      "power_id": "song",
+      "location": "guangdong",
+      "birth_year": 1022,
+      "status": "active",
+      "summary": "宣徽南院使，边帅宿将，重实战与军需调度。对纸上谈兵的改革常泼冷水。与边饷、军心相关。召见可问前线实情与补给。老成务实，重补给。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "种谔",
+      "office": "鄜延路钤辖",
+      "office_type": "枢密",
+      "faction": "新法派",
+      "aliases": [
+        "种谔",
+        "种世衡后"
+      ],
+      "personal_skills": [
+        "善战",
+        "边事"
+      ],
+      "loyalty": 76,
+      "ability": 80,
+      "integrity": 62,
+      "courage": 90,
+      "style": "边将善战",
+      "power_id": "song",
+      "location": "shaanxi",
+      "birth_year": 1027,
+      "status": "active",
+      "summary": "鄜延路钤辖，西北边将，善战而与变法派声气相通。西夏边警与边饷急缺常系于此。召见可问战事与练兵。骁勇敢任，少顾朝议。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "薛向",
+      "office": "三司使",
+      "office_type": "户部",
+      "faction": "新法派",
+      "aliases": [
+        "薛向",
+        "薛正臣"
+      ],
+      "personal_skills": [
+        "理财",
+        "转运"
+      ],
+      "loyalty": 74,
+      "ability": 84,
+      "integrity": 70,
+      "courage": 68,
+      "style": "理财实务",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1026,
+      "status": "active",
+      "summary": "三司使，理财实务派，熟悉陕西转运与边饷。国用会计、折变多经其手。与开源、边饷续解相关。召见可问账目与转运。精于财政，重数字。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "范纯仁",
+      "office": "右谏议大夫",
+      "office_type": "御史台",
+      "faction": "旧党",
+      "aliases": [
+        "范纯仁",
+        "范尧夫"
+      ],
+      "personal_skills": [
+        "清议",
+        "恤民"
+      ],
+      "loyalty": 78,
+      "ability": 82,
+      "integrity": 88,
+      "courage": 74,
+      "style": "宽仁守旧",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1027,
+      "status": "active",
+      "summary": "知开封府，范仲淹之子，旧党清议代表。主张宽政恤民、抑变法过急。与京师治理、民怨相关。召见可问宽政实践。清望继承，持论平和而坚定。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "吕大防",
+      "office": "翰林学士",
+      "office_type": "中书",
+      "faction": "旧党",
+      "aliases": [
+        "吕大防",
+        "吕微之"
+      ],
+      "personal_skills": [
+        "经学",
+        "清议"
+      ],
+      "loyalty": 76,
+      "ability": 84,
+      "integrity": 86,
+      "courage": 70,
+      "style": "持重守经",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1027,
+      "status": "active",
+      "summary": "翰林学士，旧党经学重臣，与司马光声气相通。论政持重守经，常以义理制约峻法开源。召见可问祖宗之法与缓进。学者气重，持重守经。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "李定",
+      "office": "谏议大夫",
+      "office_type": "御史台",
+      "faction": "新法派",
+      "aliases": [
+        "李定",
+        "李资深"
+      ],
+      "personal_skills": [
+        "论驳",
+        "实务"
+      ],
+      "loyalty": 72,
+      "ability": 78,
+      "integrity": 52,
+      "courage": 80,
+      "style": "附势敢言",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1028,
+      "status": "active",
+      "summary": "监察御史，新法派言官，善论驳旧党。为新法在台谏争话语权。与言路攻防相关。召见可问如何反制旧党弹章。锋利善辩，偏新法。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "包拯",
+      "office": "枢密副使",
+      "office_type": "枢密",
+      "faction": "旧党",
+      "aliases": [
+        "包拯",
+        "包孝肃",
+        "包龙图"
+      ],
+      "personal_skills": [
+        "清议",
+        "断狱"
+      ],
+      "loyalty": 85,
+      "ability": 86,
+      "integrity": 95,
+      "courage": 82,
+      "style": "刚正清望",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 999,
+      "status": "active",
+      "summary": "虽已亡故，孝肃清望犹存；朝野论吏治、抑兼并，多引包公旧事为标杆。与清议风气、反贪象征相关。召见偏象征性请益。刚正象征，清望如山。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "张方平",
+      "office": "枢密使",
+      "office_type": "枢密",
+      "faction": "旧党",
+      "aliases": [
+        "张方平",
+        "张安道"
+      ],
+      "personal_skills": [
+        "持重",
+        "财计"
+      ],
+      "loyalty": 78,
+      "ability": 82,
+      "integrity": 80,
+      "courage": 68,
+      "style": "持重老成",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1007,
+      "status": "active",
+      "summary": "枢密使，熟稔财计边事，对变法持审慎。常提醒边费与国用张力，不喜冒进开边。召见可问稳妥边策与财政边界。审慎持重，老成谋国。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "刘挚",
+      "office": "监察御史",
+      "office_type": "御史台",
+      "faction": "旧党",
+      "aliases": [
+        "刘挚",
+        "刘莘老"
+      ],
+      "personal_skills": [
+        "台谏",
+        "论政"
+      ],
+      "loyalty": 76,
+      "ability": 80,
+      "integrity": 84,
+      "courage": 78,
+      "style": "峻切敢言",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1031,
+      "status": "active",
+      "summary": "监察御史，台谏重臣，论新法执行之弊峻切，与司马光声气相通。与言路、清议相关。召见可问弹章焦点与民怨。清正敢言，持论旧党。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "种世衡",
+      "office": "鄜延路钤辖",
+      "office_type": "枢密",
+      "faction": "中立",
+      "aliases": [
+        "种世衡",
+        "种公"
+      ],
+      "personal_skills": [
+        "筑堡",
+        "招抚"
+      ],
+      "loyalty": 82,
+      "ability": 86,
+      "integrity": 80,
+      "courage": 85,
+      "style": "筑堡招抚",
+      "power_id": "song",
+      "location": "shaanxi",
+      "birth_year": 985,
+      "status": "active",
+      "summary": "鄜延路旧将，声望未衰；筑青涧城、招抚蕃部之绩仍为西北边议所援引。与边防抚驭经验相关。召见可问边地招抚。将门声望，重实边。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "赵抃",
+      "office": "参知政事",
+      "office_type": "中书",
+      "faction": "旧党",
+      "aliases": [
+        "赵抃",
+        "赵阅道",
+        "铁面御史"
+      ],
+      "personal_skills": [
+        "台谏",
+        "清望"
+      ],
+      "loyalty": 80,
+      "ability": 82,
+      "integrity": 90,
+      "courage": 82,
+      "style": "刚直清望",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1008,
+      "status": "active",
+      "summary": "参知政事，以台谏清望著称，论保甲连坐、催科尺度峻切。旧党中坚，与言路、民变风险相关。召见可听峻切批评。刚直敢言，不避权贵。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "王雱",
+      "office": "同知谏院",
+      "office_type": "御史台",
+      "faction": "新法派",
+      "aliases": [
+        "王雱",
+        "王元泽"
+      ],
+      "personal_skills": [
+        "论驳",
+        "机略"
+      ],
+      "loyalty": 85,
+      "ability": 84,
+      "integrity": 58,
+      "courage": 80,
+      "style": "附势机敏",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1049,
+      "status": "active",
+      "summary": "同知谏院，王安石之子，新法论驳干将。与吕惠卿、章惇声气相从。与新法理论辩护相关。召见可问义理辩驳。锋芒毕露，少顾情面。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "陆佃",
+      "office": "右正言",
+      "office_type": "御史台",
+      "faction": "新法派",
+      "aliases": [
+        "陆佃",
+        "陆农师"
+      ],
+      "personal_skills": [
+        "经学",
+        "农政"
+      ],
+      "loyalty": 74,
+      "ability": 80,
+      "integrity": 72,
+      "courage": 68,
+      "style": "博学务实",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1042,
+      "status": "active",
+      "summary": "馆职，新法派学者，长于农政与方田清丈。青苗、方田实务可参议。与税基清丈相关。召见可问农政技术。学者务实，偏新法。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "郑侠",
+      "office": "监安上门下省",
+      "office_type": "御史台",
+      "faction": "旧党",
+      "aliases": [
+        "郑侠",
+        "郑介夫"
+      ],
+      "personal_skills": [
+        "台谏",
+        "绘事"
+      ],
+      "loyalty": 78,
+      "ability": 76,
+      "integrity": 88,
+      "courage": 85,
+      "style": "峻切敢言",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1048,
+      "status": "active",
+      "summary": "安上门监，曾上《流民图》论青苗害民，台谏抗新法代表。与民怨、催科停缓相关。召见可听极端民情警示。孤直敢谏，言辞激烈。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "唐埴",
+      "office": "监察御史",
+      "office_type": "御史台",
+      "faction": "旧党",
+      "aliases": [
+        "唐埴",
+        "唐介"
+      ],
+      "personal_skills": [
+        "台谏",
+        "论政"
+      ],
+      "loyalty": 76,
+      "ability": 78,
+      "integrity": 82,
+      "courage": 80,
+      "style": "交章不已",
+      "power_id": "song",
+      "location": "beizhili",
+      "birth_year": 1025,
+      "status": "active",
+      "summary": "监察御史，论市易「与民争利」，交章不已。旧党台谏，与曾布、王安石多有论难。与商怨、市易存废相关。召见可问商路风险。峻切好争。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    }
+  ]
+}

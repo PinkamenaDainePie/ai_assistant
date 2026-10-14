@@ -1,0 +1,14 @@
+[
+  {
+    "persona_id": "zhang_juzheng",
+    "name": "张居正",
+    "role": "明朝内阁首辅",
+    "stance": "推行改革，整顿财政"
+  },
+  {
+    "persona_id": "wanli_emperor",
+    "name": "万历皇帝",
+    "role": "明朝皇帝",
+    "stance": "支持张居正初期改革"
+  }
+]

@@ -1,0 +1,1300 @@
+{
+  "version": 3,
+  "scenario": "song_xining",
+  "node_titles_zh": {
+    "reform_mandate": "变法诏令",
+    "wang_anshi_in_court": "王安石入中枢",
+    "sansi_established": "三司条例司",
+    "green_sprout_active": "青苗法试行",
+    "green_sprout_expanded": "青苗诸路推广",
+    "corvee_active": "免役法",
+    "fiscal_reform_pack_active": "国家理财改革包",
+    "shiyi_active": "市易法",
+    "equalized_transport_active": "均输法",
+    "fangtian_active": "方田均税",
+    "baojia_active": "保甲法",
+    "baoma_active": "保马法",
+    "drought_crisis_resolved": "旱荒赈济收束",
+    "wang_anshi_retired": "王安石去相位",
+    "old_party_pressure": "旧党朝议压力",
+    "auto_green_sprout_expand": "青苗扩行",
+    "auto_wang_anshi_vice_grand_councillor": "拜相掌条例",
+    "auto_simaguang_outcourt": "旧臣疏反新法",
+    "green_sprout_reform_failed": "青苗法改革失败",
+    "court_fierce_resistance": "群臣激烈反抗"
+  },
+  "nodes": [
+    {
+      "id": "green_sprout_reform_failed",
+      "title_zh": "青苗法改革失败",
+      "kind": "risk",
+      "branch": "fiscal_reform",
+      "linked_flag": "green_sprout_reform_failed"
+    },
+    {
+      "id": "court_fierce_resistance",
+      "title_zh": "群臣激烈反抗",
+      "kind": "risk",
+      "branch": "conflict",
+      "linked_flag": "court_fierce_resistance",
+      "passive_effects_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -1.2
+        },
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -0.8
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "advance_reform_mandate_suspended_on_failed",
+      "from": "task:main_xining_reform_mandate",
+      "to": "reform_mandate",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ]
+      },
+      "effect": {
+        "once": true,
+        "set_status": "suspended",
+        "set_flag": "conservative_compromise"
+      }
+    },
+    {
+      "id": "advance_reform_mandate_failed_old_party_voice",
+      "from": "task:main_xining_reform_mandate",
+      "to": "old_party_pressure",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ]
+      },
+      "effect": {
+        "once": true,
+        "set_status": "active",
+        "progress_delta": 6
+      }
+    },
+    {
+      "id": "advance_wang_in_court_suspended_on_failed",
+      "from": "task:main_wang_anshi_to_court",
+      "to": "wang_anshi_in_court",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ]
+      },
+      "effect": {
+        "once": true,
+        "set_status": "suspended",
+        "set_flag": "wang_anshi_delayed"
+      }
+    },
+    {
+      "id": "advance_sansi_delay_old_party_pressure",
+      "from": "task:main_sansi_establish",
+      "to": "old_party_pressure",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "active"
+        ],
+        "task_overdue_quarters_gte": 2
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_sansi_failed_resistance",
+      "from": "task:main_sansi_establish",
+      "to": "court_fierce_resistance",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ],
+        "any_metric_lt": {
+          "authority": 50,
+          "public_support": 48
+        }
+      },
+      "effect": {
+        "once": true,
+        "set_status": "active",
+        "progress_delta": 10
+      }
+    },
+    {
+      "id": "advance_sansi_failed_suspend",
+      "from": "task:main_sansi_establish",
+      "to": "sansi_established",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ]
+      },
+      "effect": {
+        "once": true,
+        "set_status": "suspended"
+      }
+    },
+    {
+      "id": "advance_corvee_failed_suspend",
+      "from": "task:main_corvee_commutation",
+      "to": "corvee_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ],
+        "task_overdue_quarters_gte": 2
+      },
+      "effect": {
+        "once": true,
+        "set_status": "suspended"
+      }
+    },
+    {
+      "id": "advance_corvee_failed_resistance",
+      "from": "task:main_corvee_commutation",
+      "to": "court_fierce_resistance",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ],
+        "task_overdue_quarters_gte": 2,
+        "metric_gte": {
+          "unrest": 42
+        }
+      },
+      "effect": {
+        "once": true,
+        "set_status": "active",
+        "progress_delta": 10
+      }
+    },
+    {
+      "id": "advance_fiscal_pack_overpressure_shiyi_suspend",
+      "from": "task:main_fiscal_reform_pack",
+      "to": "shiyi_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "active"
+        ],
+        "metric_gte": {
+          "fiscal_pressure": 58
+        },
+        "metric_lt": {
+          "public_support": 50
+        }
+      },
+      "effect": {
+        "once": true,
+        "set_status": "suspended",
+        "set_flag": "shiyi_deferred_by_pressure"
+      }
+    },
+    {
+      "id": "advance_fiscal_pack_failed_suspend",
+      "from": "task:main_fiscal_reform_pack",
+      "to": "fiscal_reform_pack_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ]
+      },
+      "effect": {
+        "once": true,
+        "set_status": "suspended"
+      }
+    },
+    {
+      "id": "advance_fiscal_pack_failed_resistance",
+      "from": "task:main_fiscal_reform_pack",
+      "to": "court_fierce_resistance",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ],
+        "any_metric_lt": {
+          "public_support": 48,
+          "authority": 50
+        }
+      },
+      "effect": {
+        "once": true,
+        "set_status": "active",
+        "progress_delta": 12
+      }
+    },
+    {
+      "id": "advance_baojia_delay_resistance",
+      "from": "task:main_baojia_baoma_route",
+      "to": "court_fierce_resistance",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "active"
+        ],
+        "task_overdue_quarters_gte": 2,
+        "metric_gte": {
+          "unrest": 42
+        }
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 6
+      }
+    },
+    {
+      "id": "advance_baojia_failed_suspend",
+      "from": "task:main_baojia_baoma_route",
+      "to": "baojia_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ]
+      },
+      "effect": {
+        "once": true,
+        "set_status": "suspended",
+        "set_flag": "baojia_delayed"
+      }
+    },
+    {
+      "id": "advance_baoma_failed_suspend",
+      "from": "task:main_baojia_baoma_route",
+      "to": "baoma_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ]
+      },
+      "effect": {
+        "once": true,
+        "set_status": "suspended",
+        "set_flag": "baoma_delayed"
+      }
+    },
+    {
+      "id": "advance_hehuang_supply_old_party_pressure",
+      "from": "task:main_wangshao_hehuang",
+      "to": "old_party_pressure",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "active"
+        ],
+        "task_overdue_quarters_gte": 2,
+        "metric_lt": {
+          "army_supply": 58
+        }
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_hehuang_fiscal_resistance",
+      "from": "task:main_wangshao_hehuang",
+      "to": "court_fierce_resistance",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "active"
+        ],
+        "task_overdue_quarters_gte": 3,
+        "metric_gte": {
+          "fiscal_pressure": 55
+        }
+      },
+      "effect": {
+        "once": true,
+        "set_status": "active",
+        "progress_delta": 10
+      }
+    },
+    {
+      "id": "advance_drought_strain_old_party_pressure",
+      "from": "task:main_drought_famine_crisis",
+      "to": "old_party_pressure",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "active"
+        ],
+        "metric_gte": {
+          "disaster_index": 35
+        },
+        "metric_lt": {
+          "public_support": 48
+        }
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_drought_failed_green_backlash",
+      "from": "task:main_drought_famine_crisis",
+      "to": "green_sprout_reform_failed",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ],
+        "flag_true": "green_sprout_active"
+      },
+      "effect": {
+        "once": true,
+        "set_status": "active",
+        "progress_delta": 20
+      }
+    },
+    {
+      "id": "advance_drought_failed_resistance",
+      "from": "task:main_drought_famine_crisis",
+      "to": "court_fierce_resistance",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ],
+        "metric_gte": {
+          "unrest": 50
+        }
+      },
+      "effect": {
+        "once": true,
+        "set_status": "active",
+        "progress_delta": 12
+      }
+    },
+    {
+      "id": "advance_song_viet_war_flag_active",
+      "from": "task:main_song_viet_war_1075",
+      "to": "song_viet_war_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "active"
+        ]
+      },
+      "effect": {
+        "once": true,
+        "set_status": "active",
+        "set_flag": "song_viet_war_active"
+      }
+    },
+    {
+      "id": "advance_song_viet_supply_resistance",
+      "from": "task:main_song_viet_war_1075",
+      "to": "court_fierce_resistance",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "active"
+        ],
+        "task_overdue_quarters_gte": 2,
+        "metric_lt": {
+          "army_morale": 58
+        }
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_song_viet_fiscal_retirement",
+      "from": "task:main_song_viet_war_1075",
+      "to": "wang_anshi_retired",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "active"
+        ],
+        "task_overdue_quarters_gte": 3,
+        "metric_gte": {
+          "fiscal_pressure": 55,
+          "unrest": 48
+        }
+      },
+      "effect": {
+        "once": true,
+        "set_status": "active",
+        "set_flag": "wartime_resignation_pressure"
+      }
+    },
+    {
+      "id": "advance_wang_resign_pressure_active",
+      "from": "task:main_wang_anshi_resignation_crisis",
+      "to": "wang_anshi_retired",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "active"
+        ],
+        "any_metric_lt": {
+          "authority": 50,
+          "public_support": 46
+        },
+        "metric_gte": {
+          "fiscal_pressure": 48
+        }
+      },
+      "effect": {
+        "once": true,
+        "set_status": "active"
+      }
+    },
+    {
+      "id": "advance_agri_spring_grain_lending_green_sprout",
+      "from": "task:agri_spring_grain_lending",
+      "to": "green_sprout_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_agri_spring_lending_failed_green_risk",
+      "from": "task:agri_spring_grain_lending",
+      "to": "green_sprout_reform_failed",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ],
+        "flag_true": "green_sprout_active"
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_fiscal_tax_push_sansi",
+      "from": "task:fiscal_tax_collection_push",
+      "to": "sansi_established",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 4
+      }
+    },
+    {
+      "id": "advance_fiscal_tax_push_green_sprout",
+      "from": "task:fiscal_tax_collection_push",
+      "to": "green_sprout_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 4
+      }
+    },
+    {
+      "id": "advance_fiscal_corvee_commutation_random",
+      "from": "task:fiscal_corvee_commutation",
+      "to": "corvee_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 10
+      }
+    },
+    {
+      "id": "advance_fiscal_equalized_transport_random",
+      "from": "task:fiscal_equalized_transport",
+      "to": "equalized_transport_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_fiscal_monopoly_shiyi",
+      "from": "task:fiscal_expand_state_monopoly",
+      "to": "shiyi_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_fiscal_monopoly_failed_resistance",
+      "from": "task:fiscal_expand_state_monopoly",
+      "to": "court_fierce_resistance",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ],
+        "metric_gte": {
+          "corruption": 44
+        }
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 6
+      }
+    },
+    {
+      "id": "advance_reform_even_transport_pilot_equalized",
+      "from": "task:reform_even_transport_pilot",
+      "to": "equalized_transport_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_reform_green_spring_lend_green",
+      "from": "task:reform_green_spring_lend",
+      "to": "green_sprout_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_reform_green_spring_lend_failed_green_risk",
+      "from": "task:reform_green_spring_lend",
+      "to": "green_sprout_reform_failed",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_finance_raise_treasury_fiscal_pack",
+      "from": "task:finance_raise_treasury",
+      "to": "fiscal_reform_pack_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_reform_sansi_audit_sansi",
+      "from": "task:reform_sansi_audit",
+      "to": "sansi_established",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_reform_canal_patrol_equalized",
+      "from": "task:reform_canal_patrol",
+      "to": "equalized_transport_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 6
+      }
+    },
+    {
+      "id": "advance_reform_memorial_backlash_failed_old_party",
+      "from": "task:reform_memorial_backlash",
+      "to": "old_party_pressure",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 10
+      }
+    },
+    {
+      "id": "advance_reform_memorial_backlash_completed_suspend_old_party",
+      "from": "task:reform_memorial_backlash",
+      "to": "old_party_pressure",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ],
+        "metric_gte": {
+          "authority": 56
+        }
+      },
+      "effect": {
+        "once": true,
+        "set_status": "suspended",
+        "set_flag": "memorial_backlash_defused"
+      }
+    },
+    {
+      "id": "advance_reform_gentry_boycott_failed_green_suspend",
+      "from": "task:reform_gentry_boycott",
+      "to": "green_sprout_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ]
+      },
+      "effect": {
+        "once": true,
+        "set_status": "suspended",
+        "set_flag": "gentry_boycott_blocks_green_sprout"
+      }
+    },
+    {
+      "id": "advance_reform_gentry_boycott_failed_resistance",
+      "from": "task:reform_gentry_boycott",
+      "to": "court_fierce_resistance",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_reform_green_coerce_probe_failed_resistance",
+      "from": "task:reform_green_coerce_probe",
+      "to": "court_fierce_resistance",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 10
+      }
+    },
+    {
+      "id": "advance_reform_green_coerce_probe_failed_green_risk",
+      "from": "task:reform_green_coerce_probe",
+      "to": "green_sprout_reform_failed",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 12
+      }
+    },
+    {
+      "id": "advance_reform_northwest_budget_failed_resistance",
+      "from": "task:reform_northwest_budget",
+      "to": "court_fierce_resistance",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ],
+        "metric_lt": {
+          "army_supply": 58
+        }
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 10
+      }
+    },
+    {
+      "id": "advance_reform_northwest_budget_failed_retirement_pressure",
+      "from": "task:reform_northwest_budget",
+      "to": "wang_anshi_retired",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ],
+        "metric_gte": {
+          "fiscal_pressure": 55,
+          "unrest": 48
+        }
+      },
+      "effect": {
+        "once": true,
+        "set_status": "active",
+        "set_flag": "northwest_budget_resignation_pressure"
+      }
+    },
+    {
+      "id": "advance_military_secure_supply_baoma",
+      "from": "task:military_secure_supply",
+      "to": "baoma_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 5
+      }
+    },
+    {
+      "id": "advance_military_reduce_revolt_baojia",
+      "from": "task:military_reduce_revolt",
+      "to": "baojia_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 5
+      }
+    },
+    {
+      "id": "advance_livelihood_disaster_relief_drought",
+      "from": "task:livelihood_disaster_relief",
+      "to": "drought_crisis_resolved",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 10
+      }
+    },
+    {
+      "id": "advance_livelihood_disaster_relief_failed_green_backlash",
+      "from": "task:livelihood_disaster_relief",
+      "to": "green_sprout_reform_failed",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ],
+        "flag_true": "green_sprout_active"
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_livelihood_reduce_unrest_old_party_suspend",
+      "from": "task:livelihood_reduce_unrest",
+      "to": "old_party_pressure",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ],
+        "metric_lt": {
+          "unrest": 40
+        }
+      },
+      "effect": {
+        "once": true,
+        "set_status": "suspended",
+        "set_flag": "unrest_defused_old_party_argument"
+      }
+    },
+    {
+      "id": "advance_faction_balance_court_old_party_suspend",
+      "from": "task:faction_balance_court",
+      "to": "old_party_pressure",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ],
+        "metric_gte": {
+          "authority": 52
+        }
+      },
+      "effect": {
+        "once": true,
+        "set_status": "suspended",
+        "set_flag": "court_balance_defused_pressure"
+      }
+    },
+    {
+      "id": "advance_faction_balance_failed_old_party",
+      "from": "task:faction_balance_court",
+      "to": "old_party_pressure",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 6
+      }
+    },
+    {
+      "id": "advance_faction_balance_court_old_party_relief",
+      "from": "task:faction_balance_court",
+      "to": "old_party_pressure",
+      "type": "advances",
+      "condition": {
+        "task_status_in": ["completed"],
+        "node_id": "old_party_pressure",
+        "node_status_in": ["active"]
+      },
+      "effect": {
+        "once": false,
+        "progress_delta": -10
+      }
+    },
+    {
+      "id": "advance_reform_memorial_backlash_old_party_relief",
+      "from": "task:reform_memorial_backlash",
+      "to": "old_party_pressure",
+      "type": "advances",
+      "condition": {
+        "task_status_in": ["completed"],
+        "metric_gte": {"authority": 52},
+        "node_id": "old_party_pressure",
+        "node_status_in": ["active"]
+      },
+      "effect": {
+        "once": false,
+        "progress_delta": -8
+      }
+    },
+    {
+      "id": "advance_livelihood_reduce_unrest_old_party_relief",
+      "from": "task:livelihood_reduce_unrest",
+      "to": "old_party_pressure",
+      "type": "advances",
+      "condition": {
+        "task_status_in": ["completed"],
+        "metric_lt": {"unrest": 42},
+        "node_id": "old_party_pressure",
+        "node_status_in": ["active"]
+      },
+      "effect": {
+        "once": false,
+        "progress_delta": -6
+      }
+    },
+    {
+      "id": "advance_finance_reduce_pressure_old_party_relief",
+      "from": "task:finance_reduce_pressure",
+      "to": "old_party_pressure",
+      "type": "advances",
+      "condition": {
+        "task_status_in": ["completed"],
+        "metric_lt": {"fiscal_pressure": 50},
+        "node_id": "old_party_pressure",
+        "node_status_in": ["active"]
+      },
+      "effect": {
+        "once": false,
+        "progress_delta": -6
+      }
+    },
+    {
+      "id": "advance_internal_restore_authority_sansi",
+      "from": "task:internal_restore_authority",
+      "to": "sansi_established",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ],
+        "metric_gte": {
+          "authority": 56
+        }
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 4
+      }
+    },
+    {
+      "id": "advance_internal_stabilize_order_baojia",
+      "from": "task:internal_stabilize_order",
+      "to": "baojia_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 4
+      }
+    },
+    {
+      "id": "advance_reform_water_charter_drought",
+      "from": "task:reform_water_charter",
+      "to": "drought_crisis_resolved",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 6
+      }
+    },
+    {
+      "id": "advance_reform_water_gentry_monopoly_fangtian",
+      "from": "task:reform_water_gentry_monopoly",
+      "to": "fangtian_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 4
+      }
+    },
+    {
+      "id": "advance_fiscal_increase_tax_levy_failed_resistance",
+      "from": "task:fiscal_increase_tax_levy",
+      "to": "court_fierce_resistance",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "failed"
+        ],
+        "metric_gte": {
+          "unrest": 45
+        }
+      },
+      "effect": {
+        "once": false,
+        "set_status": "active",
+        "progress_delta": 8
+      }
+    },
+    {
+      "id": "advance_green_sprout_progress",
+      "from": "task:main_green_sprout_route",
+      "to": "green_sprout_active",
+      "type": "advances",
+      "condition": {
+        "flag_true": "green_sprout_active",
+        "task_status_in": [
+          "active"
+        ],
+        "metric_gte": {
+          "tax_completion_index": 42
+        }
+      },
+      "effect": {
+        "once": false,
+        "progress_delta": 12
+      }
+    },
+    {
+      "id": "advance_green_sprout_failed",
+      "from": "task:main_green_sprout_route",
+      "to": "green_sprout_reform_failed",
+      "type": "advances",
+      "condition": {
+        "flag_true": "green_sprout_active",
+        "task_status_in": [
+          "active",
+          "failed"
+        ],
+        "task_overdue_quarters_gte": 3
+      },
+      "effect": {
+        "set_status": "failed",
+        "progress": 100,
+        "set_flag": "green_sprout_reform_failed",
+        "source_task_set_status": "failed"
+      }
+    },
+    {
+      "id": "advance_court_fierce_resistance",
+      "from": "task:main_green_sprout_route",
+      "to": "court_fierce_resistance",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "active",
+          "failed"
+        ],
+        "task_overdue_quarters_gte": 3,
+        "any_metric_lt": {
+          "authority": 48,
+          "public_support": 46
+        }
+      },
+      "effect": {
+        "set_status": "active",
+        "progress": 100,
+        "set_flag": "court_fierce_resistance"
+      }
+    },
+    {
+      "id": "advance_corvee_on_main_done",
+      "from": "task:main_corvee_commutation",
+      "to": "corvee_active",
+      "type": "advances",
+      "condition": {
+        "task_status_in": [
+          "completed"
+        ]
+      },
+      "effect": {
+        "set_status": "completed",
+        "progress": 100
+      }
+    },
+    {
+      "id": "requires_corvee_green",
+      "from": "green_sprout_active",
+      "to": "corvee_active",
+      "type": "requires",
+      "condition": {
+        "progress_gte": 20
+      }
+    },
+    {
+      "id": "requires_fiscal_pack_sansi",
+      "from": "sansi_established",
+      "to": "fiscal_reform_pack_active",
+      "type": "requires",
+      "condition": {
+        "node_status_in": [
+          "active",
+          "completed"
+        ],
+        "progress_gte": 10
+      }
+    },
+    {
+      "id": "risk_green_coerce",
+      "from": "green_sprout_active",
+      "to": "event:song_green_coerce_001",
+      "type": "risk_triggers",
+      "condition": {
+        "progress_gte": 30,
+        "metric_lt": {
+          "public_support": 48
+        }
+      },
+      "probability": 0.35
+    },
+    {
+      "id": "risk_gentry_boycott",
+      "from": "green_sprout_active",
+      "to": "event:song_gentry_boycott_001",
+      "type": "risk_triggers",
+      "condition": {
+        "progress_gte": 20,
+        "metric_lt": {
+          "public_support": 52
+        }
+      },
+      "probability": 0.28
+    },
+    {
+      "id": "risk_cuike_fiscal",
+      "from": "fiscal_reform_pack_active",
+      "to": "event:song_cuike_001",
+      "type": "risk_triggers",
+      "condition": {
+        "progress_gte": 25,
+        "metric_gte": {
+          "fiscal_pressure": 42
+        }
+      },
+      "probability": 0.3
+    },
+    {
+      "id": "risk_censor_sansi",
+      "from": "sansi_established",
+      "to": "event:song_censor_reform_001",
+      "type": "risk_triggers",
+      "condition": {
+        "progress_gte": 15,
+        "metric_gte": {
+          "unrest": 38
+        }
+      },
+      "probability": 0.25
+    },
+    {
+      "id": "risk_simaguang_old_party",
+      "from": "old_party_pressure",
+      "to": "event:song_simaguang_memorial_001",
+      "type": "risk_triggers",
+      "condition": {
+        "flag_true": "old_party_pressure",
+        "progress_gte": 1
+      },
+      "probability": 0.32
+    },
+    {
+      "id": "risk_border_supply_baojia",
+      "from": "baojia_active",
+      "to": "event:song_border_supply_001",
+      "type": "risk_triggers",
+      "condition": {
+        "progress_gte": 15,
+        "metric_lt": {
+          "army_supply": 58
+        }
+      },
+      "probability": 0.3
+    },
+    {
+      "id": "risk_viet_supply",
+      "from": "baoma_active",
+      "to": "event:song_viet_war_supply_001",
+      "type": "risk_triggers",
+      "condition": {
+        "flag_true": "song_viet_war_active",
+        "metric_lt": {
+          "army_morale": 45
+        }
+      },
+      "probability": 0.35
+    }
+  ],
+  "design_note": "advances from json/juqing_design/policy_xining_advances_draft.json + main-line legacy; no playbook contributes"
+}

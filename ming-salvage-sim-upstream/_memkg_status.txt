@@ -1,0 +1,120 @@
+=== PROC ===
+1541808 bash -c  echo === PROC === pgrep -af 'run_hallucination_ablation|ablation_memkg' || echo NONE echo === MEMKG DIR === ls -lah /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg 2>/dev/null || echo NO_DIR echo === JSONL === wc -l /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg/ablation_*.jsonl 2>/dev/null || echo NO_JSONL echo === SUMMARY === ls -lah /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg/summary.json /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg/SUMMARY.md 2>/dev/null || echo NO_SUMMARY test -f /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg/SUMMARY.md && echo '--- SUMMARY.md ---' && cat /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg/SUMMARY.md echo === LOG TAIL === tail -n 80 /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg/run.log 2>/dev/null || echo NO_LOG 
+=== MEMKG DIR ===
+total 564K
+drwxr-sr-x 2 async async 4.0K Oct 12 12:09 .
+drwxr-sr-x 4 async async 4.0K Oct 12 11:37 ..
+-rw-r--r-- 1 async async  281 Oct 12 12:09 SUMMARY.md
+-rw-r--r-- 1 async async 1.1K Oct 12 11:38 ablation_A0.jsonl
+-rw-r--r-- 1 async async 1.1K Oct 12 11:48 ablation_A1.jsonl
+-rw-r--r-- 1 async async 1.1K Oct 12 11:56 ablation_C0.jsonl
+-rw-r--r-- 1 async async 1.1K Oct 12 12:02 ablation_C1.jsonl
+-rw-r--r-- 1 async async 1.1K Oct 12 12:09 ablation_CK.jsonl
+-rw-r--r-- 1 async async 512K Oct 12 12:09 run.log
+-rw-r--r-- 1 async async    7 Oct 12 11:31 run.pid
+-rwxr-xr-x 1 async async  457 Oct 12 11:31 start.sh
+-rw-r--r-- 1 async async 4.1K Oct 12 12:09 summary.json
+=== JSONL ===
+   6 /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg/ablation_A0.jsonl
+   6 /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg/ablation_A1.jsonl
+   6 /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg/ablation_C0.jsonl
+   6 /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg/ablation_C1.jsonl
+   6 /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg/ablation_CK.jsonl
+  30 total
+=== SUMMARY ===
+-rw-r--r-- 1 async async  281 Oct 12 12:09 /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg/SUMMARY.md
+-rw-r--r-- 1 async async 4.1K Oct 12 12:09 /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg/summary.json
+--- SUMMARY.md ---
+# SAVeR 消融结果（M 集）
+
+时间：2026-10-12 11:31:02
+
+| 条件 | 落库违规合计 | 邸报硬标记合计 | 错误回合 |
+|------|-------------|----------------|----------|
+| A0 | 0 | 0 | 6 |
+| A1 | 0 | 0 | 6 |
+| C0 | 0 | 0 | 6 |
+| C1 | 0 | 0 | 6 |
+| CK | 0 | 0 | 6 |
+
+=== LOG TAIL ===
+[12:09:03.139] [simulator] …解士气低落，操练多流于形式；陕西边军因粮饷不继，半数营伍仅
+[12:09:04.149] [simulator] …能维持日常巡哨。诏令虽下，各镇实情悬殊，边将多以"整军备战"为名暗增火器操演，辽东一线哨骑频密。（结果：进行中） ⏎  ⏎ 二、长期局势 ⏎ #1 户部亏空 — 本月国库固定收支转
+[12:09:05.206] [simulator] …盈（净+3万两），田赋盐税商税合计入187万两，军饷宗禄官俸等出184万两。然辽饷挪垫八万两致太仓存银仍不足安全水位，京通仓亏短、火耗截留等积弊未除。毕自严在
+[12:09:06.225] [simulator] …南京户部清查漕粮折色，杨嗣昌于户部厘定税册，然吏部王绍徽掣肘钱粮稽核，各布政司奏销迟滞如故。（进展：normal） ⏎ #2 宁锦防线整饬 — 关宁军欠
+[12:09:07.305] [simulator] …饷由60万两减至52万两，然仍超结案线近一倍。袁崇焕旧部在宁远锦州整训火器队，然士气仅48、补给36、忠诚53均未达标，鼓噪未止。王之臣督师以京营月拨
+[12:09:08.376] [simulator] …八万两垫饷，然宣大边军欠饷反增五万两，满桂部已现逃卒。魏忠贤借厂卫之便查核关宁粮道，反致军需转运更滞。（进展：bad） ⏎ #3 陕西流寇起
+[12:09:09.515] [simulator] … — 陕西赈银实拨十二万两，然经驿站、州县层层截留，实到不足七成。洪承畴督粮参政在西安设粥厂三处，然饥民日增，逃户散入清涧绥德山谷与王嘉胤部合流。孙传庭在永城试行
+[12:09:10.125] [simulator/思考] 转盈（净+3万两），但结构性压力未解，辽饷挪垫致太仓存银仍远低于安全水位。进展：normal（小幅改善但问题仍在） ⏎ 2. 宁锦防线整饬：挪垫八万两后欠饷仍超结案线近一倍，士气48、补给36、忠诚53均未达标。进展：bad（虽有改善但问题严重） ⏎ 3. 陕西流寇起：赈银实到不足七成，饥民逃户日增，地方财力枯竭。进展：bad（局势持续恶化） ⏎  ⏎ 现在，我将按照要求的格式和语言风格撰写奏章：
+[12:09:11.369] [simulator] …义仓平粜，然河南亦逢黄河水旱，粮源枯竭。流寇动乱值升至80，民心跌至28，军户逃亡日甚。（进展：bad）
+[12:09:11.371] [simulator] 完成，647 字，工具调用 0 次
+[TOKEN] caller=simulator model=qwen-plus prompt=14505 cached=2688 completion=1387 reasoning=799 total=15892
+[12:09:11.372] 结算 3/4 结算 agent（抽 JSON）
+  [evt] stage: 数值推演结算
+[12:09:11.382] 结算 3/4 抽取（模块 module）
+[12:09:11.382] [extractor/internal] 使用模型 qwen-plus
+[12:09:11.384] [extractor/military_external] 使用模型 qwen-plus
+[12:09:11.385] [extractor/issues] 使用模型 qwen-plus
+[12:09:11.387] [extractor/personnel_secret] 使用模型 qwen-plus
+[12:09:11.392] [extractor] 串行暖缓存 module=internal
+[12:09:11.393] [extractor/internal] user payload total=419 chars (~279 tok)
+[12:09:11.393] [extractor/internal] 开始非流式推演（等待完整响应）
+[TOKEN] caller=extractor/internal model=qwen-plus prompt=19875 cached=2816 completion=456 reasoning=0 total=20331
+[12:09:24.738] [extractor/internal] 完成，1023 字，用时 13.3s
+[12:09:24.739] [extractor] 并行抽取 modules=['military_external', 'issues', 'personnel_secret']
+[12:09:24.740] [extractor/military_external] user payload total=371 chars (~247 tok)
+[12:09:24.740] [extractor/military_external] 开始非流式推演（等待完整响应）
+[12:09:24.740] [extractor/issues] user payload total=341 chars (~227 tok)
+[12:09:24.742] [extractor/personnel_secret] user payload total=465 chars (~310 tok)
+[12:09:24.742] [extractor/issues] 开始非流式推演（等待完整响应）
+[12:09:24.743] [extractor/personnel_secret] 开始非流式推演（等待完整响应）
+[TOKEN] caller=extractor/personnel_secret model=qwen-plus prompt=15602 cached=2816 completion=39 reasoning=0 total=15641
+[12:09:28.492] [extractor/personnel_secret] 完成，74 字，用时 3.7s
+[TOKEN] caller=extractor/issues model=qwen-plus prompt=19030 cached=2816 completion=324 reasoning=0 total=19354
+[12:09:35.059] [extractor/issues] 完成，514 字，用时 10.3s
+[TOKEN] caller=extractor/military_external model=qwen-plus prompt=16991 cached=13056 completion=404 reasoning=0 total=17395
+[12:09:36.500] [extractor/military_external] 完成，863 字，用时 11.8s
+[12:09:36.505] [gate] drop field=economy_moves no decree authorization for expense
+[12:09:36.505] [gate] drop field=economy_moves no decree authorization for expense
+[12:09:36.505] [gate] drop field=new_armies no decree authorization to create armies
+[12:09:36.505] [gate] drop field=power_updates non-zero power delta without authorization
+[12:09:36.505] [gate] drop field=army_delta.manpower 陕西边军 manpower change without authorization
+[12:09:36.507] 结算 4/4 落库 + inertia/ongoing
+  [evt] stage: 落库与事项推进
+  [evt] stage: 记起居注
+Traceback (most recent call last):
+  File "/home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/_worker_c2_t3_drill.py", line 64, in <module>
+    result = session.resolve_turn(decree=case["decree"], on_event=on_event)
+  File "/home/async/data-disk/ljc/ming-salvage-sim-upstream/ming_sim/session.py", line 980, in resolve_turn
+    result = resolve_directives(
+        self.state, self.db, self.agno_db, self.llm_config,
+    ...<5 lines>...
+        structured_directives=structured_directives,
+    )
+  File "/home/async/data-disk/ljc/ming-salvage-sim-upstream/ming_sim/decree.py", line 360, in resolve_directives
+    report = _settle_after_narrative(
+        state, db, agno_db, llm_config, decree_text, narrative,
+    ...<5 lines>...
+        cheat_directive=cheat_directive,
+    )
+  File "/home/async/data-disk/ljc/ming-salvage-sim-upstream/ming_sim/decree.py", line 480, in _settle_after_narrative
+    if _chap_mem:
+       ^^^^^^^^^
+NameError: name '_chap_mem' is not defined
+[ERROR] c2_t3_drill elapsed=56.0 gate=0
+[summary CK] live=0 narr=0 errors=6
+
+[done] /home/async/data-disk/ljc/ming-salvage-sim-upstream/scripts/runs/ablation_memkg/summary.json
+# SAVeR 消融结果（M 集）
+
+时间：2026-10-12 11:31:02
+
+| 条件 | 落库违规合计 | 邸报硬标记合计 | 错误回合 |
+|------|-------------|----------------|----------|
+| A0 | 0 | 0 | 6 |
+| A1 | 0 | 0 | 6 |
+| C0 | 0 | 0 | 6 |
+| C1 | 0 | 0 | 6 |
+| CK | 0 | 0 | 6 |
+
+

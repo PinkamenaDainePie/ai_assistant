@@ -1,0 +1,145 @@
+{
+  "anti_corruption": {
+    "success": [
+      { "type": "stat_change", "key": "corruption", "value": -8 },
+      { "type": "stat_change", "key": "authority", "value": 3 },
+      { "type": "stat_change", "key": "public_support", "value": 2 }
+    ],
+    "partial": [
+      { "type": "stat_change", "key": "corruption", "value": -4 },
+      { "type": "stat_change", "key": "authority", "value": 1 },
+      { "type": "stat_change", "key": "unrest", "value": 2 }
+    ],
+    "failure": [
+      { "type": "stat_change", "key": "authority", "value": -1 },
+      { "type": "stat_change", "key": "fiscal_pressure", "value": 0.5 }
+    ],
+    "backlash": [
+      { "type": "stat_change", "key": "corruption", "value": 4 },
+      { "type": "stat_change", "key": "public_support", "value": -3 },
+      { "type": "stat_change", "key": "unrest", "value": 4 }
+    ],
+    "by_task_key": {
+      "strict_local_probe": {
+        "success": [
+          { "type": "stat_change", "key": "corruption", "value": -9 },
+          { "type": "stat_change", "key": "authority", "value": 4 },
+          { "type": "stat_change", "key": "public_support", "value": 1 }
+        ],
+        "partial": [
+          { "type": "stat_change", "key": "corruption", "value": -5 },
+          { "type": "stat_change", "key": "unrest", "value": 3 }
+        ],
+        "failure": [
+          { "type": "stat_change", "key": "authority", "value": -2 },
+          { "type": "stat_change", "key": "fiscal_pressure", "value": 0.5 }
+        ],
+        "backlash": [
+          { "type": "stat_change", "key": "corruption", "value": 5 },
+          { "type": "stat_change", "key": "public_support", "value": -4 },
+          { "type": "stat_change", "key": "unrest", "value": 5 }
+        ]
+      },
+      "routine_audit": {
+        "success": [
+          { "type": "stat_change", "key": "corruption", "value": -5 },
+          { "type": "stat_change", "key": "authority", "value": 2 }
+        ],
+        "partial": [
+          { "type": "stat_change", "key": "corruption", "value": -3 },
+          { "type": "stat_change", "key": "fiscal_pressure", "value": 0.5 }
+        ],
+        "failure": [
+          { "type": "stat_change", "key": "public_support", "value": -2 }
+        ],
+        "backlash": [
+          { "type": "stat_change", "key": "corruption", "value": 3 },
+          { "type": "stat_change", "key": "unrest", "value": 3 }
+        ]
+      },
+      "market_monopoly_graft": {
+        "success": [
+          { "type": "stat_change", "key": "corruption", "value": -6 },
+          { "type": "stat_change", "key": "treasury_balance", "value": 6000 }
+        ],
+        "partial": [
+          { "type": "stat_change", "key": "corruption", "value": -3 }
+        ],
+        "failure": [
+          { "type": "stat_change", "key": "public_support", "value": -2 }
+        ],
+        "backlash": [
+          { "type": "stat_change", "key": "corruption", "value": 3 },
+          { "type": "stat_change", "key": "unrest", "value": 2 }
+        ]
+      },
+      "river_work_embezzle": {
+        "success": [
+          { "type": "stat_change", "key": "corruption", "value": -7 },
+          { "type": "stat_change", "key": "public_support", "value": 2 }
+        ],
+        "partial": [
+          { "type": "stat_change", "key": "corruption", "value": -4 }
+        ],
+        "failure": [
+          { "type": "stat_change", "key": "authority", "value": -1 }
+        ],
+        "backlash": [
+          { "type": "stat_change", "key": "corruption", "value": 3 },
+          { "type": "stat_change", "key": "unrest", "value": 4 }
+        ]
+      },
+      "hidden_land_gentry": {
+        "success": [
+          { "type": "stat_change", "key": "corruption", "value": -6 },
+          { "type": "stat_change", "key": "tax_completion_index", "value": 3 }
+        ],
+        "partial": [
+          { "type": "stat_change", "key": "corruption", "value": -3 },
+          { "type": "stat_change", "key": "unrest", "value": 2 }
+        ],
+        "failure": [
+          { "type": "stat_change", "key": "unrest", "value": 3 }
+        ],
+        "backlash": [
+          { "type": "stat_change", "key": "corruption", "value": 4 },
+          { "type": "stat_change", "key": "unrest", "value": 4 }
+        ]
+      },
+      "relief_grain_embezzle": {
+        "success": [
+          { "type": "stat_change", "key": "corruption", "value": -8 },
+          { "type": "stat_change", "key": "public_support", "value": 4 }
+        ],
+        "partial": [
+          { "type": "stat_change", "key": "corruption", "value": -5 },
+          { "type": "stat_change", "key": "unrest", "value": -1 }
+        ],
+        "failure": [
+          { "type": "stat_change", "key": "public_support", "value": -4 }
+        ],
+        "backlash": [
+          { "type": "stat_change", "key": "corruption", "value": 4 },
+          { "type": "stat_change", "key": "unrest", "value": 5 }
+        ]
+      },
+      "memorial_screen_impeachment": {
+        "success": [
+          { "type": "stat_change", "key": "corruption", "value": -4 },
+          { "type": "stat_change", "key": "authority", "value": 5 }
+        ],
+        "partial": [
+          { "type": "stat_change", "key": "corruption", "value": -2 },
+          { "type": "stat_change", "key": "unrest", "value": 1 }
+        ],
+        "failure": [
+          { "type": "stat_change", "key": "authority", "value": -3 }
+        ],
+        "backlash": [
+          { "type": "stat_change", "key": "corruption", "value": 2 },
+          { "type": "stat_change", "key": "unrest", "value": 3 }
+        ]
+      }
+    }
+  }
+}

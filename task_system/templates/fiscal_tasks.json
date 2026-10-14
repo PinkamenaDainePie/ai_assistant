@@ -1,0 +1,129 @@
+[
+  {
+    "id": "fiscal_tax_collection_push",
+    "title": "清厘钱粮积欠",
+    "description": "户部会诸路清册，追比逋欠钱粮，季末完纳指数提升。",
+    "category": "fiscal",
+    "difficulty": "normal",
+    "trigger_conditions": [
+      { "type": "stat_less_than", "key": "tax_completion_index", "value": 55 }
+    ],
+    "objectives": [{ "type": "stat_at_least", "key": "tax_completion_index", "value": 55 }],
+    "rewards": [
+      { "type": "stat_change", "key": "tax_completion_index", "value": 3 },
+      { "type": "stat_change", "key": "fiscal_pressure", "value": -2 }
+    ],
+    "penalties": [{ "type": "stat_change", "key": "public_support", "value": -2 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "public_support", "value": -1 }],
+    "duration": 2,
+    "priority": 74,
+    "tags": ["财政", "钱粮", "熙宁"]
+  },
+  {
+    "id": "fiscal_increase_tax_levy",
+    "title": "加征以充国用",
+    "description": "权增岁课或加派钱粮；须防民怨与豪右规避。",
+    "category": "fiscal",
+    "difficulty": "medium",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "fiscal_pressure", "value": 52 }],
+    "objectives": [{ "type": "stat_at_least", "key": "treasury_balance", "value": 50000 }],
+    "rewards": [
+      { "type": "stat_change", "key": "treasury_balance", "value": 12000 },
+      { "type": "stat_change", "key": "tax_completion_index", "value": 2 }
+    ],
+    "penalties": [
+      { "type": "stat_change", "key": "public_support", "value": -3 },
+      { "type": "stat_change", "key": "unrest", "value": 2 }
+    ],
+    "stall_penalties_per_quarter": [
+      { "type": "stat_change", "key": "public_support", "value": -1 },
+      { "type": "stat_change", "key": "unrest", "value": 1 }
+    ],
+    "duration": 2,
+    "priority": 73,
+    "tags": ["财政", "加派", "熙宁"]
+  },
+  {
+    "id": "fiscal_reduce_court_spending",
+    "title": "裁冗节流",
+    "description": "核减冗费浮支，节内帑与诸司供亿。",
+    "category": "fiscal",
+    "difficulty": "normal",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "fiscal_pressure", "value": 58 }],
+    "objectives": [{ "type": "stat_at_most", "key": "fiscal_pressure", "value": 55 }],
+    "rewards": [
+      { "type": "stat_change", "key": "fiscal_pressure", "value": -3 },
+      { "type": "stat_change", "key": "public_support", "value": 2 }
+    ],
+    "penalties": [{ "type": "stat_change", "key": "authority", "value": -1 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "authority", "value": -1 }],
+    "duration": 1,
+    "priority": 70,
+    "tags": ["财政", "节流"]
+  },
+  {
+    "id": "fiscal_expand_state_monopoly",
+    "title": "市易榷利",
+    "description": "置场收息或整顿榷货，开源佐国计；商怨与吏胥侵渔须察。",
+    "category": "fiscal",
+    "difficulty": "medium",
+    "trigger_conditions": [{ "type": "stat_less_than", "key": "treasury_balance", "value": 350000 }],
+    "objectives": [{ "type": "stat_at_least", "key": "treasury_balance", "value": 400000 }],
+    "rewards": [
+      { "type": "stat_change", "key": "treasury_balance", "value": 15000 },
+      { "type": "stat_change", "key": "fiscal_pressure", "value": -2 }
+    ],
+    "penalties": [
+      { "type": "stat_change", "key": "public_support", "value": -2 },
+      { "type": "stat_change", "key": "corruption", "value": 1 }
+    ],
+    "stall_penalties_per_quarter": [
+      { "type": "stat_change", "key": "public_support", "value": -1 },
+      { "type": "stat_change", "key": "corruption", "value": 1 }
+    ],
+    "duration": 2,
+    "priority": 72,
+    "tags": ["财政", "市易", "熙宁"]
+  },
+  {
+    "id": "fiscal_corvee_commutation",
+    "min_reign_year": 1070,
+    "title": "推行免役",
+    "description": "以钱代役、官雇差役；户等不均易生怨。",
+    "category": "fiscal",
+    "difficulty": "normal",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "unrest", "value": 38 }],
+    "objectives": [{ "type": "stat_at_least", "key": "public_support", "value": 52 }],
+    "rewards": [
+      { "type": "stat_change", "key": "public_support", "value": 3 },
+      { "type": "stat_change", "key": "tax_completion_index", "value": 1 }
+    ],
+    "penalties": [{ "type": "stat_change", "key": "unrest", "value": 2 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "unrest", "value": 1 }],
+    "duration": 2,
+    "priority": 71,
+    "tags": ["财政", "免役", "熙宁"]
+  },
+  {
+    "id": "fiscal_equalized_transport",
+    "min_reign_year": 1072,
+    "title": "均输调剂",
+    "description": "发运司均输漕贡，徙贵就贱以省远输之费。",
+    "category": "fiscal",
+    "difficulty": "normal",
+    "trigger_conditions": [
+      { "type": "stat_greater_than", "key": "fiscal_pressure", "value": 45 },
+      { "type": "stat_less_than", "key": "tax_completion_index", "value": 50 }
+    ],
+    "objectives": [{ "type": "stat_at_least", "key": "tax_completion_index", "value": 50 }],
+    "rewards": [
+      { "type": "stat_change", "key": "treasury_balance", "value": 10000 },
+      { "type": "stat_change", "key": "fiscal_pressure", "value": -2 }
+    ],
+    "penalties": [{ "type": "stat_change", "key": "treasury_balance", "value": -6000 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "treasury_balance", "value": -3000 }],
+    "duration": 2,
+    "priority": 69,
+    "tags": ["财政", "均输", "漕运", "熙宁"]
+  }
+]

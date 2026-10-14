@@ -1,0 +1,21 @@
+# Next.js 14 standalone（构建上下文为仓库根目录，见 docker-compose）
+FROM node:20-bookworm-slim AS builder
+WORKDIR /app
+COPY frontend/package.json frontend/package-lock.json* ./
+RUN npm ci
+COPY frontend/ ./
+ARG BACKEND_PROXY_URL=http://127.0.0.1:8000
+ENV BACKEND_PROXY_URL=${BACKEND_PROXY_URL}
+ENV NEXT_TELEMETRY_DISABLED=1
+RUN npm run build
+
+FROM node:20-bookworm-slim
+WORKDIR /app
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/public ./public
+EXPOSE 3000
+CMD ["node", "server.js"]

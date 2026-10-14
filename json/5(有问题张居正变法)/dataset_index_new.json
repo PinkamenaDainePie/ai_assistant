@@ -1,0 +1,14 @@
+{
+  "dataset": "zhang_juzheng_reform",
+  "docs": [
+    "张居正变法.docx",
+    "张居正变法2.docx",
+    "张居正变法草稿.docx"
+  ],
+  "stats": {
+    "knowledge_chunks": 430,
+    "structure_facts": 507,
+    "personas": 2,
+    "events": 2
+  }
+}

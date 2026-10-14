@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-03-05T11:08:12.425947",
+  "source_file": "2c2e91bd-a901-47f5-a2cf-6ee3ce41a151.docx",
+  "stats": {
+    "docs_detected": 27,
+    "knowledge_chunks": 7,
+    "structure_facts": 6,
+    "personas": 2,
+    "events": 3
+  },
+  "files": [
+    "knowledge_chunks.jsonl",
+    "structure_facts.jsonl",
+    "personas.json",
+    "events.json"
+  ]
+}

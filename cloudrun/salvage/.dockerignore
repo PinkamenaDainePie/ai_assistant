@@ -1,0 +1,22 @@
+.git
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/.venv
+**/venv
+.env
+.env.*
+!.env.example
+**/*.log
+.DS_Store
+
+# Electron / 本地前端（CloudRun 仅跑 web_app）
+web
+server
+scripts
+docs
+tests
+.github
+*.spec
+_out_*.txt
+_full_*.txt

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "military_raise_morale",
+    "title": "整饬军纪",
+    "description": "将军心提升至 65 以上。",
+    "category": "military",
+    "difficulty": "medium",
+    "trigger_conditions": [{ "type": "stat_less_than", "key": "army_morale", "value": 65 }],
+    "objectives": [{ "type": "stat_at_least", "key": "army_morale", "value": 65 }],
+    "rewards": [{ "type": "stat_change", "key": "authority", "value": 2 }],
+    "penalties": [{ "type": "stat_change", "key": "revolt_risk", "value": 3 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "revolt_risk", "value": 1 }],
+    "duration": 1,
+    "priority": 78,
+    "tags": ["军事", "边防"]
+  },
+  {
+    "id": "military_secure_supply",
+    "title": "补足军需",
+    "description": "将军队补给提升至 62 以上。",
+    "category": "military",
+    "difficulty": "normal",
+    "trigger_conditions": [{ "type": "stat_less_than", "key": "army_supply", "value": 62 }],
+    "objectives": [{ "type": "stat_at_least", "key": "army_supply", "value": 62 }],
+    "rewards": [{ "type": "stat_change", "key": "army_morale", "value": 2 }],
+    "penalties": [{ "type": "stat_change", "key": "unrest", "value": 2 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "unrest", "value": 1 }],
+    "duration": 1,
+    "priority": 72,
+    "tags": ["军事"]
+  },
+  {
+    "id": "military_reduce_revolt",
+    "title": "压制流寇威胁",
+    "description": "将叛乱风险降至 38 以下。",
+    "category": "military",
+    "difficulty": "normal",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "revolt_risk", "value": 35 }],
+    "objectives": [{ "type": "stat_at_most", "key": "revolt_risk", "value": 38 }],
+    "rewards": [{ "type": "stat_change", "key": "public_support", "value": 2 }],
+    "penalties": [
+      { "type": "stat_change", "key": "authority", "value": -4 },
+      { "type": "stat_change", "key": "revolt_risk", "value": 2 }
+    ],
+    "stall_penalties_per_quarter": [
+      { "type": "stat_change", "key": "authority", "value": -1 },
+      { "type": "stat_change", "key": "revolt_risk", "value": 1 }
+    ],
+    "duration": 1,
+    "priority": 82,
+    "tags": ["军事", "流寇"],
+    "mandatory": true
+  },
+  {
+    "id": "reform_northwest_budget",
+    "title": "西北边饷告急",
+    "description": "边臣索饷羽书叠至，而三司旧额支绌；新法理财之成败，实系于能否支应边费。",
+    "category": "military",
+    "difficulty": "hard",
+    "trigger_conditions": [
+      { "type": "stat_less_than", "key": "army_morale", "value": 64 },
+      { "type": "stat_greater_than", "key": "fiscal_pressure", "value": 29 }
+    ],
+    "objectives": [{ "type": "stat_at_least", "key": "army_morale", "value": 63 }],
+    "rewards": [{ "type": "stat_change", "key": "authority", "value": 2 }],
+    "penalties": [{ "type": "stat_change", "key": "treasury_balance", "value": -15000 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "treasury_balance", "value": -7500 }],
+    "duration": 1,
+    "priority": 84,
+    "tags": ["熙宁", "边防", "军饷", "军事"]
+  }
+]

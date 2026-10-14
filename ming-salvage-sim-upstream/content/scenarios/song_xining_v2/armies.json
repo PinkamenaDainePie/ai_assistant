@@ -1,0 +1,430 @@
+{
+  "meta": {
+    "manpower_unit": "人",
+    "maintenance_unit": "万两/月",
+    "score_unit": "0-100（arrears 例外，单位为累计欠饷万两、整数、无上限）",
+    "note": "熙宁变法军制：殿前禁军、诸路厢军、缘边边军（占位）；禁军/厢军/边军三分，数值 N-TBD。"
+  },
+  "armies": [
+    {
+      "id": "jingying",
+      "name": "东京殿前禁军",
+      "station": "京畿 / 开封",
+      "theater": "京畿",
+      "commander": "殿前都点检诸将",
+      "controller": "枢密院 / 三衙",
+      "troop_type": "杂兵、火炮队、轻骑兵",
+      "manpower": 90000,
+      "maintenance_per_turn": 7,
+      "supply": 58,
+      "morale": 48,
+      "training": 42,
+      "equipment": 52,
+      "arrears": 12,
+      "mobility": 35,
+      "loyalty": 52,
+      "status": "禁军拱卫京师，空额克扣较仁宗末为轻；神臂弓、霹雳火器操练尚可，新法整军之议已起。",
+      "owner_power": "song",
+      "troop_composition": {
+        "杂兵": 78000,
+        "火炮队": 6000,
+        "轻骑兵": 6000
+      },
+      "arms": [
+        {
+          "troop_type": "火炮队",
+          "weapon": "霹雳火球",
+          "qty": 100
+        },
+        {
+          "troop_type": "火炮队",
+          "weapon": "床弩",
+          "qty": 50
+        },
+        {
+          "troop_type": "杂兵",
+          "weapon": "神臂弓",
+          "qty": 12000
+        }
+      ]
+    },
+    {
+      "id": "jizhen",
+      "name": "河北真定禁军",
+      "station": "河北 / 真定府",
+      "theater": "契丹南界",
+      "commander": "河北缘边诸将",
+      "controller": "枢密院",
+      "troop_type": "杂兵、车营、火炮队、轻骑兵",
+      "manpower": 58000,
+      "maintenance_per_turn": 5,
+      "supply": 52,
+      "morale": 58,
+      "training": 72,
+      "equipment": 62,
+      "arrears": 10,
+      "mobility": 48,
+      "loyalty": 62,
+      "status": "禁军戍守真定、定州一线，车营弩炮为河北楷模；契丹南扰多赖此军与霸州、雄州寨堡联防。",
+      "owner_power": "song",
+      "troop_composition": {
+        "杂兵": 32000,
+        "车营": 12000,
+        "火炮队": 8000,
+        "轻骑兵": 6000
+      },
+      "arms": [
+        {
+          "troop_type": "火炮队",
+          "weapon": "床弩",
+          "qty": 80
+        },
+        {
+          "troop_type": "杂兵",
+          "weapon": "神臂弓",
+          "qty": 10000
+        }
+      ]
+    },
+    {
+      "id": "liaodong",
+      "name": "河北缘边厢军",
+      "station": "河北 / 霸州",
+      "theater": "燕山防线",
+      "commander": "霸州诸寨守将",
+      "controller": "枢密院",
+      "troop_type": "杂兵、重骑兵、轻骑兵",
+      "manpower": 68000,
+      "maintenance_per_turn": 7,
+      "supply": 48,
+      "morale": 55,
+      "training": 65,
+      "equipment": 55,
+      "arrears": 14,
+      "mobility": 52,
+      "loyalty": 58,
+      "status": "厢军戍燕山诸寨，备契丹南界；岁币边饷渐增而续解时有迟滞，榆关、雄州联动御敌。",
+      "owner_power": "song",
+      "troop_composition": {
+        "杂兵": 40000,
+        "重骑兵": 16000,
+        "轻骑兵": 12000
+      },
+      "arms": [
+        {
+          "troop_type": "杂兵",
+          "weapon": "神臂弓",
+          "qty": 8000
+        },
+        {
+          "troop_type": "杂兵",
+          "weapon": "弩",
+          "qty": 2500
+        }
+      ]
+    },
+    {
+      "id": "shanhaiguan",
+      "name": "榆关戍军",
+      "station": "河北 / 榆关",
+      "theater": "燕山门户",
+      "commander": "榆关寨守将",
+      "controller": "枢密院",
+      "troop_type": "杂兵、火炮队",
+      "manpower": 24000,
+      "maintenance_per_turn": 3,
+      "supply": 58,
+      "morale": 56,
+      "training": 56,
+      "equipment": 58,
+      "arrears": 5,
+      "mobility": 28,
+      "loyalty": 58,
+      "status": "厢军戍榆关，为燕山门户；与真定禁军、霸州缘边军联动御契丹。",
+      "owner_power": "song",
+      "troop_composition": {
+        "杂兵": 20000,
+        "火炮队": 4000
+      },
+      "arms": [
+        {
+          "troop_type": "火炮队",
+          "weapon": "霹雳火球",
+          "qty": 60
+        },
+        {
+          "troop_type": "杂兵",
+          "weapon": "神臂弓",
+          "qty": 5000
+        }
+      ]
+    },
+    {
+      "id": "xuan_da",
+      "name": "河东缘边军",
+      "station": "河东 / 代州",
+      "theater": "雁门诸关",
+      "commander": "河东经略安抚使",
+      "controller": "枢密院",
+      "troop_type": "杂兵、轻骑兵",
+      "manpower": 62000,
+      "maintenance_per_turn": 5,
+      "supply": 48,
+      "morale": 52,
+      "training": 58,
+      "equipment": 50,
+      "arrears": 18,
+      "mobility": 54,
+      "loyalty": 52,
+      "status": "边军戍雁门、代州诸关，防契丹西翼叩边；互市与战备并重，岁币分摊牵动河东粮饷。",
+      "owner_power": "song",
+      "troop_composition": {
+        "杂兵": 48000,
+        "轻骑兵": 14000
+      },
+      "arms": [
+        {
+          "troop_type": "杂兵",
+          "weapon": "神臂弓",
+          "qty": 8000
+        }
+      ]
+    },
+    {
+      "id": "denglai",
+      "name": "登莱水军厢军",
+      "station": "山东 / 登莱",
+      "theater": "海防辽援",
+      "commander": "登莱水军将",
+      "controller": "枢密院",
+      "troop_type": "水师、火炮队、杂兵",
+      "manpower": 22000,
+      "maintenance_per_turn": 3,
+      "supply": 52,
+      "morale": 52,
+      "training": 52,
+      "equipment": 54,
+      "arrears": 4,
+      "mobility": 60,
+      "loyalty": 48,
+      "status": "厢军水师可海运接济河北，巡缉黄海倭寇余部与走私有司。",
+      "owner_power": "song",
+      "troop_composition": {
+        "水师": 10000,
+        "火炮队": 4000,
+        "杂兵": 8000
+      },
+      "arms": [
+        {
+          "troop_type": "火炮队",
+          "weapon": "床弩",
+          "qty": 25
+        }
+      ]
+    },
+    {
+      "id": "shaanxi_army",
+      "name": "陕西缘边军",
+      "station": "陕西 / 延州",
+      "theater": "西北",
+      "commander": "陕西经略安抚使",
+      "controller": "枢密院",
+      "troop_type": "杂兵、轻骑兵",
+      "manpower": 38000,
+      "maintenance_per_turn": 3,
+      "supply": 42,
+      "morale": 46,
+      "training": 48,
+      "equipment": 44,
+      "arrears": 12,
+      "mobility": 48,
+      "loyalty": 48,
+      "status": "边军戍延州、环庆、保安诸寨，备西夏；岁旱时有赈抚之责，募役初议与边饷拖欠并见。",
+      "owner_power": "song",
+      "troop_composition": {
+        "杂兵": 32000,
+        "轻骑兵": 6000
+      },
+      "arms": [
+        {
+          "troop_type": "杂兵",
+          "weapon": "神臂弓",
+          "qty": 2500
+        }
+      ]
+    },
+    {
+      "id": "nanjing_garrison",
+      "name": "淮南厢军",
+      "station": "淮南 / 寿州",
+      "theater": "江南",
+      "commander": "淮南钤辖",
+      "controller": "枢密院",
+      "troop_type": "杂兵、水师",
+      "manpower": 44000,
+      "maintenance_per_turn": 4,
+      "supply": 66,
+      "morale": 52,
+      "training": 46,
+      "equipment": 50,
+      "arrears": 3,
+      "mobility": 44,
+      "loyalty": 54,
+      "status": "厢军戍淮南财赋重地，护漕运、弹压盗匪；军力可守不可远征。",
+      "owner_power": "song",
+      "troop_composition": {
+        "杂兵": 32000,
+        "水师": 12000
+      },
+      "arms": [
+        {
+          "troop_type": "杂兵",
+          "weapon": "神臂弓",
+          "qty": 3500
+        }
+      ]
+    },
+    {
+      "id": "fujian_navy",
+      "name": "福建水军舰",
+      "station": "福建 / 福州",
+      "theater": "东南海防",
+      "commander": "福建水军舰将",
+      "controller": "枢密院",
+      "troop_type": "水师",
+      "manpower": 16000,
+      "maintenance_per_turn": 2,
+      "supply": 48,
+      "morale": 52,
+      "training": 50,
+      "equipment": 48,
+      "arrears": 3,
+      "mobility": 68,
+      "loyalty": 46,
+      "status": "厢军水师巡缉海疆，倭寇渐息而走私未绝；市舶司与水军并管海防。",
+      "owner_power": "song",
+      "troop_composition": {
+        "水师": 16000
+      }
+    },
+    {
+      "id": "guangdong_navy",
+      "name": "广南水军厢军",
+      "station": "广南东路 / 广州",
+      "theater": "南海海防",
+      "commander": "广南水军将",
+      "controller": "枢密院",
+      "troop_type": "水师",
+      "manpower": 14000,
+      "maintenance_per_turn": 2,
+      "supply": 50,
+      "morale": 52,
+      "training": 48,
+      "equipment": 48,
+      "arrears": 3,
+      "mobility": 66,
+      "loyalty": 48,
+      "status": "厢军水师守海口护商，市舶灰区仍须弹压。",
+      "owner_power": "song",
+      "troop_composition": {
+        "水师": 14000
+      }
+    },
+    {
+      "id": "southwest_tusi",
+      "name": "西南羁縻厢军",
+      "station": "广南西路 / 云南 / 贵州",
+      "theater": "西南",
+      "commander": "诸土司",
+      "controller": "广南西路经略",
+      "troop_type": "杂兵",
+      "manpower": 22000,
+      "maintenance_per_turn": 2,
+      "supply": 42,
+      "morale": 56,
+      "training": 46,
+      "equipment": 36,
+      "arrears": 3,
+      "mobility": 58,
+      "loyalty": 34,
+      "status": "厢军与羁縻土司兵并用，山地作战有用，听调取决于土司关系。",
+      "owner_power": "song",
+      "troop_composition": {
+        "杂兵": 22000
+      }
+    },
+    {
+      "id": "xixia_host",
+      "name": "西夏铁鹞子军",
+      "station": "西夏 / 兴庆府",
+      "theater": "西北",
+      "commander": "西夏惠宗系党项诸将",
+      "controller": "西夏",
+      "troop_type": "轻骑兵、杂兵",
+      "manpower": 28000,
+      "maintenance_per_turn": 0,
+      "supply": 50,
+      "morale": 68,
+      "training": 62,
+      "equipment": 48,
+      "arrears": 0,
+      "mobility": 78,
+      "loyalty": 65,
+      "status": "党项铁鹞子骑兵兼并诸部，筑城练兵；与宋边互市时有不轨，梁太后摄政诸将擅边事。",
+      "owner_power": "xixia",
+      "troop_composition": {
+        "轻骑兵": 18000,
+        "杂兵": 10000
+      }
+    },
+    {
+      "id": "liao_cavalry_host",
+      "name": "契丹皮室军",
+      "station": "辽境 / 南京",
+      "theater": "漠南草原",
+      "commander": "辽道宗",
+      "controller": "契丹",
+      "troop_type": "轻骑兵、杂兵",
+      "manpower": 32000,
+      "maintenance_per_turn": 0,
+      "supply": 46,
+      "morale": 60,
+      "training": 58,
+      "equipment": 44,
+      "arrears": 0,
+      "mobility": 84,
+      "loyalty": 42,
+      "status": "辽宋澶渊和战后互市岁赐成例，皮室军戍南京（幽州）一线；叩边索赏时见。",
+      "owner_power": "liao",
+      "troop_composition": {
+        "轻骑兵": 26000,
+        "杂兵": 6000
+      }
+    },
+    {
+      "id": "korean_border_army",
+      "name": "高丽备边军",
+      "station": "高丽 / 义州",
+      "theater": "高丽",
+      "commander": "高丽备边司诸将",
+      "controller": "高丽朝廷",
+      "troop_type": "杂兵、火炮队、水师",
+      "manpower": 24000,
+      "maintenance_per_turn": 0,
+      "supply": 48,
+      "morale": 48,
+      "training": 44,
+      "equipment": 42,
+      "arrears": 0,
+      "mobility": 44,
+      "loyalty": 58,
+      "status": "藩臣恭顺，边备防契丹诸部与东海寇患。",
+      "owner_power": "korea",
+      "troop_composition": {
+        "杂兵": 16000,
+        "火炮队": 4000,
+        "水师": 4000
+      }
+    }
+  ]
+}

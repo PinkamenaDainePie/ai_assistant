@@ -1,0 +1,103 @@
+{
+  "version": 2,
+  "note": "北宋军械型号（熙宁，1068）。神臂弓为禁军主力；床弩、梢炮守城；霹雳火球为早期火器。禁止明末佛郎机/鸟铳/红夷炮/三眼铳口径。requires_tech 指 preset_technologies 中文名。",
+  "default_tier": "弓弩",
+  "tiers": {
+    "弓弩": {
+      "cost": 1,
+      "equip_per_unit": 0.35,
+      "keywords": ["弓", "弩", "神臂", "步"]
+    },
+    "刀盾": {
+      "cost": 1,
+      "equip_per_unit": 0.25,
+      "keywords": ["刀", "盾", "枪", "矛"]
+    },
+    "投石器": {
+      "cost": 3,
+      "equip_per_unit": 1.2,
+      "keywords": ["床弩", "投石", "梢炮"]
+    },
+    "火器": {
+      "cost": 4,
+      "equip_per_unit": 1.5,
+      "keywords": ["霹雳", "火球", "火器"]
+    }
+  },
+  "weapons": [
+    {
+      "id": "shenbi_gong",
+      "name": "神臂弓",
+      "tier": "弓弩",
+      "cost": 2,
+      "equip_per_unit": 0.5,
+      "requires_tech": "军器监造",
+      "opening_stock": 8000,
+      "_note": "熙宁军器监所造强弩，非明末火器"
+    },
+    {
+      "id": "gong",
+      "name": "弓",
+      "tier": "弓弩",
+      "cost": 1,
+      "equip_per_unit": 0.3,
+      "requires_tech": "",
+      "opening_stock": 20000
+    },
+    {
+      "id": "nu",
+      "name": "弩",
+      "tier": "弓弩",
+      "cost": 1,
+      "equip_per_unit": 0.35,
+      "requires_tech": "",
+      "opening_stock": 12000
+    },
+    {
+      "id": "chuangnu",
+      "name": "床弩",
+      "tier": "投石器",
+      "cost": 4,
+      "equip_per_unit": 2.0,
+      "requires_tech": "",
+      "opening_stock": 200
+    },
+    {
+      "id": "daodun",
+      "name": "刀盾",
+      "tier": "刀盾",
+      "cost": 1,
+      "equip_per_unit": 0.25,
+      "requires_tech": "",
+      "opening_stock": 30000
+    },
+    {
+      "id": "qiang",
+      "name": "枪",
+      "tier": "刀盾",
+      "cost": 1,
+      "equip_per_unit": 0.3,
+      "requires_tech": "",
+      "opening_stock": 15000
+    },
+    {
+      "id": "shaopao",
+      "name": "梢炮",
+      "tier": "投石器",
+      "cost": 3,
+      "equip_per_unit": 1.2,
+      "requires_tech": "",
+      "opening_stock": 80
+    },
+    {
+      "id": "pilipao",
+      "name": "霹雳火球",
+      "tier": "火器",
+      "cost": 5,
+      "equip_per_unit": 1.5,
+      "requires_tech": "",
+      "opening_stock": 400,
+      "_note": "北宋霹雳火球/火器，非佛郎机或鸟铳"
+    }
+  ]
+}

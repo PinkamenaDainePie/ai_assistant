@@ -1,0 +1,1 @@
+{"intent_ids": ["allocate_funds", "diplomacy_tribute", "disaster_relief", "inner_spending", "military_downsize", "military_expand", "mixed_military_internal", "navy_ops", "peace_and_trade", "raise_tax", "strict_governance", "tax_relief", "welfare"], "vocab_size": 118, "num_classes": 13}

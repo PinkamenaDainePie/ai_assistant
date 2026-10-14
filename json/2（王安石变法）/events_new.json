@@ -1,0 +1,225 @@
+[
+  {
+    "id": "event_ancestral_law_vs_reform_001",
+    "title": "祖宗之法不可变？还是应当随时更张？",
+    "desc": "围绕“祖宗成法”与“先王之法可变”的论辩：是坚持成法以稳人心，还是以制度更新应对现实？",
+    "options": [
+      {
+        "id": "keep_ancestral",
+        "text": "以守祖宗成法为纲，先修弊不更造",
+        "effects": {
+          "political_consensus": 6,
+          "reform_speed": -3,
+          "short_term_stability": 4
+        }
+      },
+      {
+        "id": "measured_change",
+        "text": "承认可变但设定边界：小修小补、分步试行",
+        "effects": {
+          "political_consensus": 2,
+          "reform_speed": 2,
+          "implementation_risk": -1
+        }
+      },
+      {
+        "id": "full_reform",
+        "text": "大规模更张旧制，以新机构统筹推进",
+        "effects": {
+          "reform_speed": 6,
+          "political_consensus": -5,
+          "implementation_risk": 4
+        }
+      }
+    ],
+    "evidence_sources": [
+      "宋史·列传第九十五（居室比喻/象魏之辩）"
+    ]
+  },
+  {
+    "id": "event_green_sprouts_loan_002",
+    "title": "青苗法：救急贷还是放债取息？",
+    "desc": "青黄不接时的官贷是否能救民，还是会因“抑配+催督+保责”演化为长期债务陷阱？",
+    "options": [
+      {
+        "id": "abolish",
+        "text": "罢青苗钱，复常平粜籴为主",
+        "effects": {
+          "rural_debt_risk": -6,
+          "short_term_relief": -1,
+          "public_trust": 4
+        }
+      },
+      {
+        "id": "reform_design",
+        "text": "保留救急但去息/限量/取消督促官，严禁抑配",
+        "effects": {
+          "rural_debt_risk": -3,
+          "short_term_relief": 3,
+          "administrative_cost": 1
+        }
+      },
+      {
+        "id": "expand",
+        "text": "扩大放贷规模，以“多散”为绩效并收息",
+        "effects": {
+          "short_term_relief": 5,
+          "rural_debt_risk": 6,
+          "social_stability": -4
+        }
+      }
+    ],
+    "evidence_sources": [
+      "宋史·列传第九十五（司马光论青苗十年之忧）",
+      "续资治通鉴长编（欧阳修三事、青苗钱源流）"
+    ]
+  },
+  {
+    "id": "event_market_exchange_003",
+    "title": "市易法：国家入市以平价，还是退出以息争？",
+    "desc": "国家以市易务参与市场、积贮物货与取息，是否会挤压民间与滋生欠负？",
+    "options": [
+      {
+        "id": "repeal",
+        "text": "废市易法，鬻所储物、不取息，并除民欠",
+        "effects": {
+          "merchant_pressure": -5,
+          "state_profit": -3,
+          "public_trust": 3
+        }
+      },
+      {
+        "id": "keep_limited",
+        "text": "保留但限于救荒平准，不以取息为目的",
+        "effects": {
+          "merchant_pressure": -2,
+          "state_profit": 1,
+          "market_stability": 2
+        }
+      },
+      {
+        "id": "strengthen",
+        "text": "强化国家经营与取息，扩大市场控制",
+        "effects": {
+          "state_profit": 4,
+          "merchant_pressure": 5,
+          "market_stability": -2
+        }
+      }
+    ],
+    "evidence_sources": [
+      "宋史·列传第九十五（废市易段落）"
+    ]
+  },
+  {
+    "id": "event_service_exemption_004",
+    "title": "免役法：以钱代役能否减扰？",
+    "desc": "用“出钱雇役”替代徭役，可能减少差役扰民，也可能变相加重负担并带来执行争议。",
+    "options": [
+      {
+        "id": "abolish",
+        "text": "罢免役并整合军政归州县，减少监司刻急",
+        "effects": {
+          "household_burden": -4,
+          "implementation_capacity": -1,
+          "public_trust": 3
+        }
+      },
+      {
+        "id": "adjust",
+        "text": "保留但降费率、明确豁免与公开核算",
+        "effects": {
+          "household_burden": -2,
+          "fiscal_balance": 1,
+          "corruption_risk": -1
+        }
+      },
+      {
+        "id": "enforce",
+        "text": "严格推行，以考核压实征收与雇役",
+        "effects": {
+          "fiscal_balance": 3,
+          "household_burden": 4,
+          "social_stability": -3
+        }
+      }
+    ],
+    "evidence_sources": [
+      "宋史·列传第九十五（免役五害、请罢）"
+    ]
+  },
+  {
+    "id": "event_redundant_officials_005",
+    "title": "去冗官：快速裁撤还是渐进清理？",
+    "desc": "边事与财政压力下，冗官冗费被视为“及民最切”的问题；如何在不伤运转的前提下清理？",
+    "options": [
+      {
+        "id": "fast_cut",
+        "text": "集中清理冗官，优先替换不材，迅速止骚扰",
+        "effects": {
+          "fiscal_balance": 5,
+          "administrative_stability": -2,
+          "public_relief": 4
+        }
+      },
+      {
+        "id": "phased",
+        "text": "分批裁撤并配套选用良吏与考核",
+        "effects": {
+          "fiscal_balance": 3,
+          "administrative_stability": 1,
+          "public_relief": 3
+        }
+      },
+      {
+        "id": "delay",
+        "text": "暂缓裁撤，维持现状避免震荡",
+        "effects": {
+          "fiscal_balance": -2,
+          "administrative_stability": 2,
+          "public_relief": -3
+        }
+      }
+    ],
+    "evidence_sources": [
+      "续资治通鉴长编（冗官利害六事）"
+    ]
+  },
+  {
+    "id": "event_finance_debate_006",
+    "title": "理财之道：不加赋而足？还是“头会箕敛”？",
+    "desc": "国用不足时，强调“善理财不加赋”的主张与“设法夺民更甚于加赋”的反驳发生冲突。",
+    "options": [
+      {
+        "id": "austerity_first",
+        "text": "先节用救灾，从贵近始削减赐予",
+        "effects": {
+          "public_trust": 3,
+          "fiscal_balance": 2,
+          "policy_conflict": -1
+        }
+      },
+      {
+        "id": "institutional_finance",
+        "text": "设机构统筹理财与条理化征收",
+        "effects": {
+          "fiscal_balance": 4,
+          "policy_conflict": 2,
+          "administrative_cost": 2
+        }
+      },
+      {
+        "id": "avoid_extraction",
+        "text": "明确避免“设法夺民”，以减扰促生产为本",
+        "effects": {
+          "public_trust": 4,
+          "fiscal_balance": 0,
+          "long_term_growth": 3
+        }
+      }
+    ],
+    "evidence_sources": [
+      "宋史·列传第九十五（天地之财辩论）"
+    ]
+  }
+]

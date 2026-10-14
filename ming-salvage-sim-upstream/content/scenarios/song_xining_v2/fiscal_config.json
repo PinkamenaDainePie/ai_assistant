@@ -1,0 +1,38 @@
+{
+  "_comment": "北宋熙宁（1068）财政科目目录（数据驱动）。base/rate 单位＝月度万两/%，全盘按月。改默认值改本文件并升 schema_version。budget_role: fixed=由 flows.compute_budget_lines 遍历按 base×rate 直接落账；dynamic=仅保留仍被公式读取的全局系数。省级田赋/盐税/商税走 regions.fiscal；岁币边饷走 regions.fiscal.liao_xiang_li（字段名 liao_xiang_li 沿用引擎键，fiction 为岁币/边饷亩摊，非明辽饷/辽饷加派）。account/direction/display 仅 fixed 项用于生成 budget 行。order 控制预算表展示顺序。金花银/工部等 display 名沿用引擎键，注释标明宋制对应（添马钱、河工城防等）。禁止一条鞭/辽饷/金花银折银直解等明末口径。数值多为 N-TBD 占位，P2 未做平衡。",
+  "schema_version": 13,
+  "items": [
+    {"key": "田赋亩率_base", "value": 250, "kind": "base", "budget_role": "dynamic", "note": "全国官民田田赋亩率，单位毫/亩/年(两×10000)。250=0.025两/亩≈2.5分。田赋月额=官民田万亩×亩率/10000/12。省可在 fiscal.tian_fu_li 覆盖；熙宁方田均税清丈后各省可分化"},
+    {"key": "皇庄亩率_base", "value": 380, "kind": "base", "budget_role": "dynamic", "note": "御庄/官庄子粒银亩率，单位毫/亩/年。380=0.038两/亩≈3.8分。皇庄月额=huang_tian万亩×亩率/10000/12。皇室直辖不吃 eff 折扣"},
+    {"key": "皇庄_rate",     "value": 100, "kind": "rate", "budget_role": "dynamic", "note": "御庄收益率%（整体倍率，乘在各省皇庄实算总额上）"},
+    {"key": "人均年耗粮_base", "value": 3, "kind": "base", "budget_role": "dynamic", "note": "每人每年耗粮，单位石/人/年。population单位万人，乘后得到万石/年；仅用于12月年度粮食结算"},
+    {"key": "人口基础增长率_base", "value": 8,  "kind": "base", "budget_role": "dynamic", "note": "各省人口平年自然增长率，单位‰/年(×0.001)。8=+0.8%/年。仅用于12月年度人口结算(apply_annual_population_flows)"},
+    {"key": "人口民心增益_base",   "value": 4,  "kind": "base", "budget_role": "dynamic", "note": "民心>60时人口增长率加成，单位‰/年。4=+0.4%"},
+    {"key": "人口民心减损_base",   "value": 4,  "kind": "base", "budget_role": "dynamic", "note": "民心<40时人口增长率减损，单位‰/年。4=-0.4%"},
+    {"key": "人口动乱减损_base",   "value": 6,  "kind": "base", "budget_role": "dynamic", "note": "动乱>50时人口增长率减损，单位‰/年。6=-0.6%"},
+    {"key": "人口饥荒减损_base",   "value": 10, "kind": "base", "budget_role": "dynamic", "note": "本年存粮被口粮吃成缺口(闹饥荒)时额外人口减损，单位‰/年。10=-1.0%，可叠加致负增长(饿死逃亡)"},
+
+    {"key": "金花银_base",   "value": 5,   "kind": "base", "budget_role": "fixed", "account": "内库", "direction": "income", "display": "内库进项", "order": 10, "note": "【字段名金花银沿用引擎】非明金花银折银直解。北宋约指添马钱、入内库诸杂入、诸路进奉等，月额万两（N-TBD占位）"},
+    {"key": "金花银_rate",   "value": 100, "kind": "rate", "budget_role": "fixed", "note": "内库进项实收率%"},
+    {"key": "矿税_base",     "value": 2,   "kind": "base", "budget_role": "fixed", "account": "内库", "direction": "income", "display": "坑冶课利", "order": 30, "note": "坑冶、茶盐专卖余项等月额，万两（N-TBD）"},
+    {"key": "矿税_rate",     "value": 100, "kind": "rate", "budget_role": "fixed", "note": "坑冶课利实收率%"},
+    {"key": "织造_base",     "value": 8,   "kind": "base", "budget_role": "fixed", "account": "内库", "direction": "income", "display": "织造上供", "order": 20, "note": "诸路织造局、绫锦院等月上缴内库，万两（N-TBD）"},
+    {"key": "织造_rate",     "value": 100, "kind": "rate", "budget_role": "fixed", "note": "织造上供收益率%"},
+
+    {"key": "宗室禄米_base", "value": 45,  "kind": "base", "budget_role": "fixed", "account": "国库", "direction": "expense", "display": "宗室禄赐", "order": 100, "note": "赵氏宗室岁赐禄米折银月度账面额，万两。北宋宗室规模远小于明末诸藩（N-TBD）"},
+    {"key": "宗室禄米_rate", "value": 85,  "kind": "rate", "budget_role": "fixed", "note": "宗室禄赐实发率%"},
+    {"key": "官俸_base",     "value": 22,  "kind": "base", "budget_role": "fixed", "account": "国库", "direction": "expense", "display": "百官俸禄", "order": 110, "note": "在京百官俸禄月额，万两（含地方折色、添支；N-TBD）"},
+    {"key": "官俸_rate",     "value": 100, "kind": "rate", "budget_role": "fixed", "note": "官俸发放率%"},
+    {"key": "工程_base",     "value": 6,   "kind": "base", "budget_role": "fixed", "account": "国库", "direction": "expense", "display": "工部", "order": 120, "note": "【display 工部沿用引擎键】北宋约指都水、将作、河防、城郭、驿传等工役月度支出，万两（N-TBD）"},
+    {"key": "工程_rate",     "value": 100, "kind": "rate", "budget_role": "fixed", "note": "工程维护率%"},
+    {"key": "赈灾_base",     "value": 5,   "kind": "base", "budget_role": "fixed", "account": "国库", "direction": "expense", "display": "赈灾备用", "order": 130, "note": "制度性赈灾、常平仓调剂备用，万两（月；N-TBD）"},
+    {"key": "赈灾_rate",     "value": 100, "kind": "rate", "budget_role": "fixed", "note": "赈灾拨付率%"},
+
+    {"key": "宫廷_base",     "value": 6,   "kind": "base", "budget_role": "fixed", "account": "内库", "direction": "expense", "display": "宫廷开支", "order": 200, "note": "皇室日常用度月额，万两（N-TBD）"},
+    {"key": "宫廷_rate",     "value": 100, "kind": "rate", "budget_role": "fixed", "note": "宫廷开支率%"},
+    {"key": "内廷俸_base",   "value": 3,   "kind": "base", "budget_role": "fixed", "account": "内库", "direction": "expense", "display": "内侍俸禄", "order": 210, "note": "内侍、供奉官等月额，万两（N-TBD）"},
+    {"key": "内廷俸_rate",   "value": 100, "kind": "rate", "budget_role": "fixed", "note": "内侍俸禄率%"},
+    {"key": "妃嫔_base",     "value": 2,   "kind": "base", "budget_role": "fixed", "account": "内库", "direction": "expense", "display": "后宫供奉", "order": 220, "note": "后宫妃嫔月度供奉，万两（N-TBD）"},
+    {"key": "妃嫔_rate",     "value": 100, "kind": "rate", "budget_role": "fixed", "note": "后宫供奉率%"}
+  ]
+}

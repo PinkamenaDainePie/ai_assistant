@@ -1,0 +1,10 @@
+{
+  "id": "song_xining_v2",
+  "name": "熙宁变法",
+  "description": "熙宁元年，王安石主持新法。可玩至元丰末年（1068–1086）。",
+  "source": "bundled",
+  "content_version": "0.5.4",
+  "ending_profile": "xining",
+  "player_power_id": "song",
+  "playable_years": [1068, 1086]
+}

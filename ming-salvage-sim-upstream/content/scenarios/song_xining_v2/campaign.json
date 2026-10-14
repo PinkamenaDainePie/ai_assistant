@@ -1,0 +1,20 @@
+{
+  "start_year": 1068,
+  "start_month": 1,
+  "year_min": 1068,
+  "year_max": 1086,
+  "campaign_years": 18,
+  "reign_label": "熙宁",
+  "notes": "1068–1086 熙宁—元丰年表；可玩至神宗崩逝前夜。",
+  "_milestones": [
+    {"year": 1068, "month": 1, "label": "熙宁元年·神宗亲政求治，召王安石入相"},
+    {"year": 1069, "month": 3, "label": "青苗法颁行"},
+    {"year": 1070, "month": 5, "label": "郑侠上《流民图》，暂停青苗催科"},
+    {"year": 1070, "month": 6, "label": "市易司置"},
+    {"year": 1072, "month": 5, "label": "熙河开边"},
+    {"year": 1074, "month": 9, "label": "王安石再罢出相"},
+    {"year": 1079, "month": 2, "label": "乌台诗案"},
+    {"year": 1079, "month": 3, "label": "元丰官制改革"},
+    {"year": 1086, "month": 1, "label": "神宗崩逝·元祐前夜（campaign 终局）"}
+  ]
+}

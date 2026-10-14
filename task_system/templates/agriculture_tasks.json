@@ -1,0 +1,129 @@
+[
+  {
+    "id": "agri_spring_encourage_farming",
+    "title": "劝课农桑",
+    "description": "督诸路州县不误农时，力穑劝课，季末税完成指数提升。",
+    "category": "agriculture",
+    "difficulty": "normal",
+    "trigger_conditions": [
+      { "type": "stat_less_than", "key": "tax_completion_index", "value": 58 }
+    ],
+    "objectives": [{ "type": "stat_at_least", "key": "tax_completion_index", "value": 58 }],
+    "rewards": [
+      { "type": "stat_change", "key": "public_support", "value": 2 },
+      { "type": "stat_change", "key": "tax_completion_index", "value": 2 }
+    ],
+    "penalties": [{ "type": "stat_change", "key": "unrest", "value": 2 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "unrest", "value": 1 }],
+    "duration": 1,
+    "priority": 72,
+    "tags": ["农政", "劝农", "熙宁"]
+  },
+  {
+    "id": "agri_irrigation_or_land_improvement",
+    "title": "兴修农田水利",
+    "description": "量度陂塘农渠，兴工溉田；降低灾荒压力并稳固农本。",
+    "category": "agriculture",
+    "difficulty": "medium",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "disaster_index", "value": 18 }],
+    "objectives": [{ "type": "stat_reduce_by", "key": "disaster_index", "value": 3 }],
+    "rewards": [
+      { "type": "stat_change", "key": "public_support", "value": 2 },
+      { "type": "stat_change", "key": "disaster_index", "value": -2 }
+    ],
+    "penalties": [{ "type": "stat_change", "key": "treasury_balance", "value": -12000 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "treasury_balance", "value": -6000 }],
+    "duration": 2,
+    "priority": 70,
+    "tags": ["农政", "水利", "陂塘"]
+  },
+  {
+    "id": "agri_mulberry_silk_promotion",
+    "title": "广植桑麻课蚕",
+    "description": "劝民植桑育蚕，增丝绵课额；须防夺稻过甚、粮价波动。",
+    "category": "agriculture",
+    "difficulty": "normal",
+    "trigger_conditions": [
+      { "type": "stat_less_than", "key": "tax_completion_index", "value": 62 }
+    ],
+    "objectives": [{ "type": "stat_at_least", "key": "tax_completion_index", "value": 62 }],
+    "rewards": [
+      { "type": "stat_change", "key": "treasury_balance", "value": 6000 },
+      { "type": "stat_change", "key": "tax_completion_index", "value": 2 }
+    ],
+    "penalties": [
+      { "type": "stat_change", "key": "unrest", "value": 2 },
+      { "type": "stat_change", "key": "public_support", "value": -1 }
+    ],
+    "stall_penalties_per_quarter": [
+      { "type": "stat_change", "key": "unrest", "value": 1 },
+      { "type": "stat_change", "key": "public_support", "value": -1 }
+    ],
+    "duration": 2,
+    "priority": 68,
+    "tags": ["农政", "蚕桑", "丝课"]
+  },
+  {
+    "id": "agri_spring_grain_lending",
+    "title": "春前给散贷种",
+    "description": "常平仓廪春前给散，备春耕贷种；民心与完纳节奏并重。",
+    "category": "agriculture",
+    "difficulty": "normal",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "fiscal_pressure", "value": 35 }],
+    "objectives": [{ "type": "stat_at_least", "key": "public_support", "value": 52 }],
+    "rewards": [
+      { "type": "stat_change", "key": "public_support", "value": 3 },
+      { "type": "stat_change", "key": "tax_completion_index", "value": 1 }
+    ],
+    "penalties": [
+      { "type": "stat_change", "key": "treasury_balance", "value": -10000 },
+      { "type": "stat_change", "key": "corruption", "value": 1 }
+    ],
+    "stall_penalties_per_quarter": [
+      { "type": "stat_change", "key": "treasury_balance", "value": -5000 },
+      { "type": "stat_change", "key": "corruption", "value": 1 }
+    ],
+    "duration": 1,
+    "priority": 71,
+    "tags": ["农政", "青苗", "常平"]
+  },
+  {
+    "id": "agri_post_disaster_replant",
+    "title": "灾后劝复农耕",
+    "description": "水患既退，开仓贷种、督民复业，勿误春播。",
+    "category": "agriculture",
+    "difficulty": "medium",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "disaster_index", "value": 28 }],
+    "objectives": [
+      { "type": "stat_reduce_by", "key": "disaster_index", "value": 2 },
+      { "type": "stat_at_least", "key": "public_support", "value": 50 }
+    ],
+    "rewards": [
+      { "type": "stat_change", "key": "public_support", "value": 3 },
+      { "type": "stat_change", "key": "unrest", "value": -2 }
+    ],
+    "penalties": [{ "type": "stat_change", "key": "treasury_balance", "value": -8000 }],
+    "stall_penalties_per_quarter": [
+      { "type": "stat_change", "key": "treasury_balance", "value": -4000 },
+      { "type": "stat_change", "key": "public_support", "value": -1 }
+    ],
+    "duration": 1,
+    "priority": 73,
+    "tags": ["农政", "赈后", "复耕"]
+  },
+  {
+    "id": "agri_song_irrigation_charter",
+    "title": "农田水利条约",
+    "description": "颁农田水利条约，诸路筑陂疏渠；与河工岁修区分，专务溉田。",
+    "category": "agriculture",
+    "difficulty": "normal",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "disaster_index", "value": 12 }],
+    "objectives": [{ "type": "stat_reduce_by", "key": "disaster_index", "value": 2 }],
+    "rewards": [{ "type": "stat_change", "key": "public_support", "value": 2 }],
+    "penalties": [{ "type": "stat_change", "key": "fiscal_pressure", "value": 2 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "fiscal_pressure", "value": 1 }],
+    "duration": 2,
+    "priority": 69,
+    "tags": ["农政", "水利", "熙宁", "条约"]
+  }
+]

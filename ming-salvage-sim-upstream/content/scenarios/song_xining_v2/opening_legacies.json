@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "note": "熙宁开局负面帝国修正（1068）。不立 issue、不进推演。"
+  },
+  "legacies": [
+    {
+      "key": "guoyong_buzu",
+      "name": "国用不充·岁出日增",
+      "modifiers": {
+        "皇威": -2,
+        "国库": -5
+      },
+      "narrative_hint": "三司岁入不足，岁币边饷并见，新法开源尚未见效",
+      "clear_gate": {
+        "seed.fangtian.bar_value": ">=55"
+      },
+      "clear_narrative": "方田清丈推进，岁入稍实，国用压力缓解"
+    },
+    {
+      "key": "yintian_bike",
+      "name": "隐田蔽课·税基未实",
+      "modifiers": {
+        "国库": -4,
+        "regions": {
+          "nanzhili": {
+            "tax_per_turn": -1
+          }
+        }
+      },
+      "narrative_hint": "江南缙绅优免诡寄、隐占田亩成风，方田均税阻力重重",
+      "clear_gate": {
+        "region.beizhili|nanzhili.hidden_land.sum": "<=4500"
+      },
+      "clear_narrative": "清丈推行，隐田渐入册，税基日实"
+    },
+    {
+      "key": "bianjing_qianxiang",
+      "name": "边警频仍·欠饷苗头",
+      "modifiers": {
+        "皇威": -2,
+        "armies": {
+          "jingying": {
+            "morale": -2
+          }
+        }
+      },
+      "narrative_hint": "西北警耗未息，边饷续解时有迟滞，军心未至稳固",
+      "clear_gate": {
+        "army.jingying.arrears": "<=8"
+      },
+      "clear_narrative": "边饷连续足额，军心稍安"
+    },
+    {
+      "key": "xinfa_wei_wen",
+      "name": "新法未稳·催科过急",
+      "modifiers": {
+        "皇威": -1,
+        "regions": {
+          "henan": {
+            "unrest": 2
+          }
+        }
+      },
+      "narrative_hint": "青苗、市易初行，诸路催科尺度不一，民怨未息",
+      "clear_gate": {
+        "seed.qingmiao.bar_value": ">=55"
+      },
+      "clear_narrative": "青苗本钱周转顺畅，催科尺度稍定"
+    },
+    {
+      "key": "hegong_yefan",
+      "name": "河工役繁·漕运牵急",
+      "modifiers": {
+        "国库": -2,
+        "regions": {
+          "shandong": {
+            "unrest": 2
+          }
+        }
+      },
+      "narrative_hint": "黄河堤工征发役夫，与募役、漕运并紧，河北山东民力告急",
+      "clear_gate": {
+        "seed.yellow_river.bar_value": ">=50"
+      },
+      "clear_narrative": "堤工见效，河患稍缓，役夫征发减轻"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+# 万历地图 — 由 salvage mapPaths.ts 同步
+# 渲染使用 mingMapRegions.ts 内 svgPaths（原版 SVG path）
+
+北直隶：paths=2 centroid=(770, 472) pct=(53.18, 43.46)
+
+辽东：paths=3 centroid=(917, 340) pct=(63.33, 31.31)
+
+山东：paths=1 centroid=(818, 517) pct=(56.49, 47.61)
+
+山西：paths=1 centroid=(708, 490) pct=(48.9, 45.12)
+
+河南：paths=1 centroid=(728, 565) pct=(50.28, 52.03)
+
+陕西：paths=3 centroid=(565, 513) pct=(39.02, 47.24)
+
+南直隶：paths=5 centroid=(814, 601) pct=(56.22, 55.34)
+
+浙江：paths=1 centroid=(848, 661) pct=(58.56, 60.87)
+
+江西：paths=1 centroid=(769, 689) pct=(53.11, 63.44)
+
+福建：paths=1 centroid=(813, 723) pct=(56.15, 66.57)
+
+湖广：paths=3 centroid=(706, 646) pct=(48.76, 59.48)
+
+四川：paths=2 centroid=(569, 635) pct=(39.3, 58.47)
+
+广东：paths=2 centroid=(710, 786) pct=(49.03, 72.38)
+
+广西：paths=1 centroid=(659, 751) pct=(45.51, 69.15)
+
+云南：paths=1 centroid=(512, 742) pct=(35.36, 68.32)
+
+贵州：paths=1 centroid=(602, 703) pct=(41.57, 64.73)
+
+# --- 邻区 / 外邦 ---
+
+朝鲜 (korea)：paths=5 centroid=(973, 494) pct=(67.2, 45.49)
+
+台湾 (taiwan)：paths=1 centroid=(866, 766) pct=(59.81, 70.53)
+
+奴儿干 (nurgan)：paths=2 centroid=(1090, 226) pct=(75.28, 20.81)
+
+蒙古察哈尔 (mongol_chahar)：paths=4 centroid=(595, 352) pct=(41.09, 32.41)
+
+建州 (jianzhou)：paths=2 centroid=(949, 302) pct=(65.54, 27.81)
+
+沈阳辽阳 (shenyang_liaoyang)：paths=1 centroid=(853, 417) pct=(58.91, 38.4)
+
+漠北诸部 (outer_mongolia)：paths=3 centroid=(611, 161) pct=(42.2, 14.83)
+
+西域诸部 (western_regions)：paths=2 centroid=(230, 422) pct=(15.88, 38.86)
+
+乌思藏 / 青海 (tibet)：paths=3 centroid=(339, 595) pct=(23.41, 54.79)
+
+黑龙江北境 (amur_frontier)：paths=1 centroid=(1242, 224) pct=(85.77, 20.63)
+
+日本 (japan)：paths=8 centroid=(1147, 528) pct=(79.21, 48.62)
+
+安南 / 越南 (southwest_frontier)：paths=4 centroid=(589, 886) pct=(40.68, 81.58)

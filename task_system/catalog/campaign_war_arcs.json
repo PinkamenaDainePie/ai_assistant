@@ -1,0 +1,149 @@
+{
+  "version": 2,
+  "scenario": "song_xining",
+  "arcs": [
+    {
+      "arc_id": "hehuang",
+      "label_zh": "熙河开边",
+      "spawn_on_main_id": "main_wangshao_hehuang",
+      "hostile_entity_ids": ["xixia", "tubo"],
+      "frontier_routes": ["qinfeng", "yongxingjun", "lizhou"],
+      "on_spawn_flags": {"hehuang_arc_active": true},
+      "initial_phase_id": "prelude",
+      "initial_pressure": {
+        "supply_line": 35,
+        "command_cohesion": 55,
+        "frontier_compliance": 40
+      },
+      "edict_effects": {
+        "border_readiness": {
+          "supply_line": -5,
+          "frontier_compliance": 2,
+          "phase_contribution": 1
+        },
+        "campaign_against": {
+          "supply_line": 2,
+          "command_cohesion": 4,
+          "frontier_compliance": 3,
+          "phase_contribution": 1
+        }
+      },
+      "outcome_rules": {
+        "collapse": {
+          "min_supply_line": 76,
+          "max_command_cohesion": 34,
+          "max_army_morale": 39
+        },
+        "victory": {
+          "max_supply_line": 50,
+          "min_command_cohesion": 48,
+          "min_army_morale": 52,
+          "min_total_edict_contributions": 2,
+          "min_phase_id": "climax"
+        }
+      },
+      "phases": [
+        {
+          "phase_id": "prelude",
+          "label_zh": "经略筹备",
+          "min_quarters": 2,
+          "min_edict_contributions": 0,
+          "pressure_drift_per_quarter": {"supply_line": 2, "frontier_compliance": -1}
+        },
+        {
+          "phase_id": "active",
+          "label_zh": "河湟进击",
+          "min_quarters": 2,
+          "min_edict_contributions": 1,
+          "pressure_drift_per_quarter": {"supply_line": 4, "command_cohesion": -1}
+        },
+        {
+          "phase_id": "climax",
+          "label_zh": "拓边胶着",
+          "min_quarters": 2,
+          "min_edict_contributions": 1,
+          "pressure_drift_per_quarter": {"supply_line": 5, "frontier_compliance": -2}
+        },
+        {
+          "phase_id": "resolved",
+          "label_zh": "收束",
+          "min_quarters": 1,
+          "terminal": true
+        }
+      ],
+      "on_complete_flags": {},
+      "drift_event_tags": ["supply", "military"]
+    },
+    {
+      "arc_id": "song_viet",
+      "label_zh": "交趾战争",
+      "spawn_on_main_id": "main_song_viet_war_1075",
+      "hostile_entity_ids": ["jiaozhi"],
+      "frontier_routes": ["guangxi", "guangnan"],
+      "on_spawn_flags": {"song_viet_war_active": true},
+      "initial_phase_id": "prelude",
+      "initial_pressure": {
+        "supply_line": 45,
+        "command_cohesion": 50,
+        "frontier_compliance": 35
+      },
+      "edict_effects": {
+        "border_readiness": {
+          "supply_line": -4,
+          "frontier_compliance": 2,
+          "phase_contribution": 1
+        },
+        "campaign_against": {
+          "supply_line": 3,
+          "command_cohesion": 3,
+          "phase_contribution": 1
+        }
+      },
+      "outcome_rules": {
+        "collapse": {
+          "min_supply_line": 80,
+          "max_command_cohesion": 32,
+          "max_army_morale": 37
+        },
+        "victory": {
+          "max_supply_line": 52,
+          "min_command_cohesion": 45,
+          "min_army_supply": 54,
+          "min_total_edict_contributions": 2,
+          "min_phase_id": "active"
+        }
+      },
+      "phases": [
+        {
+          "phase_id": "prelude",
+          "label_zh": "犯境告警",
+          "min_quarters": 1,
+          "min_edict_contributions": 0,
+          "pressure_drift_per_quarter": {"supply_line": 3}
+        },
+        {
+          "phase_id": "mobilize",
+          "label_zh": "反击筹备",
+          "min_quarters": 2,
+          "min_edict_contributions": 1,
+          "pressure_drift_per_quarter": {"supply_line": 4, "command_cohesion": -1}
+        },
+        {
+          "phase_id": "active",
+          "label_zh": "岭南激战",
+          "min_quarters": 2,
+          "min_edict_contributions": 1,
+          "pressure_drift_per_quarter": {"supply_line": 6, "command_cohesion": -2}
+        },
+        {
+          "phase_id": "resolved",
+          "label_zh": "议和收束",
+          "min_quarters": 1,
+          "terminal": true
+        }
+      ],
+      "on_complete_flags": {"song_viet_war_resolved": true},
+      "drift_event_tags": ["supply", "military"]
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "version": 2,
+  "scenario": "song_xining",
+  "design_note": "主线按国家路线排期，非每条新法各占一条。B类见 campaign_xining_taxonomy.json；C类见 campaign_xining_auto_facts.json。war_arc 主线 stall 由 drift_effects_per_quarter 在代码层 alias，不在此重复写 stall_penalties_per_quarter。",
+  "mains": [
+    {
+      "id": "main_xining_reform_mandate",
+      "task_tier": "main",
+      "reign_year": 1068,
+      "season": 1,
+      "quarter_index": 1,
+      "title": "熙宁求治：是否变法",
+      "description": "史实动因：神宗即位后国库空虚、边饷日增。须定国家路线：急变祖宗之法、缓进调和，或守旧经权。此抉择将长期影响 reform 合法性与朝局阻力。",
+      "resolution_kind": "campaign_story",
+      "objectives": [],
+      "rewards": [{"type": "stat_change", "key": "authority", "value": 2}],
+      "stall_penalties_per_quarter": [{"type": "stat_change", "key": "authority", "value": -1}],
+      "penalties": [
+        {"type": "stat_change", "key": "authority", "value": -3},
+        {"type": "stat_change", "key": "unrest", "value": 2}
+      ],
+      "on_complete_flags": {"reform_mandate": true},
+      "allowed_edict_playbooks": [
+        {"domain": "personnel", "task_key": "official_evaluation"},
+        {"domain": "fiscal", "task_key": "reduce_court_spending"}
+      ]
+    },
+    {
+      "id": "main_wang_anshi_to_court",
+      "task_tier": "main",
+      "reign_year": 1068,
+      "season": 2,
+      "quarter_index": 2,
+      "title": "召王安石入中枢",
+      "description": "史实动因：中枢缺理财用人之才。若已择变法路线，诏王安石入京问富国强兵之术；亦可缓召以安抚旧党。",
+      "resolution_kind": "campaign_story",
+      "objectives": [],
+      "rewards": [{"type": "stat_change", "key": "authority", "value": 2}],
+      "stall_penalties_per_quarter": [{"type": "stat_change", "key": "authority", "value": -1}],
+      "penalties": [
+        {"type": "stat_change", "key": "authority", "value": -2},
+        {"type": "stat_change", "key": "corruption", "value": 1}
+      ],
+      "on_complete_flags": {"wang_anshi_in_court": true},
+      "allowed_edict_playbooks": [
+        {"domain": "personnel", "task_key": "merit_appointment"}
+      ]
+    },
+    {
+      "id": "main_sansi_establish",
+      "task_tier": "main",
+      "reign_year": 1069,
+      "season": 1,
+      "quarter_index": 5,
+      "title": "制置三司条例司",
+      "description": "史实动因：熙宁二年中枢需专责机构推动新法。三司岁入不敷、账目淆杂，须设条例司总揽条贯与财政权重组。",
+      "objectives": [{"type": "stat_at_least", "key": "authority", "value": 52}],
+      "rewards": [
+        {"type": "stat_change", "key": "authority", "value": 3},
+        {"type": "stat_change", "key": "tax_completion_index", "value": 2}
+      ],
+      "stall_penalties_per_quarter": [
+        {"type": "stat_change", "key": "authority", "value": -1},
+        {"type": "stat_change", "key": "tax_completion_index", "value": -1}
+      ],
+      "penalties": [
+        {"type": "stat_change", "key": "authority", "value": -2},
+        {"type": "stat_change", "key": "tax_completion_index", "value": -2}
+      ],
+      "on_complete_flags": {"sansi_established": true},
+      "allowed_edict_playbooks": [
+        {"domain": "anti_corruption", "task_key": "reform_audit_sansi"},
+        {"domain": "fiscal", "task_key": "tax_collection_push"}
+      ]
+    },
+    {
+      "id": "main_green_sprout_route",
+      "task_tier": "main",
+      "reign_year": 1069,
+      "season": 3,
+      "quarter_index": 7,
+      "title": "青苗法路线：官贷与民困",
+      "description": "史实动因：民间高利贷、常平仓与财政空虚并存。须抉择：以低息官贷济民增收、缩小试行、或维持旧制。强贷与推广副作用见季初事件卡，非本主线。",
+      "objectives": [{"type": "stat_at_least", "key": "tax_completion_index", "value": 42}],
+      "rewards": [
+        {"type": "stat_change", "key": "treasury_balance", "value": 15000},
+        {"type": "stat_change", "key": "public_support", "value": 2}
+      ],
+      "stall_penalties_per_quarter": [
+        {"type": "stat_change", "key": "public_support", "value": -1},
+        {"type": "stat_change", "key": "fiscal_pressure", "value": 1}
+      ],
+      "penalties": [{"type": "stat_change", "key": "public_support", "value": -2}],
+      "on_complete_flags": {"green_sprout_active": true},
+      "passive_effects_per_quarter": [
+        {"type": "stat_change", "key": "treasury_balance", "value": 8000},
+        {"type": "stat_change", "key": "public_support", "value": -0.5}
+      ],
+      "allowed_edict_playbooks": [
+        {"domain": "agriculture", "task_key": "spring_grain_lending"},
+        {"domain": "fiscal", "task_key": "tax_collection_push"}
+      ]
+    },
+    {
+      "id": "main_corvee_commutation",
+      "task_tier": "main",
+      "reign_year": 1071,
+      "season": 1,
+      "quarter_index": 13,
+      "title": "役法改革：免役与募役",
+      "description": "史实动因：熙宁四年差役频仍、豪右避役。须定以钱代役之制，权衡财政、民心与士绅反弹；摊派不均等执行问题走事件卡。",
+      "objectives": [{"type": "stat_at_least", "key": "tax_completion_index", "value": 46}],
+      "rewards": [
+        {"type": "stat_change", "key": "treasury_balance", "value": 12000},
+        {"type": "stat_change", "key": "fiscal_pressure", "value": -2}
+      ],
+      "stall_penalties_per_quarter": [
+        {"type": "stat_change", "key": "public_support", "value": -1},
+        {"type": "stat_change", "key": "unrest", "value": 1}
+      ],
+      "penalties": [
+        {"type": "stat_change", "key": "unrest", "value": 3},
+        {"type": "stat_change", "key": "public_support", "value": -2}
+      ],
+      "on_complete_flags": {"corvee_active": true},
+      "allowed_edict_playbooks": [
+        {"domain": "fiscal", "task_key": "corvee_commutation"}
+      ]
+    },
+    {
+      "id": "main_fiscal_reform_pack",
+      "task_tier": "main",
+      "reign_year": 1071,
+      "season": 2,
+      "quarter_index": 14,
+      "title": "国家理财改革包",
+      "description": "史实动因：均输、市易、方田同属熙宁理财体系。本主线定改革力度与优先序；市易伤商、均输扰民、方田遇豪强等副作用由事件卡处理。",
+      "objectives": [{"type": "stat_at_least", "key": "treasury_balance", "value": 38000}],
+      "rewards": [
+        {"type": "stat_change", "key": "treasury_balance", "value": 20000},
+        {"type": "stat_change", "key": "tax_completion_index", "value": 3}
+      ],
+      "stall_penalties_per_quarter": [
+        {"type": "stat_change", "key": "fiscal_pressure", "value": 1},
+        {"type": "stat_change", "key": "public_support", "value": -1}
+      ],
+      "penalties": [
+        {"type": "stat_change", "key": "treasury_balance", "value": -15000},
+        {"type": "stat_change", "key": "public_support", "value": -2}
+      ],
+      "on_complete_flags": {
+        "fiscal_reform_pack_active": true,
+        "shiyi_active": true,
+        "equalized_transport_active": true,
+        "fangtian_active": true
+      },
+      "passive_effects_per_quarter": [
+        {"type": "stat_change", "key": "treasury_balance", "value": 5000},
+        {"type": "stat_change", "key": "public_support", "value": -0.6}
+      ],
+      "allowed_edict_playbooks": [
+        {"domain": "fiscal", "task_key": "expand_state_monopoly"},
+        {"domain": "fiscal", "task_key": "equalized_transport"},
+        {"domain": "fiscal", "task_key": "tax_collection_push"},
+        {"domain": "anti_corruption", "task_key": "hidden_land_gentry"}
+      ]
+    },
+    {
+      "id": "main_baojia_baoma_route",
+      "task_tier": "main",
+      "reign_year": 1072,
+      "season": 1,
+      "quarter_index": 17,
+      "title": "强兵路线：保甲与保马",
+      "description": "史实动因：熙宁中后期须「以民为兵」整饬乡里、助征调。保甲连坐与保马征调改变军事社会结构；扰民训练走事件卡。",
+      "objectives": [{"type": "stat_reduce_by", "key": "unrest", "value": 3}],
+      "rewards": [{"type": "stat_change", "key": "unrest", "value": -3}],
+      "stall_penalties_per_quarter": [{"type": "stat_change", "key": "unrest", "value": 1}],
+      "penalties": [
+        {"type": "stat_change", "key": "unrest", "value": 4},
+        {"type": "stat_change", "key": "revolt_risk", "value": 2}
+      ],
+      "on_complete_flags": {"baojia_active": true, "baoma_active": true},
+      "allowed_edict_playbooks": [
+        {"domain": "public_order", "task_key": "patrol_order"},
+        {"domain": "public_order", "task_key": "bandit_suppression"},
+        {"domain": "military", "task_key": "border_readiness"}
+      ]
+    },
+    {
+      "id": "main_wangshao_hehuang",
+      "task_tier": "main",
+      "reign_year": 1072,
+      "season": 2,
+      "quarter_index": 18,
+      "title": "熙河开边：王韶经略",
+      "description": "史实动因：熙宁五年起河湟吐蕃威胁西夏侧翼，神宗谋复汉唐故地。是否持续拓边将牵动军需、财政与罢相压力；军粮告急为子事件/drift。",
+      "duration": 6,
+      "resolution_kind": "war_arc",
+      "objectives": [
+        {"type": "war_arc_phase_at_least", "arc_id": "hehuang", "phase_id": "climax"},
+        {"type": "war_arc_outcome_ready", "arc_id": "hehuang", "min_edict_contributions": 2}
+      ],
+      "rewards": [
+        {"type": "stat_change", "key": "authority", "value": 3},
+        {"type": "stat_change", "key": "revolt_risk", "value": -2}
+      ],
+      "penalties": [
+        {"type": "stat_change", "key": "authority", "value": -3},
+        {"type": "stat_change", "key": "army_supply", "value": -5},
+        {"type": "stat_change", "key": "revolt_risk", "value": 4},
+        {"type": "stat_change", "key": "treasury_balance", "value": -25000}
+      ],
+      "drift_effects_per_quarter": [
+        {"type": "stat_change", "key": "army_supply", "value": -2},
+        {"type": "stat_change", "key": "revolt_risk", "value": 2}
+      ],
+      "drift_event_tags": ["supply", "military"],
+      "allowed_edict_playbooks": [
+        {"domain": "military", "task_key": "border_readiness"},
+        {"domain": "military", "task_key": "campaign_against"}
+      ]
+    },
+    {
+      "id": "main_drought_famine_crisis",
+      "task_tier": "main",
+      "reign_year": 1074,
+      "season": 1,
+      "quarter_index": 25,
+      "title": "熙宁旱荒与流民图危机",
+      "description": "史实动因：熙宁六七年大旱流民，新法合法性遭质疑。须定赈济、蠲欠与是否暂缓催科；灾区仍催青苗钱等走联动事件卡。",
+      "objectives": [{"type": "stat_reduce_by", "key": "unrest", "value": 4}],
+      "rewards": [
+        {"type": "stat_change", "key": "public_support", "value": 4},
+        {"type": "stat_change", "key": "treasury_balance", "value": -35000}
+      ],
+      "stall_penalties_per_quarter": [
+        {"type": "stat_change", "key": "public_support", "value": -1},
+        {"type": "stat_change", "key": "unrest", "value": 1}
+      ],
+      "penalties": [
+        {"type": "stat_change", "key": "public_support", "value": -3},
+        {"type": "stat_change", "key": "unrest", "value": 4},
+        {"type": "stat_change", "key": "treasury_balance", "value": -20000}
+      ],
+      "on_complete_flags": {"drought_crisis_resolved": true},
+      "allowed_edict_playbooks": [
+        {"domain": "disaster_relief", "task_key": "open_granary_relief"},
+        {"domain": "disaster_relief", "task_key": "tax_remission_relief"},
+        {"domain": "disaster_relief", "task_key": "dispatch_imperial_commissioner"}
+      ]
+    },
+    {
+      "id": "main_song_viet_war_1075",
+      "task_tier": "main",
+      "reign_year": 1075,
+      "season": 1,
+      "quarter_index": 29,
+      "title": "交趾入侵：宋越熙宁战争",
+      "description": "史实动因：1075 年交趾入侵钦廉邕州，朝廷遣郭逵等反击。须调配军需、将帅与财政，战事拖延将加剧罢相压力与边患。",
+      "duration": 6,
+      "resolution_kind": "war_arc",
+      "objectives": [
+        {"type": "war_arc_phase_at_least", "arc_id": "song_viet", "phase_id": "active"},
+        {"type": "war_arc_outcome_ready", "arc_id": "song_viet", "min_edict_contributions": 2}
+      ],
+      "rewards": [
+        {"type": "stat_change", "key": "authority", "value": 2},
+        {"type": "stat_change", "key": "army_morale", "value": 3}
+      ],
+      "penalties": [
+        {"type": "stat_change", "key": "treasury_balance", "value": -45000},
+        {"type": "stat_change", "key": "revolt_risk", "value": 3}
+      ],
+      "drift_effects_per_quarter": [
+        {"type": "stat_change", "key": "army_morale", "value": -2},
+        {"type": "stat_change", "key": "fiscal_pressure", "value": 1.5}
+      ],
+      "drift_event_tags": ["military", "supply"],
+      "allowed_edict_playbooks": [
+        {"domain": "military", "task_key": "campaign_against"},
+        {"domain": "military", "task_key": "border_readiness"},
+        {"domain": "disaster_relief", "task_key": "open_granary_relief"}
+      ]
+    },
+    {
+      "id": "main_wang_anshi_resignation_crisis",
+      "task_tier": "main",
+      "spawn_mode": "conditional",
+      "reign_year": 1076,
+      "season": 1,
+      "quarter_index": 33,
+      "title": "王安石罢相危机",
+      "description": "史实动因：灾荒、言官、战争与改革阻力叠加，神宗面临是否罢相、复相或改由皇帝直推新法。非固定「熙宁十年春」罢相；1074 曾罢、1075 复、1076 再退，由局势触发。",
+      "resolution_kind": "campaign_story",
+      "spawn_conditions": [
+        {"type": "flag_true", "key": "reform_mandate"},
+        {"type": "any_stat_at_least", "keys": ["unrest", "fiscal_pressure"], "value": 48}
+      ],
+      "objectives": [],
+      "rewards": [{"type": "stat_change", "key": "authority", "value": 1}],
+      "stall_penalties_per_quarter": [
+        {"type": "stat_change", "key": "authority", "value": -1},
+        {"type": "stat_change", "key": "unrest", "value": 1}
+      ],
+      "penalties": [
+        {"type": "stat_change", "key": "unrest", "value": 3},
+        {"type": "stat_change", "key": "authority", "value": -2},
+        {"type": "stat_change", "key": "corruption", "value": 1}
+      ],
+      "on_complete_flags": {"wang_anshi_retired": true},
+      "allowed_edict_playbooks": [
+        {"domain": "personnel", "task_key": "merit_appointment"},
+        {"domain": "personnel", "task_key": "censure_and_removal"}
+      ]
+    }
+  ]
+}

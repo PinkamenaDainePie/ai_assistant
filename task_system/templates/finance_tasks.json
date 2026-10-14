@@ -1,0 +1,90 @@
+[
+  {
+    "id": "finance_raise_treasury",
+    "title": "筹措军饷",
+    "description": "本季度内国库增加至少 80000。",
+    "category": "finance",
+    "difficulty": "medium",
+    "trigger_conditions": [{ "type": "stat_less_than", "key": "treasury_balance", "value": 400000 }],
+    "objectives": [{ "type": "stat_at_least", "key": "treasury_balance", "value": 80000 }],
+    "rewards": [{ "type": "stat_change", "key": "authority", "value": 3 }],
+    "penalties": [
+      { "type": "stat_change", "key": "fiscal_pressure", "value": 4 },
+      { "type": "stat_change", "key": "authority", "value": -2 }
+    ],
+    "stall_penalties_per_quarter": [
+      { "type": "stat_change", "key": "fiscal_pressure", "value": 2 },
+      { "type": "stat_change", "key": "authority", "value": -1 }
+    ],
+    "duration": 1,
+    "priority": 85,
+    "tags": ["财政", "军饷"],
+    "mandatory": true
+  },
+  {
+    "id": "finance_reduce_pressure",
+    "title": "压降财政压力",
+    "description": "将财政压力降至 55 以下。",
+    "category": "finance",
+    "difficulty": "normal",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "fiscal_pressure", "value": 55 }],
+    "objectives": [{ "type": "stat_at_most", "key": "fiscal_pressure", "value": 55 }],
+    "rewards": [{ "type": "stat_change", "key": "public_support", "value": 2 }],
+    "penalties": [{ "type": "stat_change", "key": "unrest", "value": 3 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "unrest", "value": 1 }],
+    "duration": 1,
+    "priority": 70,
+    "tags": ["财政"]
+  },
+  {
+    "id": "finance_relieve_tax",
+    "title": "平衡税负",
+    "description": "将税负强度相对发任务时至少再降 2 点。",
+    "category": "finance",
+    "difficulty": "normal",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "tax_intensity", "value": 45 }],
+    "objectives": [{ "type": "stat_reduce_by", "key": "tax_intensity", "value": 2 }],
+    "rewards": [{ "type": "stat_change", "key": "public_support", "value": 2 }],
+    "penalties": [{ "type": "stat_change", "key": "revolt_risk", "value": 2 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "revolt_risk", "value": 1 }],
+    "duration": 1,
+    "priority": 60,
+    "tags": ["财政", "民生"]
+  },
+  {
+    "id": "reform_green_spring_lend",
+    "title": "春荒行青苗贷放",
+    "description": "青黄不接之际以官本贷民，抑兼并、济乏绝；须防胥吏与豪右从中作梗。",
+    "category": "finance",
+    "difficulty": "normal",
+    "trigger_conditions": [
+      { "type": "stat_greater_than", "key": "tax_intensity", "value": 48 },
+      { "type": "stat_greater_than", "key": "unrest", "value": 26 }
+    ],
+    "objectives": [{ "type": "stat_reduce_by", "key": "unrest", "value": 2 }],
+    "rewards": [{ "type": "stat_change", "key": "public_support", "value": 2 }],
+    "penalties": [{ "type": "stat_change", "key": "tax_intensity", "value": 1 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "tax_intensity", "value": 1 }],
+    "duration": 1,
+    "priority": 79,
+    "tags": ["熙宁", "青苗", "民生", "财政"]
+  },
+  {
+    "id": "reform_even_transport_pilot",
+    "title": "均输试调东南漕贡",
+    "description": "发运使统筹东南物货，减商贾盘剥、增京师调度；首在征管与账实相符。",
+    "category": "finance",
+    "difficulty": "normal",
+    "trigger_conditions": [
+      { "type": "stat_greater_than", "key": "fiscal_pressure", "value": 28 },
+      { "type": "stat_less_than", "key": "tax_completion_index", "value": 45 }
+    ],
+    "objectives": [{ "type": "stat_at_least", "key": "tax_completion_index", "value": 45 }],
+    "rewards": [{ "type": "stat_change", "key": "treasury_balance", "value": 12000 }],
+    "penalties": [{ "type": "stat_change", "key": "unrest", "value": 1 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "unrest", "value": 1 }],
+    "duration": 1,
+    "priority": 76,
+    "tags": ["熙宁", "均输", "漕运", "财政"]
+  }
+]

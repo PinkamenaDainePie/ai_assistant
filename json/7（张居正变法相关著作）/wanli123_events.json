@@ -1,0 +1,306 @@
+[
+  {
+    "id": "event_wanli123_001",
+    "title": "河南丈量新册遭质疑",
+    "desc": "河南丈量新册与旧册几无差错，却被户科指摘。户部请旨复核，皇帝可决定是否严查抚按责任。",
+    "options": [
+      {
+        "id": "strict_investigation",
+        "text": "停俸严勘，追究责任",
+        "effects": {
+          "bureaucratic_discipline": 2,
+          "official_loyalty": -1
+        }
+      },
+      {
+        "id": "routine_review",
+        "text": "仅复核册籍，不扩大处分",
+        "effects": {
+          "bureaucratic_discipline": 1,
+          "official_loyalty": 0
+        }
+      },
+      {
+        "id": "trust_local",
+        "text": "信任地方，停止追究",
+        "effects": {
+          "bureaucratic_discipline": -1,
+          "official_loyalty": 1
+        }
+      }
+    ],
+    "evidence_sources": [
+      "明神宗显皇帝实录卷之一百二十三"
+    ]
+  },
+  {
+    "id": "event_wanli123_002",
+    "title": "驿站困乏与边地差使",
+    "desc": "保定巡抚提出边地驿站困乏，要求禁止差使枉道、严格勘合发放，并保留真保标兵弹压地方。",
+    "options": [
+      {
+        "id": "tighten_postal",
+        "text": "严格整顿勘合与差使路线",
+        "effects": {
+          "postal_burden": -2,
+          "frontier_control": 1
+        }
+      },
+      {
+        "id": "keep_flexible",
+        "text": "维持弹性通行，少动旧规",
+        "effects": {
+          "postal_burden": 1,
+          "official_convenience": 1
+        }
+      }
+    ],
+    "evidence_sources": [
+      "明神宗显皇帝实录卷之一百二十三"
+    ]
+  },
+  {
+    "id": "event_wanli123_003",
+    "title": "白河漕运堵滞",
+    "desc": "户部指出漕运到天津顺利，但白河段疏浚不力，建议州县官昼夜驻札，并在必要时动官银雇募夫役。",
+    "options": [
+      {
+        "id": "hire_workers",
+        "text": "动官银雇募夫役疏浚",
+        "effects": {
+          "treasury": -2,
+          "grain_transport": 3
+        }
+      },
+      {
+        "id": "use_existing_labor",
+        "text": "只压榨现有夫役",
+        "effects": {
+          "grain_transport": 1,
+          "labor_unrest": 2
+        }
+      },
+      {
+        "id": "delay_action",
+        "text": "暂缓大修，等待水势好转",
+        "effects": {
+          "grain_transport": -2,
+          "treasury": 0
+        }
+      }
+    ],
+    "evidence_sources": [
+      "明神宗显皇帝实录卷之一百二十三"
+    ]
+  },
+  {
+    "id": "event_wanli123_004",
+    "title": "里松八峒土司安置",
+    "desc": "广西里松、八峒虽表面归顺，但内部仍怀疑惧。督抚建议照樊屯例设土司、设堡寨并限期观察成效。",
+    "options": [
+      {
+        "id": "install_tusi",
+        "text": "设土司与堡寨，先抚后控",
+        "effects": {
+          "local_stability": 2,
+          "military_cost": 1
+        }
+      },
+      {
+        "id": "direct_campaign",
+        "text": "直接征剿，避免养患",
+        "effects": {
+          "military_cost": 3,
+          "local_stability": -1
+        }
+      },
+      {
+        "id": "leave_alone",
+        "text": "暂不处理，观望变化",
+        "effects": {
+          "local_stability": -2,
+          "treasury": 0
+        }
+      }
+    ],
+    "evidence_sources": [
+      "明神宗显皇帝实录卷之一百二十三"
+    ]
+  },
+  {
+    "id": "event_wanli123_005",
+    "title": "旱疫中的顺天府请恤",
+    "desc": "顺天府称旱疫并作，要求停正供外诛求、缓税契、广施药饵并动用太仓赈济。内阁与皇帝对房税减免幅度意见不尽相同。",
+    "options": [
+      {
+        "id": "broad_relief",
+        "text": "大范围缓征施药并赈济",
+        "effects": {
+          "social_stability": 3,
+          "treasury": -3
+        }
+      },
+      {
+        "id": "limited_relief",
+        "text": "仅施药赈灾，税务交户部酌减",
+        "effects": {
+          "social_stability": 1,
+          "treasury": -1
+        }
+      },
+      {
+        "id": "preserve_revenue",
+        "text": "维持旧规，仅口头劝谕",
+        "effects": {
+          "treasury": 1,
+          "social_stability": -2
+        }
+      }
+    ],
+    "evidence_sources": [
+      "明神宗显皇帝实录卷之一百二十三"
+    ]
+  },
+  {
+    "id": "event_wanli123_006",
+    "title": "重囚审录是否严守原招",
+    "desc": "刑科给事中张养蒙提出，审录重囚必须先叙原招，不得任意改招，否则可能故意纵放重犯。",
+    "options": [
+      {
+        "id": "strict_original_records",
+        "text": "严守原招，不许任改",
+        "effects": {
+          "justice_integrity": 2,
+          "wrongful_release_risk": -2
+        }
+      },
+      {
+        "id": "allow_discretion",
+        "text": "允许审录官灵活改定",
+        "effects": {
+          "justice_integrity": -1,
+          "case_flexibility": 1
+        }
+      }
+    ],
+    "evidence_sources": [
+      "明神宗显皇帝实录卷之一百二十三"
+    ]
+  },
+  {
+    "id": "event_wanli123_007",
+    "title": "云南陇川宣抚司叛乱",
+    "desc": "头目岳凤父子夺印叛附。巡抚建议先遣通事宣谕，索还印牌勘合，不从再调土汉官兵并力剿捕。",
+    "options": [
+      {
+        "id": "first_persuade",
+        "text": "先宣谕索印，后备剿捕",
+        "effects": {
+          "native_affairs": 2,
+          "military_cost": 1
+        }
+      },
+      {
+        "id": "immediate_crackdown",
+        "text": "直接发兵围剿",
+        "effects": {
+          "military_cost": 3,
+          "deterrence": 2,
+          "local_stability": -1
+        }
+      }
+    ],
+    "evidence_sources": [
+      "明神宗显皇帝实录卷之一百二十三"
+    ]
+  },
+  {
+    "id": "event_wanli123_008",
+    "title": "广东军饷存银整顿",
+    "desc": "两广总督请求把现贮库银和未完银分别存储，以备紧急，并明确岁支常饷不得挪移。",
+    "options": [
+      {
+        "id": "separate_reserves",
+        "text": "严格分储，不得挪移",
+        "effects": {
+          "military_stability": 2,
+          "budget_flexibility": -1
+        }
+      },
+      {
+        "id": "allow_reallocation",
+        "text": "保留临时挪移空间",
+        "effects": {
+          "budget_flexibility": 1,
+          "military_stability": -1
+        }
+      }
+    ],
+    "evidence_sources": [
+      "明神宗显皇帝实录卷之一百二十三"
+    ]
+  },
+  {
+    "id": "event_wanli123_009",
+    "title": "清查郡王府厨役与余丁",
+    "desc": "山西抚按清查各郡王名下军民厨役，发现役占过多、绝嗣未裁、散宗滥用等问题，主张将余丁发回卫所当差。",
+    "options": [
+      {
+        "id": "full_cleanup",
+        "text": "全面清查并裁返余丁",
+        "effects": {
+          "institutional_cleanup": 2,
+          "royal_resistance": 2
+        }
+      },
+      {
+        "id": "partial_cleanup",
+        "text": "只裁绝嗣与违规最重者",
+        "effects": {
+          "institutional_cleanup": 1,
+          "royal_resistance": 1
+        }
+      }
+    ],
+    "evidence_sources": [
+      "明神宗显皇帝实录卷之一百二十三"
+    ]
+  },
+  {
+    "id": "event_wanli123_010",
+    "title": "浙江织造经费争议",
+    "desc": "浙江织造袍服所需工料浩繁，地方请求截留税银与节省银应付；户部则担忧太仓借银未补、边饷将急。",
+    "options": [
+      {
+        "id": "support_weaving",
+        "text": "准留税银应付织造",
+        "effects": {
+          "court_supply": 2,
+          "treasury": -2,
+          "border_pay_pressure": 1
+        }
+      },
+      {
+        "id": "protect_border_budget",
+        "text": "优先边饷，压缩织造",
+        "effects": {
+          "border_pay_pressure": -1,
+          "court_supply": -1,
+          "treasury": 1
+        }
+      },
+      {
+        "id": "compromise",
+        "text": "只留部分济边银在浙江",
+        "effects": {
+          "court_supply": 1,
+          "treasury": -1,
+          "border_pay_pressure": 0
+        }
+      }
+    ],
+    "evidence_sources": [
+      "明神宗显皇帝实录卷之一百二十三"
+    ]
+  }
+]

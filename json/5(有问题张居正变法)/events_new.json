@@ -1,0 +1,12 @@
+[
+  {
+    "event_id": "single_whip",
+    "title": "一条鞭法",
+    "description": "将田赋、徭役等合并为以银两征收的税制改革"
+  },
+  {
+    "event_id": "land_survey",
+    "title": "清丈土地",
+    "description": "重新丈量土地以增加税收和防止隐瞒"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "livelihood_reduce_unrest",
+    "title": "安抚民怨",
+    "description": "将动乱值降至 40 以下。",
+    "category": "livelihood",
+    "difficulty": "medium",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "unrest", "value": 40 }],
+    "objectives": [{ "type": "stat_at_most", "key": "unrest", "value": 40 }],
+    "rewards": [{ "type": "stat_change", "key": "public_support", "value": 3 }],
+    "penalties": [{ "type": "stat_change", "key": "revolt_risk", "value": 3 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "revolt_risk", "value": 1 }],
+    "duration": 1,
+    "priority": 76,
+    "tags": ["民生"]
+  },
+  {
+    "id": "livelihood_disaster_relief",
+    "title": "赈济灾民",
+    "description": "将灾害指数降低 4 点。",
+    "category": "livelihood",
+    "difficulty": "normal",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "disaster_index", "value": 20 }],
+    "objectives": [{ "type": "stat_reduce_by", "key": "disaster_index", "value": 4 }],
+    "rewards": [{ "type": "stat_change", "key": "public_support", "value": 2 }],
+    "penalties": [{ "type": "stat_change", "key": "unrest", "value": 2 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "unrest", "value": 1 }],
+    "duration": 1,
+    "priority": 69,
+    "tags": ["民生", "灾害"]
+  },
+  {
+    "id": "livelihood_support_recovery",
+    "title": "恢复民心",
+    "description": "将民心提升至 55 以上。",
+    "category": "livelihood",
+    "difficulty": "normal",
+    "trigger_conditions": [{ "type": "stat_less_than", "key": "public_support", "value": 55 }],
+    "objectives": [{ "type": "stat_at_least", "key": "public_support", "value": 55 }],
+    "rewards": [{ "type": "stat_change", "key": "authority", "value": 2 }],
+    "penalties": [{ "type": "stat_change", "key": "public_support", "value": -2 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "public_support", "value": -1 }],
+    "duration": 1,
+    "priority": 74,
+    "tags": ["民生"]
+  },
+  {
+    "id": "reform_water_charter",
+    "title": "水利条约督兴工",
+    "description": "颁农田水利条约，劝民修渠堰；灾歉之后尤赖陂塘以固农本。",
+    "category": "livelihood",
+    "difficulty": "normal",
+    "trigger_conditions": [{ "type": "stat_greater_than", "key": "disaster_index", "value": 14 }],
+    "objectives": [{ "type": "stat_reduce_by", "key": "disaster_index", "value": 2 }],
+    "rewards": [{ "type": "stat_change", "key": "public_support", "value": 2 }],
+    "penalties": [{ "type": "stat_change", "key": "treasury_balance", "value": -8000 }],
+    "stall_penalties_per_quarter": [{ "type": "stat_change", "key": "treasury_balance", "value": -4000 }],
+    "duration": 1,
+    "priority": 71,
+    "tags": ["熙宁", "水利", "农政", "民生"]
+  }
+]

@@ -1,0 +1,310 @@
+{
+  "meta": {
+    "note": "熙宁变法可推技艺池：方田、青苗、保甲、市易、募役、均输、水利、军器等。结案落 technologies 表；modifiers 同 opening_legacies。禁止明末/近代超前项。"
+  },
+  "technologies": [
+    {
+      "key": "fangtian_junshui",
+      "name": "方田均税",
+      "category": "科技",
+      "题材": "财政",
+      "预计月数": 8,
+      "起步进度": 10,
+      "stage_text": "经界方田、均定税亩，豪强隐田与吏胥舞弊并见，清丈维艰",
+      "resolve_condition": "方田均税行之一省、税亩清而国用增",
+      "fail_condition": "清丈扰民、豪强抵制或半途而废，bar≤0",
+      "effect_on_resolve": {
+        "国势": {"国库": 2},
+        "technologies": [{"action": "create", "key": "fangtian_junshui"}]
+      },
+      "effect_on_fail": {"国势": {"民心": -1}},
+      "modifiers": {
+        "regions": {
+          "henan": {"unrest": -8},
+          "beizhili": {"unrest": -6},
+          "huguang": {"unrest": -6}
+        }
+      },
+      "effect_summary": "税亩清、隐田减，国用渐增而吏胥难欺",
+      "requires": [],
+      "default_unlocked": false
+    },
+    {
+      "key": "qingmiao_cangchu",
+      "name": "青苗常平",
+      "category": "科技",
+      "题材": "民生",
+      "预计月数": 6,
+      "起步进度": 12,
+      "stage_text": "青苗本钱与常平粜籴并议，州县奉行不一、民疑为敛",
+      "resolve_condition": "青苗常平规制划一、春贷秋偿、民未大扰",
+      "fail_condition": "抑配害民、吏胥乘便牟利，bar≤0",
+      "effect_on_resolve": {
+        "国势": {"民心": 2},
+        "technologies": [{"action": "create", "key": "qingmiao_cangchu"}]
+      },
+      "effect_on_fail": {"国势": {"民心": -2}},
+      "modifiers": {"民心": 3},
+      "effect_summary": "春贷秋偿有制，荒歉少绝籴、民变势减",
+      "requires": [],
+      "default_unlocked": false
+    },
+    {
+      "key": "nongtian_shuili_tiaoyue",
+      "name": "农田水利条约",
+      "category": "科技",
+      "题材": "民生",
+      "预计月数": 5,
+      "起步进度": 16,
+      "stage_text": "民出工修陂塘堰坝，州县劝农未力、工役分配不均",
+      "resolve_condition": "水利条约颁行、陂塘堰坝成系、溉田有增",
+      "fail_condition": "工役扰农、工程敷衍或豪强占水利，bar≤0",
+      "effect_on_resolve": {
+        "technologies": [{"action": "create", "key": "nongtian_shuili_tiaoyue"}]
+      },
+      "effect_on_fail": {},
+      "modifiers": {
+        "regions": {
+          "huguang": {"unrest": -6},
+          "jiangxi": {"unrest": -6},
+          "sichuan": {"unrest": -6},
+          "shaanxi": {"unrest": -5}
+        }
+      },
+      "effect_summary": "陂塘渠堰联成，旱涝有备、农政得序",
+      "requires": [],
+      "default_unlocked": true
+    },
+    {
+      "key": "baojia_lianfang",
+      "name": "保甲连防",
+      "category": "科技",
+      "题材": "军事",
+      "预计月数": 5,
+      "起步进度": 14,
+      "stage_text": "编民为保甲、联兵防守，乡里畏扰、州县奉行参差",
+      "resolve_condition": "保甲册籍完备、巡徼有常、盗寇难聚",
+      "fail_condition": "扰民太甚、保甲虚设或民变，bar≤0",
+      "effect_on_resolve": {
+        "technologies": [{"action": "create", "key": "baojia_lianfang"}]
+      },
+      "effect_on_fail": {"国势": {"民心": -1}},
+      "modifiers": {
+        "armies": {
+          "jingying": {"training": 4},
+          "shaanxi_army": {"morale": 3}
+        }
+      },
+      "effect_summary": "乡里联防、盗寇难聚，禁军边军皆得土俗之助",
+      "requires": [],
+      "default_unlocked": false
+    },
+    {
+      "key": "bianhe_shujun",
+      "name": "汴河疏浚",
+      "category": "科技",
+      "题材": "交通",
+      "预计月数": 4,
+      "起步进度": 18,
+      "stage_text": "汴河淤浅、漕船滞涩，河工物料未集、役夫难募",
+      "resolve_condition": "汴河疏浚成、漕运复畅、京师粮道无阻",
+      "fail_condition": "河工虚报、漕运仍涩或役夫哗散，bar≤0",
+      "effect_on_resolve": {
+        "钱粮": [
+          {"账户": "国库", "增量": 4, "分类": "漕运通畅", "原因": "汴河疏浚、漕粮准时入京"}
+        ],
+        "technologies": [{"action": "create", "key": "bianhe_shujun"}]
+      },
+      "effect_on_fail": {"国势": {"民心": -1}},
+      "modifiers": {
+        "regions": {
+          "beizhili": {"unrest": -5},
+          "shandong": {"unrest": -4},
+          "nanzhili": {"unrest": -4}
+        }
+      },
+      "effect_summary": "汴河通利、漕运复畅，京师粮价得平",
+      "requires": [],
+      "default_unlocked": false
+    },
+    {
+      "key": "junqi_jianzao",
+      "name": "军器监造",
+      "category": "科技",
+      "题材": "军事",
+      "预计月数": 6,
+      "起步进度": 12,
+      "stage_text": "督造弓弩甲仗，匠役疲敝、物料短缺，神臂弓产量未敷",
+      "resolve_condition": "军器监规制划一、弓弩甲仗足供诸营",
+      "fail_condition": "粗造不堪用、匠役逃亡或物料中饱，bar≤0",
+      "effect_on_resolve": {
+        "technologies": [{"action": "create", "key": "junqi_jianzao"}]
+      },
+      "effect_on_fail": {},
+      "modifiers": {
+        "armies": {
+          "jingying": {"equipment": 4},
+          "jizhen": {"equipment": 3}
+        }
+      },
+      "effect_summary": "弓弩甲仗足供，禁军诸营器械渐精",
+      "requires": [],
+      "default_unlocked": false
+    },
+    {
+      "key": "shiyong_yisuan",
+      "name": "历算新法",
+      "category": "科技",
+      "题材": "科技",
+      "预计月数": 5,
+      "起步进度": 14,
+      "stage_text": "天文历法、筹算测望并重，士林中仍有斥为奇技者",
+      "resolve_condition": "历算新法成例、测望疏漏渐减、庙算有据",
+      "fail_condition": "士林抵制、历算讹误或馆学中辍，bar≤0",
+      "effect_on_resolve": {
+        "technologies": [{"action": "create", "key": "shiyong_yisuan"}]
+      },
+      "effect_on_fail": {},
+      "modifiers": {"皇威": 2},
+      "effect_summary": "历算测望有制，军国大事少失天时地理",
+      "requires": [],
+      "default_unlocked": true
+    },
+    {
+      "key": "shichang_yifa",
+      "name": "市易均输",
+      "category": "科技",
+      "题材": "财政",
+      "预计月数": 7,
+      "起步进度": 10,
+      "stage_text": "市易均输并议，商贾畏官夺利、州县奉行过急",
+      "resolve_condition": "市易均输规制颁行、物货流通、国用有增而商未大困",
+      "fail_condition": "与民争利太甚、商路萧条或吏胥盘剥，bar≤0",
+      "effect_on_resolve": {
+        "国势": {"国库": 2},
+        "technologies": [{"action": "create", "key": "shichang_yifa"}]
+      },
+      "effect_on_fail": {"国势": {"民心": -1}},
+      "modifiers": {"国库": 2},
+      "effect_summary": "物货流通、征榷有序，国用增而商贾知所守",
+      "requires": ["fangtian_junshui"],
+      "default_unlocked": false
+    },
+    {
+      "key": "muyi_daisong",
+      "name": "募役代输",
+      "category": "科技",
+      "题材": "财政",
+      "预计月数": 6,
+      "起步进度": 11,
+      "stage_text": "募役法推行，输钱代役与诡避诡纳并见，州县奉行参差",
+      "resolve_condition": "募役规制划一、输钱代役有制、诡避渐减",
+      "fail_condition": "加派扰民、吏胥乘便或豪强诡避，bar≤0",
+      "effect_on_resolve": {
+        "国势": {"国库": 1},
+        "technologies": [{"action": "create", "key": "muyi_daisong"}]
+      },
+      "effect_on_fail": {"国势": {"民心": -2}},
+      "modifiers": {
+        "regions": {
+          "henan": {"unrest": -5},
+          "beizhili": {"unrest": -4},
+          "huguang": {"unrest": -4}
+        }
+      },
+      "effect_summary": "输钱代役有制，差役负担渐平而吏胥难欺",
+      "requires": ["fangtian_junshui"],
+      "default_unlocked": false
+    },
+    {
+      "key": "junshu_fayun",
+      "name": "均输发运",
+      "category": "科技",
+      "题材": "财政",
+      "预计月数": 6,
+      "起步进度": 10,
+      "stage_text": "均输发运并议，漕粮转输与物货调度未畅，商贾畏官夺利",
+      "resolve_condition": "均输发运规制颁行、物货流通、转输有常",
+      "fail_condition": "转输滞涩、与民争利或吏胥盘剥，bar≤0",
+      "effect_on_resolve": {
+        "国势": {"国库": 2},
+        "technologies": [{"action": "create", "key": "junshu_fayun"}]
+      },
+      "effect_on_fail": {"国势": {"民心": -1}},
+      "modifiers": {"国库": 1},
+      "effect_summary": "物货转输有常，国用增而商路未绝",
+      "requires": ["shichang_yifa"],
+      "default_unlocked": false
+    },
+    {
+      "key": "baojia_xunbing",
+      "name": "保甲训兵",
+      "category": "科技",
+      "题材": "军事",
+      "预计月数": 5,
+      "起步进度": 12,
+      "stage_text": "保甲编练民兵、农隙教射，乡里畏扰、州县奉行过急",
+      "resolve_condition": "保甲训兵有制、农隙教射、盗寇难聚",
+      "fail_condition": "扰农太甚、保甲虚设或民变，bar≤0",
+      "effect_on_resolve": {
+        "technologies": [{"action": "create", "key": "baojia_xunbing"}]
+      },
+      "effect_on_fail": {"国势": {"民心": -1}},
+      "modifiers": {
+        "armies": {
+          "jingying": {"training": 3},
+          "jizhen": {"training": 2}
+        }
+      },
+      "effect_summary": "保甲民兵渐成，禁军边军皆得土俗之助",
+      "requires": ["baojia_lianfang"],
+      "default_unlocked": false
+    },
+    {
+      "key": "qingmiao_huanben",
+      "name": "青苗还本",
+      "category": "科技",
+      "题材": "民生",
+      "预计月数": 5,
+      "起步进度": 13,
+      "stage_text": "青苗本钱春贷秋还，抑配与乘便牟利之弊并见，民疑为敛",
+      "resolve_condition": "青苗还本规制划一、春贷秋偿、民未大扰",
+      "fail_condition": "抑配害民、吏胥乘便或本钱亏缺，bar≤0",
+      "effect_on_resolve": {
+        "国势": {"民心": 2},
+        "technologies": [{"action": "create", "key": "qingmiao_huanben"}]
+      },
+      "effect_on_fail": {"国势": {"民心": -2}},
+      "modifiers": {"民心": 2},
+      "effect_summary": "春贷秋还有制，荒歉少绝籴、民变势减",
+      "requires": ["qingmiao_cangchu"],
+      "default_unlocked": false
+    },
+    {
+      "key": "fangtian_jingjie",
+      "name": "方田经界",
+      "category": "科技",
+      "题材": "财政",
+      "预计月数": 7,
+      "起步进度": 8,
+      "stage_text": "方田经界清丈，豪强隐田与吏胥舞弊并见，清丈维艰",
+      "resolve_condition": "方田经界成例、税亩清而国用增",
+      "fail_condition": "清丈扰民、豪强抵制或半途而废，bar≤0",
+      "effect_on_resolve": {
+        "国势": {"国库": 2},
+        "technologies": [{"action": "create", "key": "fangtian_jingjie"}]
+      },
+      "effect_on_fail": {"国势": {"民心": -1}},
+      "modifiers": {
+        "regions": {
+          "henan": {"unrest": -6},
+          "shandong": {"unrest": -5},
+          "huguang": {"unrest": -5}
+        }
+      },
+      "effect_summary": "经界清丈有制，隐田渐减、国用增而吏胥难欺",
+      "requires": ["fangtian_junshui"],
+      "default_unlocked": false
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+# 仅本地课堂 PostgreSQL（腾讯云 PG 不可用时）
+# 用法（需已安装 Docker Desktop）：
+#   docker compose -f docker-compose.classroom.yml up -d
+# 然后在项目根 .env 写入：
+#   DATABASE_URL=postgresql+psycopg2://classroom:classroom@127.0.0.1:5432/classroom
+#   CLASSROOM_JWT_SECRET=本地随机长字符串
+#   CLASSROOM_SEED_DEMO=1
+#   CLASSROOM_AUTO_CREATE_TABLES=1
+# 重启 :8000 API 后访问 /api/auth/config 应返回 classroom_enabled: true
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ai-assistant-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: classroom
+      POSTGRES_PASSWORD: classroom
+      POSTGRES_DB: classroom
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U classroom -d classroom"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  postgres_data:

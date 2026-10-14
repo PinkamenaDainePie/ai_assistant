@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-03-05T12:18:18.774833",
+  "source_files": [
+    "王安石变法.司马光.苏轼.docx",
+    "王安石变法.续资治通鉴长编.docx"
+  ],
+  "stats": {
+    "docs_detected": 2,
+    "knowledge_chunks": 71,
+    "structure_facts": 85,
+    "personas": 5,
+    "events": 6
+  },
+  "files": [
+    "knowledge_chunks_new.jsonl",
+    "structure_facts_new.jsonl",
+    "personas_new.json",
+    "events_new.json",
+    "dataset_index_new.json"
+  ]
+}

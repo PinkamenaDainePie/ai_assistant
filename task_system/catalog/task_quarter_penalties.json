@@ -1,0 +1,1189 @@
+{
+  "version": 1,
+  "schema": {
+    "stall_penalties_per_quarter": "季末怠政：assigned_quarter <= Q < deadline 且未完成",
+    "penalties": "逾期失败：Q >= deadline_quarter 且未完成，任务移出 active",
+    "stall_alias": "war_arc 主线 stall 运行时读 drift_effects_per_quarter"
+  },
+  "entries": {
+    "agri_spring_encourage_farming": {
+      "title": "劝课农桑",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "agri_irrigation_or_land_improvement": {
+      "title": "兴修农田水利",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -6000.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -12000.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 2
+    },
+    "agri_mulberry_silk_promotion": {
+      "title": "广植桑麻课蚕",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        },
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 2.0
+        },
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 2
+    },
+    "agri_spring_grain_lending": {
+      "title": "春前给散贷种",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -5000.0
+        },
+        {
+          "type": "stat_change",
+          "key": "corruption",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -10000.0
+        },
+        {
+          "type": "stat_change",
+          "key": "corruption",
+          "value": 1.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "agri_post_disaster_replant": {
+      "title": "灾后劝复农耕",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -4000.0
+        },
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -8000.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "agri_song_irrigation_charter": {
+      "title": "农田水利条约",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "fiscal_pressure",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "fiscal_pressure",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 2
+    },
+    "faction_balance_court": {
+      "title": "平衡朝堂派系",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "corruption",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "corruption",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "faction_anti_corruption": {
+      "title": "压制朋党腐化",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "faction_stability_optional": {
+      "title": "调停台谏纷争",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "reform_green_coerce_probe": {
+      "title": "青苗强配纠弹",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "fiscal_pressure",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "fiscal_pressure",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "reform_gentry_boycott": {
+      "title": "豪右串联拒贷",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "reform_water_gentry_monopoly": {
+      "title": "豪渠占堰夺水利",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "reform_throne_debate": {
+      "title": "御前辩理财之本末",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "corruption",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "corruption",
+          "value": 1.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "finance_raise_treasury": {
+      "title": "筹措军饷",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "fiscal_pressure",
+          "value": 2.0
+        },
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "fiscal_pressure",
+          "value": 4.0
+        },
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -2.0
+        }
+      ],
+      "mandatory": true,
+      "duration": 1
+    },
+    "finance_reduce_pressure": {
+      "title": "压降财政压力",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 3.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "finance_relieve_tax": {
+      "title": "平衡税负",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "revolt_risk",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "revolt_risk",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "reform_green_spring_lend": {
+      "title": "春荒行青苗贷放",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "tax_intensity",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "tax_intensity",
+          "value": 1.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "reform_even_transport_pilot": {
+      "title": "均输试调东南漕贡",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "fiscal_tax_collection_push": {
+      "title": "清厘钱粮积欠",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 2
+    },
+    "fiscal_increase_tax_levy": {
+      "title": "加征以充国用",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        },
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -3.0
+        },
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 2
+    },
+    "fiscal_reduce_court_spending": {
+      "title": "裁冗节流",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -1.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "fiscal_expand_state_monopoly": {
+      "title": "市易榷利",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        },
+        {
+          "type": "stat_change",
+          "key": "corruption",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -2.0
+        },
+        {
+          "type": "stat_change",
+          "key": "corruption",
+          "value": 1.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 2
+    },
+    "fiscal_corvee_commutation": {
+      "title": "推行免役",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 2
+    },
+    "fiscal_equalized_transport": {
+      "title": "均输调剂",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -3000.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -6000.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 2
+    },
+    "internal_reduce_corruption": {
+      "title": "整饬吏治",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "internal_restore_authority": {
+      "title": "稳固朝纲",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "internal_stabilize_order": {
+      "title": "抑制朝局震荡",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "revolt_risk",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "revolt_risk",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "reform_sansi_audit": {
+      "title": "条例司勘核三司簿籍",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "reform_canal_patrol": {
+      "title": "察访使勘漕运积弊",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "corruption",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "corruption",
+          "value": 1.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "reform_memorial_backlash": {
+      "title": "台谏汹汹驳新法",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "reform_local_delay": {
+      "title": "督察州县奉行新条",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "livelihood_reduce_unrest": {
+      "title": "安抚民怨",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "revolt_risk",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "revolt_risk",
+          "value": 3.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "livelihood_disaster_relief": {
+      "title": "赈济灾民",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "livelihood_support_recovery": {
+      "title": "恢复民心",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "reform_water_charter": {
+      "title": "水利条约督兴工",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -4000.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -8000.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "military_raise_morale": {
+      "title": "整饬军纪",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "revolt_risk",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "revolt_risk",
+          "value": 3.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "military_secure_supply": {
+      "title": "补足军需",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 2.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "military_reduce_revolt": {
+      "title": "压制流寇威胁",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -1.0
+        },
+        {
+          "type": "stat_change",
+          "key": "revolt_risk",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -4.0
+        },
+        {
+          "type": "stat_change",
+          "key": "revolt_risk",
+          "value": 2.0
+        }
+      ],
+      "mandatory": true,
+      "duration": 1
+    },
+    "reform_northwest_budget": {
+      "title": "西北边饷告急",
+      "source": "template",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -7500.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -15000.0
+        }
+      ],
+      "mandatory": false,
+      "duration": 1
+    },
+    "main_xining_reform_mandate": {
+      "title": "熙宁求治：是否变法",
+      "source": "campaign_main",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -3.0
+        },
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 2.0
+        }
+      ],
+      "duration": 1,
+      "resolution_kind": "campaign_story"
+    },
+    "main_wang_anshi_to_court": {
+      "title": "召王安石入中枢",
+      "source": "campaign_main",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -2.0
+        },
+        {
+          "type": "stat_change",
+          "key": "corruption",
+          "value": 1.0
+        }
+      ],
+      "duration": 1,
+      "resolution_kind": "campaign_story"
+    },
+    "main_sansi_establish": {
+      "title": "制置三司条例司",
+      "source": "campaign_main",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -1.0
+        },
+        {
+          "type": "stat_change",
+          "key": "tax_completion_index",
+          "value": -1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -2.0
+        },
+        {
+          "type": "stat_change",
+          "key": "tax_completion_index",
+          "value": -2.0
+        }
+      ],
+      "duration": 1,
+      "resolution_kind": "objectives"
+    },
+    "main_green_sprout_route": {
+      "title": "青苗法路线：官贷与民困",
+      "source": "campaign_main",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        },
+        {
+          "type": "stat_change",
+          "key": "fiscal_pressure",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -2.0
+        }
+      ],
+      "duration": 1,
+      "resolution_kind": "objectives"
+    },
+    "main_corvee_commutation": {
+      "title": "役法改革：免役与募役",
+      "source": "campaign_main",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        },
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 3.0
+        },
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -2.0
+        }
+      ],
+      "duration": 1,
+      "resolution_kind": "objectives"
+    },
+    "main_fiscal_reform_pack": {
+      "title": "国家理财改革包",
+      "source": "campaign_main",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "fiscal_pressure",
+          "value": 1.0
+        },
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -15000.0
+        },
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -2.0
+        }
+      ],
+      "duration": 1,
+      "resolution_kind": "objectives"
+    },
+    "main_baojia_baoma_route": {
+      "title": "强兵路线：保甲与保马",
+      "source": "campaign_main",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 4.0
+        },
+        {
+          "type": "stat_change",
+          "key": "revolt_risk",
+          "value": 2.0
+        }
+      ],
+      "duration": 1,
+      "resolution_kind": "objectives"
+    },
+    "main_wangshao_hehuang": {
+      "title": "熙河开边：王韶经略",
+      "source": "campaign_main",
+      "stall_penalties_per_quarter": [],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -3.0
+        },
+        {
+          "type": "stat_change",
+          "key": "army_supply",
+          "value": -5.0
+        },
+        {
+          "type": "stat_change",
+          "key": "revolt_risk",
+          "value": 4.0
+        },
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -25000.0
+        }
+      ],
+      "duration": 6,
+      "resolution_kind": "war_arc",
+      "stall_alias": "drift_effects_per_quarter",
+      "drift_effects_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "army_supply",
+          "value": -2.0
+        },
+        {
+          "type": "stat_change",
+          "key": "revolt_risk",
+          "value": 2.0
+        }
+      ]
+    },
+    "main_drought_famine_crisis": {
+      "title": "熙宁旱荒与流民图危机",
+      "source": "campaign_main",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -1.0
+        },
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "public_support",
+          "value": -3.0
+        },
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 4.0
+        },
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -20000.0
+        }
+      ],
+      "duration": 1,
+      "resolution_kind": "objectives"
+    },
+    "main_song_viet_war_1075": {
+      "title": "交趾入侵：宋越熙宁战争",
+      "source": "campaign_main",
+      "stall_penalties_per_quarter": [],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "treasury_balance",
+          "value": -45000.0
+        },
+        {
+          "type": "stat_change",
+          "key": "revolt_risk",
+          "value": 3.0
+        }
+      ],
+      "duration": 6,
+      "resolution_kind": "war_arc",
+      "stall_alias": "drift_effects_per_quarter",
+      "drift_effects_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "army_morale",
+          "value": -2.0
+        },
+        {
+          "type": "stat_change",
+          "key": "fiscal_pressure",
+          "value": 1.5
+        }
+      ]
+    },
+    "main_wang_anshi_resignation_crisis": {
+      "title": "王安石罢相危机",
+      "source": "campaign_main",
+      "stall_penalties_per_quarter": [
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -1.0
+        },
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 1.0
+        }
+      ],
+      "penalties": [
+        {
+          "type": "stat_change",
+          "key": "unrest",
+          "value": 3.0
+        },
+        {
+          "type": "stat_change",
+          "key": "authority",
+          "value": -2.0
+        },
+        {
+          "type": "stat_change",
+          "key": "corruption",
+          "value": 1.0
+        }
+      ],
+      "duration": 1,
+      "resolution_kind": "campaign_story"
+    }
+  }
+}

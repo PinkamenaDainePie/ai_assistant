@@ -1,0 +1,208 @@
+{
+  "version": 1,
+  "weak_current_quarter_scale": 0.42,
+  "playbooks": {
+    "strict_local_probe": {
+      "phase_narratives": [
+        "立案参劾，诏狱初开",
+        "外查对质，地方震动",
+        "结案追赃，吏治稍肃"
+      ],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "corruption", "value": -7},
+          {"type": "stat_change", "key": "authority", "value": 4},
+          {"type": "stat_change", "key": "treasury_balance", "value": 8000}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "corruption", "value": -4},
+          {"type": "stat_change", "key": "authority", "value": 2},
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "authority", "value": -2},
+          {"type": "stat_change", "key": "corruption", "value": 1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "corruption", "value": 3},
+          {"type": "stat_change", "key": "public_support", "value": -3},
+          {"type": "stat_change", "key": "unrest", "value": 3}
+        ]
+      }
+    },
+    "routine_audit": {
+      "phase_narratives": [
+        "卷宗清理，吏案待发",
+        "对账问询，账目渐明",
+        "汇奏整改，稍见成效"
+      ],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "corruption", "value": -4},
+          {"type": "stat_change", "key": "authority", "value": 2}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "corruption", "value": -2},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 0.5}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "corruption", "value": 2},
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ]
+      }
+    },
+    "reform_audit_sansi": {
+      "phase_narratives": [
+        "条例司立案，三司簿籍待勘",
+        "勾稽转运账目，隐漏渐显",
+        "汇奏朝廷，新法吏治并论"
+      ],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "corruption", "value": -5},
+          {"type": "stat_change", "key": "tax_completion_index", "value": 2},
+          {"type": "stat_change", "key": "authority", "value": 2}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "corruption", "value": -2},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "corruption", "value": 2},
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ]
+      }
+    },
+    "market_monopoly_graft": {
+      "phase_narratives": [
+        "市易司立案，侵渔账目待核",
+        "勾稽和买簿籍，舞弊渐显",
+        "奏报朝廷，商贾与吏治并论"
+      ],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "corruption", "value": -5},
+          {"type": "stat_change", "key": "treasury_balance", "value": 5000},
+          {"type": "stat_change", "key": "public_support", "value": -1}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "corruption", "value": -2},
+          {"type": "stat_change", "key": "fiscal_pressure", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "corruption", "value": 2},
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ]
+      }
+    },
+    "river_work_embezzle": {
+      "phase_narratives": [
+        "都水监勘河工，工料册籍待发",
+        "逐段核料对工，冒领渐露",
+        "奏报工部，堤防与吏治并论"
+      ],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "corruption", "value": -6},
+          {"type": "stat_change", "key": "treasury_balance", "value": -3000},
+          {"type": "stat_change", "key": "public_support", "value": 2}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "corruption", "value": -3},
+          {"type": "stat_change", "key": "unrest", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "authority", "value": -1}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "corruption", "value": 2},
+          {"type": "stat_change", "key": "unrest", "value": 3}
+        ]
+      }
+    },
+    "hidden_land_gentry": {
+      "phase_narratives": [
+        "转运司方田立案，隐田册籍待勘",
+        "逐乡丈量对册，庇奸渐显",
+        "汇奏户部，税籍与吏治并论"
+      ],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "corruption", "value": -5},
+          {"type": "stat_change", "key": "tax_completion_index", "value": 3},
+          {"type": "stat_change", "key": "unrest", "value": 1}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "corruption", "value": -2},
+          {"type": "stat_change", "key": "authority", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "corruption", "value": 2},
+          {"type": "stat_change", "key": "public_support", "value": -2},
+          {"type": "stat_change", "key": "unrest", "value": 3}
+        ]
+      }
+    },
+    "relief_grain_embezzle": {
+      "phase_narratives": [
+        "钦差察赈立案，仓漕簿籍待发",
+        "逐仓核粮对册，侵吞渐露",
+        "汇奏朝廷，赈务与吏治并论"
+      ],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "corruption", "value": -7},
+          {"type": "stat_change", "key": "public_support", "value": 3},
+          {"type": "stat_change", "key": "treasury_balance", "value": -5000}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "corruption", "value": -4},
+          {"type": "stat_change", "key": "unrest", "value": -1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "public_support", "value": -3}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "corruption", "value": 3},
+          {"type": "stat_change", "key": "unrest", "value": 4}
+        ]
+      }
+    },
+    "memorial_screen_impeachment": {
+      "phase_narratives": [
+        "御史台收章，诬告与实贪待甄别",
+        "对质卷宗，党议渐明",
+        "汇奏中书，朝局稍肃"
+      ],
+      "effect_tiers": {
+        "success": [
+          {"type": "stat_change", "key": "corruption", "value": -3},
+          {"type": "stat_change", "key": "authority", "value": 4}
+        ],
+        "partial": [
+          {"type": "stat_change", "key": "corruption", "value": -1},
+          {"type": "stat_change", "key": "unrest", "value": 1}
+        ],
+        "failure": [
+          {"type": "stat_change", "key": "authority", "value": -2}
+        ],
+        "backlash": [
+          {"type": "stat_change", "key": "corruption", "value": 1},
+          {"type": "stat_change", "key": "unrest", "value": 2}
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "scenario": "song_xining",
+  "facts": [
+    {
+      "id": "auto_green_sprout_expand",
+      "earliest_quarter_index": 9,
+      "requires_flags": {"green_sprout_active": true},
+      "sets_flags": {"green_sprout_expanded": true},
+      "narrative_zh": "诸路青苗试行见效，朝廷诏扩大推行；州县按期放贷纳息。",
+      "passive_effects_per_quarter": [
+        {"type": "stat_change", "key": "treasury_balance", "value": 5000},
+        {"type": "stat_change", "key": "unrest", "value": 0.8}
+      ]
+    },
+    {
+      "id": "auto_wang_anshi_vice_grand_councillor",
+      "earliest_quarter_index": 5,
+      "requires_flags": {"wang_anshi_in_court": true, "reform_mandate": true},
+      "sets_flags": {"wang_anshi_leading_reform": true},
+      "narrative_zh": "王安石任参知政事，主持条例司条贯。",
+      "unlock_playbooks": [
+        {"domain": "personnel", "task_key": "merit_appointment"}
+      ]
+    },
+    {
+      "id": "auto_simaguang_outcourt",
+      "earliest_quarter_index": 13,
+      "requires_flags": {"reform_mandate": true},
+      "requires_any_stat_at_least": {"unrest": 42},
+      "sets_flags": {"old_party_pressure": true},
+      "narrative_zh": "司马光等旧臣屡疏反新法，朝论分歧日甚。",
+      "passive_effects_per_quarter": [
+        {"type": "stat_change", "key": "authority", "value": -0.3}
+      ]
+    }
+  ]
+}

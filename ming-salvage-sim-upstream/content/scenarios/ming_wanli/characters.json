@@ -1,0 +1,582 @@
+{
+  "factions": [
+    {
+      "name": "张党",
+      "satisfaction": 72,
+      "leverage": 68,
+      "agenda": "推考成、一条鞭，整饬吏治，保改革节奏"
+    },
+    {
+      "name": "高拱余党",
+      "satisfaction": 38,
+      "leverage": 42,
+      "agenda": "争首辅名分，阻张冯专权，重祖制"
+    },
+    {
+      "name": "户部实务",
+      "satisfaction": 55,
+      "leverage": 58,
+      "agenda": "保太仓、催解赋税、少背锅"
+    },
+    {
+      "name": "言官",
+      "satisfaction": 45,
+      "leverage": 35,
+      "agenda": "纠弹权臣、清议名分"
+    },
+    {
+      "name": "边镇",
+      "satisfaction": 50,
+      "leverage": 62,
+      "agenda": "补饷、守边、少受文臣掣肘"
+    },
+    {
+      "name": "中立",
+      "satisfaction": 50,
+      "leverage": 45,
+      "agenda": "按章办事、避党争"
+    }
+  ],
+  "characters": [
+    {
+      "name": "万历帝",
+      "office": "皇帝",
+      "office_type": "皇帝",
+      "faction": "中立",
+      "aliases": [
+        "万历",
+        "皇上",
+        "陛下"
+      ],
+      "personal_skills": [
+        "临朝"
+      ],
+      "loyalty": 100,
+      "ability": 55,
+      "integrity": 60,
+      "courage": 50,
+      "style": "冲龄听政",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1563,
+      "status": "active",
+      "summary": "明神宗，万历元年尚幼冲龄即位，政务多委首辅与司礼监。开局正值辅政格局初定、改革待兴。国库告急与考成、一条鞭皆需他裁断或默许。召见意义有限，然圣意风向决定改革空间。年幼倚重，易受太后与冯保影响。"
+    },
+    {
+      "name": "张居正",
+      "office": "内阁首辅",
+      "office_type": "内阁",
+      "faction": "张党",
+      "aliases": [
+        "张居正",
+        "张太岳",
+        "首辅"
+      ],
+      "personal_skills": [
+        "考成法",
+        "一条鞭",
+        "权术"
+      ],
+      "loyalty": 88,
+      "ability": 92,
+      "integrity": 70,
+      "courage": 85,
+      "style": "铁腕务实",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1525,
+      "historical_death_year": 1582,
+      "status": "active",
+      "summary": "内阁首辅，铁腕改革派，力推考成法整顿吏治，并支持一条鞭与清丈。与国库开源、吏治效率、党争风险全部相关，是万历改革主线核心。召见可问考成次第、清丈阻力与边饷。刚毅专断，不避怨谤。"
+    },
+    {
+      "name": "李太后",
+      "office": "慈圣皇太后",
+      "office_type": "后宫",
+      "faction": "张党",
+      "aliases": [
+        "李太后",
+        "慈圣太后"
+      ],
+      "personal_skills": [
+        "辅政",
+        "平衡"
+      ],
+      "loyalty": 80,
+      "ability": 75,
+      "integrity": 72,
+      "courage": 68,
+      "style": "持重护幼主",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1545,
+      "status": "active",
+      "summary": "慈圣皇太后，幼主辅政保护人，优先国家安定。改革能否推进常视其是否支持张冯。与宫廷政治、改革合法性相关。召见可问辅政分寸与安民。慈严并济，重秩序。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "冯保",
+      "office": "司礼监掌印太监",
+      "office_type": "司礼监",
+      "faction": "张党",
+      "aliases": [
+        "冯保",
+        "冯公公"
+      ],
+      "personal_skills": [
+        "批红",
+        "内廷"
+      ],
+      "loyalty": 78,
+      "ability": 80,
+      "integrity": 55,
+      "courage": 70,
+      "style": "内廷枢纽",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1548,
+      "status": "active",
+      "summary": "司礼监掌印太监，政令批红与宫廷枢纽。与张居正互为表里，推动票拟落地。与内廷、宦权、改革执行相关。召见可问内朝动向与阻力。权术娴熟，重实利与权位。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "高拱",
+      "office": "内阁首辅",
+      "office_type": "内阁",
+      "faction": "高拱余党",
+      "aliases": [
+        "高拱",
+        "高仪邻"
+      ],
+      "personal_skills": [
+        "政务",
+        "强势"
+      ],
+      "loyalty": 45,
+      "ability": 82,
+      "integrity": 65,
+      "courage": 80,
+      "style": "刚愎强势",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1513,
+      "historical_death_year": 1578,
+      "status": "active",
+      "summary": "内阁首辅（或刚罢未稳），强势政务派，与张冯矛盾日深。开局前后名分与首辅之争是朝局焦点。与权力重组、改革是否顺畅相关。召见可听反对张党之声。强势自负，不善妥协。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "吕调阳",
+      "office": "内阁次辅",
+      "office_type": "内阁",
+      "faction": "张党",
+      "aliases": [
+        "吕调阳",
+        "吕大司寇"
+      ],
+      "personal_skills": [
+        "政务",
+        "调和"
+      ],
+      "loyalty": 82,
+      "ability": 78,
+      "integrity": 75,
+      "courage": 62,
+      "style": "持重调和",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1516,
+      "historical_death_year": 1580,
+      "status": "active",
+      "summary": "内阁次辅，佐张居正理政，偏改革阵营。负责票拟调和与日常政务。与内阁运转、改革落地相关。召见可问具体政务安排。稳健辅弼，少出风头。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "张四维",
+      "office": "内阁大学士",
+      "office_type": "内阁",
+      "faction": "中立",
+      "aliases": [
+        "张四维"
+      ],
+      "personal_skills": [
+        "票拟",
+        "实务"
+      ],
+      "loyalty": 75,
+      "ability": 76,
+      "integrity": 68,
+      "courage": 58,
+      "style": "谨慎守成",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1534,
+      "historical_death_year": 1585,
+      "status": "active",
+      "summary": "内阁大学士，谨慎守成，偏实务。对新式整顿常求稳妥，不喜骤变。与票拟、朝议平衡相关。召见可问缓进方案。谨慎圆熟，少出锋芒。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "申时行",
+      "office": "内阁大学士",
+      "office_type": "内阁",
+      "faction": "中立",
+      "aliases": [
+        "申时行",
+        "申文端"
+      ],
+      "personal_skills": [
+        "调和",
+        "票拟"
+      ],
+      "loyalty": 80,
+      "ability": 80,
+      "integrity": 72,
+      "courage": 55,
+      "style": "和稀泥",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1534,
+      "historical_death_year": 1614,
+      "status": "active",
+      "summary": "内阁大学士，善调和党争，日后或成缓冲人物。与言路安抚、朝局降温相关。召见可问如何息争保改革。调和圆通，不喜极端。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "王锡爵",
+      "office": "内阁大学士",
+      "office_type": "内阁",
+      "faction": "中立",
+      "aliases": [
+        "王锡爵"
+      ],
+      "personal_skills": [
+        "政务",
+        "文学"
+      ],
+      "loyalty": 78,
+      "ability": 77,
+      "integrity": 70,
+      "courage": 56,
+      "style": "儒雅持重",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1534,
+      "historical_death_year": 1611,
+      "status": "active",
+      "summary": "内阁大学士，儒雅持重，长于文学政务，立场相对中立。与阁务、诏令文辞相关。召见可问持重之策与朝议措辞。儒雅稳妥。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "王国光",
+      "office": "户部尚书",
+      "office_type": "六部",
+      "faction": "户部实务",
+      "aliases": [
+        "王国光"
+      ],
+      "personal_skills": [
+        "理财",
+        "清丈"
+      ],
+      "loyalty": 80,
+      "ability": 84,
+      "integrity": 72,
+      "courage": 70,
+      "style": "理财干练",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1523,
+      "historical_death_year": 1588,
+      "status": "active",
+      "summary": "户部尚书，改革期太仓掌钥人。清丈、一条鞭折银、边饷续解多经户部。与国库盈亏直接相关。召见可问太仓实数与开源节流。精于理财，务实。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "梁梦龙",
+      "office": "刑部尚书",
+      "office_type": "六部",
+      "faction": "张党",
+      "aliases": [
+        "梁梦龙"
+      ],
+      "personal_skills": [
+        "律例",
+        "政务"
+      ],
+      "loyalty": 76,
+      "ability": 74,
+      "integrity": 68,
+      "courage": 60,
+      "style": "奉法行事",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1532,
+      "historical_death_year": 1597,
+      "status": "active",
+      "summary": "刑部尚书，张党姻亲，掌律例政务。改革阻力可用法司手段处理。与吏治惩戒、违法阻挠相关。召见可问执法尺度。果决偏张党。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "王篆",
+      "office": "户部左侍郎",
+      "office_type": "六部",
+      "faction": "张党",
+      "aliases": [
+        "王篆"
+      ],
+      "personal_skills": [
+        "理财",
+        "清丈"
+      ],
+      "loyalty": 72,
+      "ability": 70,
+      "integrity": 52,
+      "courage": 58,
+      "style": "依附权臣",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1534,
+      "status": "active",
+      "summary": "户部左侍郎，张居正之弟，户部要职。协助清丈与赋役折银，贴近江南税基。与隐田清丈相关。召见可问清丈进度。亲贵实务，偏改革。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "潘季驯",
+      "office": "河道总督",
+      "office_type": "部院",
+      "faction": "户部实务",
+      "aliases": [
+        "潘季驯",
+        "潘应祥"
+      ],
+      "personal_skills": [
+        "治河",
+        "漕运"
+      ],
+      "loyalty": 78,
+      "ability": 85,
+      "integrity": 80,
+      "courage": 65,
+      "style": "工程务实",
+      "power_id": "ming",
+      "location": "shandong",
+      "birth_year": 1521,
+      "historical_death_year": 1595,
+      "status": "active",
+      "summary": "河道总督，水利官僚，漕运与河工所系。河患役繁会拖累民力与国用。与漕粮、工程开支相关。召见可问治河缓急。专业务实，重工程。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "海瑞",
+      "office": "南京都察院右都御史",
+      "office_type": "都察院",
+      "faction": "言官",
+      "aliases": [
+        "海瑞",
+        "海刚峰"
+      ],
+      "personal_skills": [
+        "清议",
+        "纠弹"
+      ],
+      "loyalty": 70,
+      "ability": 76,
+      "integrity": 95,
+      "courage": 92,
+      "style": "刚直清议",
+      "power_id": "ming",
+      "location": "nanzhili",
+      "birth_year": 1514,
+      "historical_death_year": 1587,
+      "status": "active",
+      "summary": "南京右都御史，清议标杆，纠弹权臣不留情面。改革专权易遭其清议反噬。与言路、民心相关。召见可听极端清廉批评。刚直如铁，不惧权贵。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "刘台",
+      "office": "御史",
+      "office_type": "都察院",
+      "faction": "言官",
+      "aliases": [
+        "刘台"
+      ],
+      "personal_skills": [
+        "纠弹",
+        "清议"
+      ],
+      "loyalty": 65,
+      "ability": 72,
+      "integrity": 82,
+      "courage": 88,
+      "style": "敢言敢谏",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1536,
+      "historical_death_year": 1605,
+      "status": "active",
+      "summary": "御史，曾疏劾张居正，倒张先驱之一。代表科道对专权的警惕。与党争、清议相关。召见可听弹章逻辑与风险。敢言犯上，锋芒毕露。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "戚继光",
+      "office": "蓟镇总兵",
+      "office_type": "总兵",
+      "faction": "边镇",
+      "aliases": [
+        "戚继光",
+        "戚元敬"
+      ],
+      "personal_skills": [
+        "练兵",
+        "蓟辽防务"
+      ],
+      "loyalty": 82,
+      "ability": 88,
+      "integrity": 75,
+      "courage": 90,
+      "style": "精练实兵",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1528,
+      "historical_death_year": 1588,
+      "status": "active",
+      "summary": "蓟镇总兵，蓟辽防务与练兵核心，车营火器名将。边饷不足则军心不稳。与蓟辽北防主危机直接相关。召见可问练兵、边墙与欠饷。治军严整，重实效。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "李成梁",
+      "office": "辽东总兵",
+      "office_type": "总兵",
+      "faction": "边镇",
+      "aliases": [
+        "李成梁",
+        "李宁远伯"
+      ],
+      "personal_skills": [
+        "辽东",
+        "战功"
+      ],
+      "loyalty": 75,
+      "ability": 78,
+      "integrity": 58,
+      "courage": 82,
+      "style": "善战贪功",
+      "power_id": "ming",
+      "location": "liaodong",
+      "birth_year": 1526,
+      "historical_death_year": 1618,
+      "status": "active",
+      "summary": "辽东总兵，羁縻女真、战功卓著。辽饷与边镇稳定系于此人。与辽东军费、边警相关。召见可问辽事与军需。骁勇能战，亦重地方利益。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "王崇古",
+      "office": "兵部尚书",
+      "office_type": "六部",
+      "faction": "边镇",
+      "aliases": [
+        "王崇古"
+      ],
+      "personal_skills": [
+        "宣大防务",
+        "互市"
+      ],
+      "loyalty": 78,
+      "ability": 80,
+      "integrity": 72,
+      "courage": 68,
+      "style": "通边务",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1525,
+      "historical_death_year": 1588,
+      "status": "active",
+      "summary": "兵部尚书，知蒙古互市与宣大防务。互市可缓边压、亦涉财政。与北防、互市开源相关。召见可问抚驭与互市。老成边务，务实。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "谭纶",
+      "office": "兵部尚书",
+      "office_type": "六部",
+      "faction": "边镇",
+      "aliases": [
+        "谭纶",
+        "谭元湘"
+      ],
+      "personal_skills": [
+        "练兵",
+        "边务"
+      ],
+      "loyalty": 80,
+      "ability": 82,
+      "integrity": 74,
+      "courage": 78,
+      "style": "与戚继光善",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1523,
+      "historical_death_year": 1588,
+      "status": "active",
+      "summary": "兵部尚书，蓟辽防务中枢，与戚继光等配合练兵。边政与军饷调度关键人物。与北防主线相关。召见可问兵部统筹。练达军政，重配合。课上可对照其党派立场理解问策方向。召见时可先问其职守与主张，再问财税或边事具体建议。"
+    },
+    {
+      "name": "马自强",
+      "office": "吏部尚书",
+      "office_type": "六部",
+      "faction": "张党",
+      "aliases": [
+        "马自强"
+      ],
+      "personal_skills": [
+        "考成",
+        "铨选"
+      ],
+      "loyalty": 82,
+      "ability": 78,
+      "integrity": 70,
+      "courage": 62,
+      "style": "奉首辅行考成",
+      "power_id": "ming",
+      "location": "beizhili",
+      "birth_year": 1513,
+      "historical_death_year": 1578,
+      "status": "active",
+      "summary": "吏部尚书，考成法所系，铨选考核在其手。考成能否落实决定吏治与赋役效率。与考成主线相关。召见可问考核条目与阳奉阴违。刚正偏改革。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "努尔哈赤",
+      "office": "建州左卫都督",
+      "office_type": "外藩",
+      "faction": "中立",
+      "aliases": [
+        "努尔哈赤",
+        "努儿哈赤"
+      ],
+      "personal_skills": [
+        "兼并",
+        "练兵"
+      ],
+      "loyalty": 15,
+      "ability": 82,
+      "integrity": 40,
+      "courage": 85,
+      "style": "雄略渐露",
+      "power_id": "jurchen",
+      "location": "jianzhou",
+      "birth_year": 1559,
+      "historical_death_year": 1626,
+      "status": "active",
+      "summary": "建州女真首领（边外势力）。万历初尚非心腹大患，但辽东羁縻与边饷已受其活动牵动。与辽东边防远期风险相关。不可作朝臣问策，作情报对象理解。雄猜进取。课上可对照其党派立场理解问策方向。"
+    },
+    {
+      "name": "俺答",
+      "office": "顺义王",
+      "office_type": "外藩",
+      "faction": "中立",
+      "aliases": [
+        "俺答",
+        "俺答汗"
+      ],
+      "personal_skills": [
+        "互市",
+        "叩边"
+      ],
+      "loyalty": 25,
+      "ability": 75,
+      "integrity": 45,
+      "courage": 78,
+      "style": "索市赏",
+      "power_id": "mongol",
+      "location": "mongol_chahar",
+      "birth_year": 1507,
+      "historical_death_year": 1582,
+      "status": "active",
+      "summary": "蒙古顺义王一系，互市与北防压力的关键变量。封贡后边警形态变化，影响蓟辽与宣大。与互市、边费相关。作边情对象理解。势力强大，重实利。课上可对照其党派立场理解问策方向。"
+    }
+  ]
+}

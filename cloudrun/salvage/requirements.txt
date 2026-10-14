@@ -1,0 +1,8 @@
+# CloudRun Salvage deps (from ming-salvage-sim-main/requirements.txt + gunicorn)
+agno[openai,sqlite]>=2.6.7
+debugpy>=1.8.20
+fastapi>=0.115.0
+python-multipart>=0.0.9
+pexpect>=4.9.0
+uvicorn[standard]>=0.32.0
+gunicorn>=23.0.0
